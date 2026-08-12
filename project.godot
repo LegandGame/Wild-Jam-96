@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot Wild Jam #96"
-run/main_scene="res://scenes/opening/opening.tscn"
+run/main_scene="res://ui/opening/opening.tscn"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.png"
 
@@ -33,9 +33,20 @@ project/assembly_name="Maaack-s Minimal Game Template"
 
 enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://addons/guide/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://assets/": "red",
+"res://common/": "yellow",
+"res://entities/": "blue",
+"res://scenes/": "purple",
+"res://ui/": "orange"
+}
+
 [gui]
 
-theme/custom="res://resources/themes/lab.tres"
+theme/custom="res://ui/resources/themes/lab.tres"
 common/drop_mouse_on_gui_input_disabled=true
 
 [input]

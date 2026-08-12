@@ -1,5 +1,5 @@
 @tool
-extends "res://scenes/credits/scrolling_credits.gd"
+extends "res://ui/credits/scrolling_credits.gd"
 
 ## Defines the path to the main menu. Hides the Main Menu button if not set.
 @export_file("*.tscn") var main_menu_scene_path : String
