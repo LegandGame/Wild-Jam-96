@@ -13,7 +13,7 @@ config_version=5
 config/name="Godot Wild Jam #96"
 run/main_scene="res://ui/opening/opening.tscn"
 config/features=PackedStringArray("4.7")
-config/icon="res://icon.png"
+config/icon="uid://bdtqacwys6h13"
 
 [autoload]
 
