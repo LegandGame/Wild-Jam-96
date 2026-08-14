@@ -1,5 +1,7 @@
 # Attribution
 ## Collaborators
+![Profile Photo](res://assets/credit_logos/SpiderSonaComm_NoHalfTone_Nate_Profile.png)
+Programmer: Aidan "Legandairy" Crawford
 
 ### Godot Minimal Game Template
 ![Maaack Plugin Icon](/assets/plugin_logo/logo.png)  
@@ -35,3 +37,21 @@ License: [MIT License](https://github.com/microsoft/vscode/blob/main/LICENSE.txt
 Author: [Linus Torvalds](https://github.com/torvalds)  
 Source: [git-scm.com](https://git-scm.com/downloads)  
 License: [GNU General Public License version 2](https://opensource.org/licenses/GPL-2.0)
+
+#### Godot State Charts
+![State Chart Logo](res://addons/godot_state_charts/state_chart.svg)
+Author: [Jan "derkork" Thomä & Contributers](https://github.com/derkork/godot-statecharts)
+Source: [Godot Asset Library](https://store.godotengine.org/asset/godotneers/godot-state-charts/)
+License: [MIT License](https://choosealicense.com/licenses/mit/)
+
+#### Godot Unified Input Detection Engine (G.U.I.D.E)
+![guide logo](res://addons/guide/guide_mapping_context.svg)
+Author: [Jan "derkork" Thomä & Contributers](https://github.com/godotneers/G.U.I.D.E)
+Source: [Godot Asset Library](https://store.godotengine.org/asset/godotneers/guide/)
+License: [MIT License](https://choosealicense.com/licenses/mit/)
+
+#### Phantom camera
+![pcam logo](res://addons/phantom_camera/icons/phantom_camera_gizmo.svg)
+Author: [Marcus "ramokz" Skov & Contributers](https://github.com/ramokz/phantom-camera)
+Source: [Godot Asset Library](https://store.godotengine.org/asset/ramokz/phantom-camera/)
+License: [MIT License](https://choosealicense.com/licenses/mit/)

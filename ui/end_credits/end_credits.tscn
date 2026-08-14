@@ -6,7 +6,7 @@
 
 [node name="EndCredits" unique_id=241213605 instance=ExtResource("1_h82up")]
 script = ExtResource("2_0sycx")
-main_menu_scene_path = "res://scenes/menus/main_menu/main_menu.tscn"
+main_menu_scene_path = "uid://bj14p3aa7wm8f"
 force_mouse_mode_visible = false
 
 [node name="BackgroundColor" type="ColorRect" parent="." index="0" unique_id=1680337145]
@@ -27,6 +27,9 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="ScrollContainer" parent="." index="2" unique_id=1826061058]
+scroll_vertical = 1599
 
 [node name="CenterContainer" type="CenterContainer" parent="." index="3" unique_id=1516904581]
 layout_mode = 0
