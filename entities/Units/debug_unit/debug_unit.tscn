@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cr4rlmoper1c2"]
+
+[ext_resource type="Script" uid="uid://d2geap8a52qi4" path="res://entities/Units/unit.gd" id="1_63md5"]
+[ext_resource type="Script" uid="uid://r2baue2y324i" path="res://common/counter.gd" id="2_laae3"]
+[ext_resource type="Script" uid="uid://bxahglea2iyqi" path="res://entities/Units/unit_stats.gd" id="2_xu31v"]
+[ext_resource type="Script" uid="uid://drvlx84s0dv6t" path="res://common/hitbox_hurtbox/hurtbox.gd" id="3_klytv"]
+
+[sub_resource type="Resource" id="Resource_klytv"]
+script = ExtResource("2_xu31v")
+metadata/_custom_type_script = "uid://bxahglea2iyqi"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ky4ls"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ky4ls"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mr007"]
+
+[node name="DebugUnit" type="CharacterBody3D" unique_id=764353807 node_paths=PackedStringArray("model", "health", "hurtbox")]
+script = ExtResource("1_63md5")
+stats = SubResource("Resource_klytv")
+model = NodePath("MeshInstance3D")
+health = NodePath("HealthCounter")
+hurtbox = NodePath("Hurtbox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2144051896]
+shape = SubResource("CapsuleShape3D_ky4ls")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1559928568]
+mesh = SubResource("CapsuleMesh_ky4ls")
+
+[node name="HealthCounter" type="Node" parent="." unique_id=1482041667]
+script = ExtResource("2_laae3")
+metadata/_custom_type_script = "uid://r2baue2y324i"
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=246492572]
+script = ExtResource("3_klytv")
+metadata/_custom_type_script = "uid://drvlx84s0dv6t"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=852767588]
+shape = SubResource("CapsuleShape3D_mr007")

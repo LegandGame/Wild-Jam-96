@@ -19,10 +19,10 @@ pause_menu_packed = ExtResource("2_2a8rs")
 script = ExtResource("3_4j704")
 level_container = NodePath("../LevelContainer")
 
-[node name="LevelManager" type="Node" parent="." unique_id=1350972375 node_paths=PackedStringArray("level_loader", "scene_lister")]
+[node name="LevelManager" type="Node" parent="." unique_id=1350972375 node_paths=PackedStringArray("level_loader")]
 script = ExtResource("4_kp23o")
 level_loader = NodePath("../LevelLoader")
-scene_lister = NodePath("SceneLister")
+starting_level_path = "uid://ch55nc5r8dc5k"
 main_menu_scene_path = "uid://bj14p3aa7wm8f"
 ending_scene_path = "uid://b6v0chta8af6"
 game_won_scene = ExtResource("5_5jirj")
