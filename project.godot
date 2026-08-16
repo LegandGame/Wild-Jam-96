@@ -19,6 +19,7 @@ config/icon="uid://bdtqacwys6h13"
 
 GUIDE="*uid://p2jwrgjcbexr"
 PhantomCameraManager="*uid://duq6jhf6unyis"
+ScreenSpaceEdges="*uid://bsluhmkfltf41"
 
 [display]
 
@@ -142,7 +143,13 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_environment="res://default_env.tres"
+
+[shader_globals]
+
+reflection_texture={
+"type": "sampler2D",
+"value": ""
+}
