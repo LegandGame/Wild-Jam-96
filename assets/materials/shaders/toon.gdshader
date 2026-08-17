@@ -36,6 +36,7 @@ void fragment() {
 	
 	vec3 albedo = texture(albedo_texture, UV).rgb * tint_color;
 	ALBEDO = albedo + (fake_specular * albedo);
+	ALBEDO *= 1.0 - (max(0.0, orm.b - fake_specular.r) * 0.5);
 	EMISSION = texture(emissive_texture, UV).rgb * emissive_tint * emissive_strength;
 }
 

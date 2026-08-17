@@ -151,5 +151,5 @@ environment/defaults/default_environment="res://default_env.tres"
 
 reflection_texture={
 "type": "sampler2D",
-"value": ""
+"value": "res://assets/textures/reflection_noise_texture.tres"
 }
