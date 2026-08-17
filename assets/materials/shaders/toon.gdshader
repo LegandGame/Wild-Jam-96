@@ -16,23 +16,27 @@ uniform float rim_light_affect : hint_range(0.0, 1.0) = 0.25;
 uniform vec3 rim_tint : source_color = vec3(1.0);
 
 global uniform sampler2D reflection_texture;
+global uniform sampler2D soft_reflection_texture;
 
 varying lowp vec3 norm;
 
 void vertex() {
-    mat4 mat = MODEL_MATRIX*VIEW_MATRIX;
-    norm = NORMAL;
-    vec4 norm4 = vec4(norm.x, norm.y, norm.z, 0.0);
-    norm4 = mat*norm4;
-    norm = vec3(norm4.x, norm4.y, norm4.z);
+	mat4 mat = MODEL_MATRIX*VIEW_MATRIX;
+	norm = NORMAL;
+	vec4 norm4 = vec4(norm.x, norm.y, norm.z, 0.0);
+	norm4 = mat*norm4;
+	norm = vec3(norm4.x, norm4.y, norm4.z);
 }
 
 void fragment() {
 	vec3 orm = texture(orm_texture, UV).rgb;
 	orm.g = 1.0 - orm.g;
 	
-    vec2 _norm = vec2(norm.x, norm.y/2.0);
-    vec3 fake_specular = texture(reflection_texture, _norm*1.0).rgb * orm.g * 2.0;
+	vec2 _norm = vec2(norm.x, norm.y/2.0);
+	vec3 metal_specular = texture(reflection_texture, _norm*1.0).rgb;
+	vec3 soft_specular = texture(soft_reflection_texture, _norm).rgb;
+	
+	vec3 fake_specular = mix(soft_specular, metal_specular, orm.b) * orm.g * 2.0;
 	
 	vec3 albedo = texture(albedo_texture, UV).rgb * tint_color;
 	ALBEDO = albedo + (fake_specular * albedo);

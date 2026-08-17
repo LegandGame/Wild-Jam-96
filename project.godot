@@ -153,3 +153,7 @@ reflection_texture={
 "type": "sampler2D",
 "value": "res://assets/textures/reflection_noise_texture.tres"
 }
+soft_reflection_texture={
+"type": "sampler2D",
+"value": "res://assets/textures/soft_reflection_noise_texture.tres"
+}
