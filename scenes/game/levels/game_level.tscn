@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ch55nc5r8dc5k"]
 
 [ext_resource type="PackedScene" uid="uid://cr4rlmoper1c2" path="res://entities/Units/debug_unit/debug_unit.tscn" id="1_u8aah"]
+[ext_resource type="PackedScene" uid="uid://pq6d411mu1kt" path="res://common/rts_camera/rts_camera.tscn" id="1_xtc42"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_otvh4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,15 +20,19 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [node name="GameLevel" type="Node3D" unique_id=1838144058]
 
+[node name="RTSCamera" parent="." unique_id=219880910 instance=ExtResource("1_xtc42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 5)
+zoom_speed = 25.0
+
+[node name="CameraZoomPivot" parent="RTSCamera/CameraRotationX" parent_id_path=PackedInt32Array(219880910, 2114858487) index="0" unique_id=2134376419]
+transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 3.15, 5)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=240772459]
 environment = SubResource("Environment_xtc42")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1993480318]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 9.029389, 0)
 shadow_enabled = true
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=549631354]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.103472, 3.2956324)
 
 [node name="DebugUnit" parent="." unique_id=764353807 instance=ExtResource("1_u8aah")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.220808, 0)
@@ -40,3 +45,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(50, 1, 50)
 metadata/_edit_lock_ = true
+
+[editable path="RTSCamera"]

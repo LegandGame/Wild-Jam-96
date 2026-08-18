@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://pq6d411mu1kt"]
+
+[ext_resource type="Script" uid="uid://d0itj2u0d3kg5" path="res://common/rts_camera/rts_camera.gd" id="1_kj28d"]
+
+[node name="RTSCamera" type="Node3D" unique_id=219880910]
+script = ExtResource("1_kj28d")
+
+[node name="CameraRotationX" type="Node3D" parent="." unique_id=2114858487]
+
+[node name="CameraZoomPivot" type="Node3D" parent="CameraRotationX" unique_id=2134376419]
+transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraRotationX/CameraZoomPivot" unique_id=951955966]
