@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bmkixcbwxoeg6"]
 
 [ext_resource type="Material" uid="uid://cgnubveohftyr" path="res://assets/materials/guard.tres" id="1_k007p"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://rph5fan0ren8" path="res://assets/characters/animation/blend_tree.tres" id="2_k007p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fahju"]
 
@@ -3257,6 +3258,7 @@ _data = {
 }
 
 [node name="Guard" type="Node3D" unique_id=1516807226]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="RIG-Guard_Rig_deform" type="Node3D" parent="." unique_id=945283904]
 
@@ -3521,7 +3523,7 @@ bone_name = "DEF-grip.R"
 bone_idx = 6
 
 [node name="Knight_Sword" type="MeshInstance3D" parent="RIG-Guard_Rig_deform/Skeleton3D/DEF-grip_R" unique_id=1925533434]
-transform = Transform3D(-0.01045561, 0.00023362036, 0.99994534, -0.9999339, 0.004813429, -0.010456611, -0.004815609, -0.99998844, 0.00018327755, -1.5124679e-06, -1.9595027e-06, 5.0477684e-07)
+transform = Transform3D(-0.010455611, 0.00023363334, 0.99994534, -0.9999339, 0.004813465, -0.010456613, -0.004815645, -0.99998844, 0.00018329016, -1.5124679e-06, -1.9595027e-06, 5.0477684e-07)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_4xnc2")
 surface_material_override/0 = ExtResource("1_k007p")
@@ -3535,3 +3537,13 @@ surface_material_override/0 = ExtResource("1_k007p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1113376183]
 libraries/ = SubResource("AnimationLibrary_6mini")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=234738272]
+tree_root = ExtResource("2_k007p")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Transition/current_state = "Idle"
+parameters/Transition/transition_request = ""
+parameters/Transition/current_index = 0
+parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0

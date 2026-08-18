@@ -2,8 +2,8 @@ shader_type spatial;
 
 render_mode unshaded, ambient_light_disabled;
 
-uniform float edge_brightness = 2.0;
-uniform float sample_distance = 20.0;
+uniform float outline_brightness = 2.0;
+uniform float outline_width = 20.0;
 uniform float depth_threshold = 0.1;
 uniform float depth_artifact_correction_coef = 2;
 
@@ -23,7 +23,7 @@ void fragment() {
 	float fragment_depth = texture(depth_texture, SCREEN_UV).r;
 	fragment_depth = PROJECTION_MATRIX[3][2] / (fragment_depth + PROJECTION_MATRIX[2][2]);
 	
-	float recalculated_sample_distance = sample_distance * (1.0 / fragment_depth);
+	float recalculated_outline_width = outline_width * (1.0 / fragment_depth);
 	float highest_angle_difference = 0.0;
 	float highest_depth_difference = 0.0;
 	
@@ -33,8 +33,8 @@ void fragment() {
 	for (int x = -1; x < 2; x++){
 		for (int y = -1; y < 2; y++){
 			if (abs(x) > 0 || abs(y) > 0){
-				float x_test = SCREEN_UV.x * (recalculated_sample_distance / VIEWPORT_SIZE.x) * float(x);
-				float y_test = SCREEN_UV.y * (recalculated_sample_distance / VIEWPORT_SIZE.y) * float(y);
+				float x_test = SCREEN_UV.x * (recalculated_outline_width / VIEWPORT_SIZE.x) * float(x);
+				float y_test = SCREEN_UV.y * (recalculated_outline_width / VIEWPORT_SIZE.y) * float(y);
 				vec2 offset_uv = SCREEN_UV + vec2(x_test, y_test);
 				
 				vec3 kernel_normal = texture(normal_texture, offset_uv).xyz;
@@ -67,7 +67,7 @@ void fragment() {
 	
 	// >= 15 degrees between surfaces
 	if ((highest_angle_difference) >= PI/24.0 || highest_depth_difference >= depth_threshold + angle * depth_artifact_correction_coef){
-		multiplier *= edge_brightness;
+		multiplier *= outline_brightness;
 		fragment_color = texture(color_texture, lowest_depth_UV).rgb;
 	} else {
 		discard;

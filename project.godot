@@ -32,7 +32,7 @@ project/assembly_name="Maaack-s Minimal Game Template"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://addons/guide/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://addons/guide/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [file_customization]
 
