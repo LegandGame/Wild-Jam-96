@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bsluhmkfltf41"]
+
+[ext_resource type="Material" uid="uid://ckmk8er4avbc8" path="res://assets/materials/edge_highlights.tres" id="1_72b30"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_t6sap"]
+material = ExtResource("1_72b30")
+flip_faces = true
+size = Vector2(15, 15)
+
+[node name="ScreenSpaceEdges" type="MeshInstance3D" unique_id=511432441]
+extra_cull_margin = 2000.0
+mesh = SubResource("QuadMesh_t6sap")
