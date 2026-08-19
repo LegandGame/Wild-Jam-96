@@ -19,6 +19,8 @@ var wave_state: Types.WaveState = Types.WaveState.SPAWNING:
 signal change_wave_state(wave_state: Types.WaveState, wave_number: int)
 #endregion
 
+#region WaveFields
+## Full list of waves to iterate through
 @export var wave_list: Array[Wave]
 
 ## Downtime between waves in seconds
@@ -31,6 +33,7 @@ var wave_index: int
 var units_to_spawn: Array[UnitCount]
 var total_unit_count: int
 var remaining_unit_count: int
+#endregion
 
 #region Engine
 func _ready():
