@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://be22gd8cmlj45"]
+
+[ext_resource type="Script" uid="uid://c0a0wbij8nlgy" path="res://scenes/game/managers/charge_manager.gd" id="1_hjomn"]
+
+[node name="ChargeManager" type="Node3D" unique_id=502572430]
+script = ExtResource("1_hjomn")
