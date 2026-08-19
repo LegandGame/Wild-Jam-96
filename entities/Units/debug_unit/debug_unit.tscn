@@ -15,12 +15,13 @@ metadata/_custom_type_script = "uid://bxahglea2iyqi"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mr007"]
 
-[node name="DebugUnit" type="CharacterBody3D" unique_id=764353807 node_paths=PackedStringArray("model", "health", "hurtbox")]
+[node name="DebugUnit" type="CharacterBody3D" unique_id=764353807 node_paths=PackedStringArray("model", "health", "hurtbox", "navigator")]
 script = ExtResource("1_63md5")
 stats = SubResource("Resource_klytv")
 model = NodePath("MeshInstance3D")
 health = NodePath("HealthCounter")
 hurtbox = NodePath("Hurtbox")
+navigator = NodePath("NavigationAgent3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2144051896]
 shape = SubResource("CapsuleShape3D_ky4ls")
@@ -38,3 +39,5 @@ metadata/_custom_type_script = "uid://drvlx84s0dv6t"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=852767588]
 shape = SubResource("CapsuleShape3D_mr007")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1298225350]

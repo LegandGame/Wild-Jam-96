@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Wave" format=3 uid="uid://bhw7xvxmll4tw"]
+
+[ext_resource type="Script" uid="uid://obf1a2inyre6" path="res://data/waves/wave.gd" id="1_pos16"]
+[ext_resource type="Script" uid="uid://b6aq0r2m0okw4" path="res://data/waves/unit_count.gd" id="2_5n5bu"]
+
+[sub_resource type="Resource" id="Resource_xu31v"]
+script = ExtResource("2_5n5bu")
+unit_type = 1
+metadata/_custom_type_script = "uid://b6aq0r2m0okw4"
+
+[sub_resource type="Resource" id="Resource_3gawl"]
+script = ExtResource("2_5n5bu")
+metadata/_custom_type_script = "uid://b6aq0r2m0okw4"
+
+[resource]
+script = ExtResource("1_pos16")
+name = "Sample"
+wave_number = 1
+unit_counts = Array[ExtResource("2_5n5bu")]([SubResource("Resource_xu31v"), SubResource("Resource_3gawl")])
+metadata/_custom_type_script = "uid://obf1a2inyre6"
