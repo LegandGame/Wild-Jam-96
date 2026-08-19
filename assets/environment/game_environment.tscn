@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://ivuho8u704n8"]
 
 [ext_resource type="Shader" uid="uid://b8lcka3trrc1e" path="res://assets/materials/shaders/terrain3d_toon.gdshader" id="1_l8dcq"]
+[ext_resource type="PackedScene" uid="uid://bsluhmkfltf41" path="res://assets/vfx/ScreenSpaceEdges.tscn" id="1_q5lqk"]
 [ext_resource type="Texture2D" uid="uid://da5s7hlwks3ag" path="res://assets/textures/grass_Base_Color.png" id="1_swy4y"]
 [ext_resource type="Texture2D" uid="uid://ie5h4468up8h" path="res://assets/textures/grass_Normal_OpenGL.png" id="2_d4yl4"]
 [ext_resource type="PackedScene" uid="uid://bmkixcbwxoeg6" path="res://assets/characters/guard.tscn" id="2_viuol"]
@@ -15,30 +16,37 @@
 [ext_resource type="PackedScene" uid="uid://bqy6o1qrp8rhi" path="res://assets/environment/rocks/tall_rock.tscn" id="14_gt8t3"]
 [ext_resource type="PackedScene" uid="uid://d3miv5bnq02wj" path="res://assets/characters/evil_guard.tscn" id="15_7rq4p"]
 [ext_resource type="PackedScene" uid="uid://dgu6n6ywyfc2n" path="res://assets/environment/rocks/pillar_rock.tscn" id="15_x25wl"]
+[ext_resource type="PackedScene" uid="uid://rv8v4rjf6off" path="res://assets/environment/pine_trees/curvy_pine.tscn" id="16_u5fbt"]
+[ext_resource type="PackedScene" uid="uid://cl5331m3pk6bh" path="res://assets/environment/pine_trees/curvy_pine_decayed.tscn" id="17_cfmqw"]
+[ext_resource type="PackedScene" uid="uid://5eviwibxpnbd" path="res://assets/environment/pine_trees/curvy_pine_dead.tscn" id="18_gvvjy"]
+[ext_resource type="PackedScene" uid="uid://gqp3naqxk8qa" path="res://assets/environment/pine_trees/bent_pine.tscn" id="19_q5lqk"]
+[ext_resource type="PackedScene" uid="uid://b482sicw43ic5" path="res://assets/environment/pine_trees/straight_pine.tscn" id="21_m45s3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l8dcq"]
-sky_top_color = Color(0.5895168, 0.76181424, 0.99203247, 1)
-sky_horizon_color = Color(0.76548874, 0.8085631, 0.8661176, 1)
-ground_bottom_color = Color(0, 0, 0, 1)
-ground_horizon_color = Color(0.76548874, 0.8085631, 0.8661176, 1)
-energy_multiplier = 0.5
+sky_top_color = Color(0.05106707, 0.38012096, 0.42662925, 1)
+sky_horizon_color = Color(0.7919939, 0.86513925, 0.9907716, 1)
+sky_curve = 1.8188599
+sky_energy_multiplier = 2.0
+ground_bottom_color = Color(0.4, 0.47058824, 0.5686275, 1)
+ground_horizon_color = Color(0.7921569, 0.8666667, 0.99215686, 1)
+ground_curve = 0.04594801
+sun_angle_max = 0.0
 
 [sub_resource type="Sky" id="Sky_e2ycy"]
 sky_material = SubResource("ProceduralSkyMaterial_l8dcq")
 
 [sub_resource type="Environment" id="Environment_xvb8u"]
-background_mode = 1
-background_color = Color(0.68768966, 0.7908935, 0.8887332, 1)
+background_mode = 2
+background_color = Color(0.95658916, 0.94459486, 0.83840966, 1)
+background_energy_multiplier = 0.5
 sky = SubResource("Sky_e2ycy")
-tonemap_mode = 2
-tonemap_exposure = 0.75
 tonemap_white = 5.0
 ssao_enabled = true
 ssao_power = 14.270473
 glow_enabled = true
 glow_bloom = 0.25
 adjustment_enabled = true
-adjustment_brightness = 1.05
+adjustment_brightness = 1.15
 adjustment_contrast = 1.25
 adjustment_saturation = 1.15
 
@@ -115,7 +123,7 @@ lod0_range = 128.0
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_viuol"]
 name = "Grass"
-albedo_color = Color(0.66, 0.60159004, 0.27060002, 1)
+albedo_color = Color(0.31269926, 0.35632545, 0.16532958, 1)
 albedo_texture = ExtResource("1_swy4y")
 normal_texture = ExtResource("2_d4yl4")
 uv_scale = 0.5
@@ -123,7 +131,7 @@ uv_scale = 0.5
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_l8dcq"]
 name = "Dirt"
 id = 1
-albedo_color = Color(0.57, 0.439375, 0.25649998, 1)
+albedo_color = Color(0.41544917, 0.3406115, 0.20275375, 1)
 albedo_texture = ExtResource("3_cio6d")
 normal_texture = ExtResource("4_veo2t")
 normal_depth = 0.75
@@ -135,7 +143,7 @@ detiling_shift = 0.435
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_e2ycy"]
 name = "Rocks"
 id = 2
-albedo_color = Color(0.52, 0.44416666, 0.33799997, 1)
+albedo_color = Color(0.39690262, 0.35021135, 0.2520981, 1)
 albedo_texture = ExtResource("5_veo2t")
 normal_texture = ExtResource("8_e2ycy")
 normal_depth = 2.0
@@ -197,11 +205,14 @@ albedo_color = Color(0.552462, 0.06408658, 4.813075e-08, 1)
 
 [node name="Game_Environment" type="Node3D" unique_id=496390260]
 
+[node name="ScreenSpaceEdges" parent="." unique_id=511432441 instance=ExtResource("1_q5lqk")]
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=413905761]
 transform = Transform3D(-0.8660253, -0.18857378, 0.46307662, -2.9802322e-08, 0.92615324, 0.37714744, -0.50000006, 0.3266193, -0.8020723, 0, 0, 0)
-light_color = Color(0.73699546, 0.84306026, 1, 1)
+light_color = Color(0.9709504, 0.77108717, 0.39296338, 1)
 shadow_enabled = true
 directional_shadow_mode = 0
+directional_shadow_max_distance = 200.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=909580179]
 environment = SubResource("Environment_xvb8u")
@@ -238,7 +249,7 @@ mesh = SubResource("ArrayMesh_l8dcq")
 surface_material_override/0 = SubResource("StandardMaterial3D_fmfag")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=746185040]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -230.021, 30, 177.961)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -226.941, 30, 176.321)
 
 [node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=1534860435]
 transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 0, 0, 0)
@@ -267,3 +278,78 @@ transform = Transform3D(0.010084158, 0, 0.19974561, 0, 0.2, 0, -0.19974561, 0, 0
 transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_l8dcq")
 surface_material_override/0 = SubResource("StandardMaterial3D_fmfag")
+
+[node name="CurvyPine" parent="." unique_id=2037302520 instance=ExtResource("16_u5fbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -289.93875, 2.1368608, 151.54619)
+
+[node name="CurvyPine_Decayed" parent="." unique_id=1632665537 instance=ExtResource("17_cfmqw")]
+transform = Transform3D(-0.41158572, 0, 0.91137105, 0, 1, 0, -0.91137105, 0, -0.41158572, -251.38834, 0, 135.3416)
+
+[node name="CurvyPine_Decayed2" parent="." unique_id=168648847 instance=ExtResource("17_cfmqw")]
+transform = Transform3D(0.51870394, 0, -0.6156066, 0.11689951, 0.7903528, 0.09849836, 0.60440546, -0.15286404, 0.50926596, -216.38713, 1.5521526, 130.29227)
+
+[node name="CurvyPine_Dead" parent="." unique_id=1966163744 instance=ExtResource("18_gvvjy")]
+transform = Transform3D(-0.8791307, 0, 0.47658074, 0, 1, 0, -0.47658074, 0, -0.8791307, -277.11246, -3.8146973e-06, 138.90567)
+
+[node name="BentPine" parent="." unique_id=430092127 instance=ExtResource("19_q5lqk")]
+transform = Transform3D(-0.8867194, 0, -0.121465474, 0.017817846, 0.88531834, -0.13007341, 0.12015151, -0.13128811, -0.87712723, -247.2411, 2.3887634, 150.88637)
+
+[node name="BentPine2" parent="." unique_id=1305983128 instance=ExtResource("19_q5lqk")]
+transform = Transform3D(-0.6775529, -0.07163152, -0.5803586, 0.017817847, 0.8853183, -0.13007341, 0.584491, -0.11002495, -0.6687974, -225.97502, 12.382641, 108.55708)
+
+[node name="BentPine3" parent="." unique_id=1087366832 instance=ExtResource("19_q5lqk")]
+transform = Transform3D(-0.17647922, 0.10494364, 0.6901028, 0.014333909, 0.7122114, -0.10464008, -0.6978894, -0.011909624, -0.17665939, -218.97931, 12.382641, 112.147934)
+
+[node name="BentPine4" parent="." unique_id=355782810 instance=ExtResource("19_q5lqk")]
+transform = Transform3D(-0.017932676, -0.051045593, -0.9985353, -0.014363468, 0.99860597, -0.050791264, 0.9997359, 0.013431606, -0.01864086, -202.15733, 1.9163322, 122.18695)
+
+[node name="StraightPine" parent="." unique_id=85772223 instance=ExtResource("21_m45s3")]
+transform = Transform3D(0.52890265, -0.029116169, 0.5725506, 0.019709943, 0.7794563, 0.021430675, -0.5729515, -6.383199e-05, 0.5292698, -206.4302, 1.568903, 132.55576)
+
+[node name="StraightPine2" parent="." unique_id=1233780422 instance=ExtResource("21_m45s3")]
+transform = Transform3D(0.165156, 0.018314233, 0.7620945, -0.017312115, 0.77966386, -0.014984678, -0.76211786, -0.01374188, 0.16549146, -189.63446, 1.568903, 140.61523)
+
+[node name="BentPine5" parent="." unique_id=749580492 instance=ExtResource("19_q5lqk")]
+transform = Transform3D(-0.4751951, 0.037876163, 0.8790649, -0.01820593, 0.998436, -0.05286107, -0.8796921, -0.04112351, -0.47376236, -178.57745, 1.9411993, 156.69748)
+
+[node name="StraightPine3" parent="." unique_id=595694100 instance=ExtResource("21_m45s3")]
+transform = Transform3D(-0.17948517, 0.02539704, -0.75864357, 0.023024075, 0.7793867, 0.020644266, 0.75871927, -0.01764325, -0.18009374, -195.37053, 1.5341686, 132.172)
+
+[node name="StraightPine4" parent="." unique_id=963071135 instance=ExtResource("21_m45s3")]
+transform = Transform3D(0.4955212, 0.019727804, 0.6020543, -0.014057825, 0.7797481, -0.013980065, -0.6022134, -0.0019694362, 0.49571693, -199.94751, 1.5787647, 140.07018)
+
+[node name="BentPine6" parent="." unique_id=582795184 instance=ExtResource("19_q5lqk")]
+transform = Transform3D(-0.5087725, 0.036430113, 0.86012983, -0.014363468, 0.99860597, -0.050791264, -0.8607811, -0.038195644, -0.50754005, -159.24657, 1.9163322, 121.646576)
+
+[node name="StraightPine5" parent="." unique_id=1680828223 instance=ExtResource("21_m45s3")]
+transform = Transform3D(-0.15008548, 0.02482897, -0.76502144, 0.019709947, 0.7794563, 0.021430682, 0.76517034, -0.015207826, -0.15060833, -164.42361, 1.568903, 94.2721)
+
+[node name="StraightPine6" parent="." unique_id=2035560767 instance=ExtResource("21_m45s3")]
+transform = Transform3D(0.25884098, -0.008393258, -0.735752, -0.017312115, 0.77966386, -0.014984678, 0.7355958, 0.021302667, 0.25854307, -188.98755, 1.568903, 121.458855)
+
+[node name="BentPine7" parent="." unique_id=1289517380 instance=ExtResource("19_q5lqk")]
+transform = Transform3D(0.8657981, -0.010699332, -0.50027895, -0.018205928, 0.99843585, -0.052861065, 0.50006217, 0.054875053, 0.86424935, -195.65495, 1.9411993, 111.500824)
+
+[node name="StraightPine7" parent="." unique_id=2025864274 instance=ExtResource("21_m45s3")]
+transform = Transform3D(-0.24485672, -0.012379993, 0.7404673, 0.023024067, 0.77938664, 0.020644266, -0.7402128, 0.028337779, -0.24429877, -193.94856, 1.5341686, 81.69554)
+
+[node name="StraightPine8" parent="." unique_id=958378977 instance=ExtResource("21_m45s3")]
+transform = Transform3D(-0.58667445, -0.0013612267, 0.51401484, -0.014057825, 0.7797481, -0.0139800655, -0.5138243, -0.019779082, -0.58650947, -181.07082, 1.5787647, 100.488495)
+
+[node name="BentPine8" parent="." unique_id=118686232 instance=ExtResource("19_q5lqk")]
+transform = Transform3D(0.8610326, -0.013472166, -0.5083711, -0.01436347, 0.99860597, -0.050791264, 0.5083467, 0.0510349, 0.8596388, -240.9563, 1.9163322, 75.81872)
+
+[node name="StraightPine9" parent="." unique_id=501841868 instance=ExtResource("21_m45s3")]
+transform = Transform3D(-0.23784345, -0.014406139, 0.74271315, 0.019709945, 0.7794563, 0.021430682, -0.7425912, 0.02530254, -0.23731364, -208.46509, 1.568903, 76.60235)
+
+[node name="StraightPine10" parent="." unique_id=816874850 instance=ExtResource("21_m45s3")]
+transform = Transform3D(-0.5817183, -0.002930217, 0.5196105, -0.017312111, 0.77966374, -0.014984676, -0.5193299, -0.022708233, -0.58153266, -225.63162, 1.568903, 64.009834)
+
+[node name="BentPine9" parent="." unique_id=1578561389 instance=ExtResource("19_q5lqk")]
+transform = Transform3D(-0.999632, -0.01711345, 0.021046788, -0.018205924, 0.9984358, -0.05286106, -0.020109385, -0.053224772, -0.99838006, -200.3206, 1.9411993, 97.12188)
+
+[node name="StraightPine11" parent="." unique_id=278507693 instance=ExtResource("21_m45s3")]
+transform = Transform3D(0.57169884, -0.0028338758, -0.53061503, 0.023024067, 0.77938664, 0.020644266, 0.5301229, -0.030793881, 0.571333, -220.42595, 1.5341686, 84.53879)
+
+[node name="StraightPine12" parent="." unique_id=1440390173 instance=ExtResource("21_m45s3")]
+transform = Transform3D(0.7618103, 0.010738124, -0.16712189, -0.014057823, 0.7797481, -0.0139800655, 0.16687536, 0.016666064, 0.7617578, -213.3805, 1.5787647, 92.816605)

@@ -1,7 +1,7 @@
 [gd_resource type="NoiseTexture2D" format=3 uid="uid://dvnbv11iwxsi"]
 
 [sub_resource type="Gradient" id="Gradient_iou3v"]
-offsets = PackedFloat32Array(0.28551137, 0.7230114)
+offsets = PackedFloat32Array(0.46448863, 0.7230114)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_56pq6"]
 

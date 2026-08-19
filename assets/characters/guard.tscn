@@ -3258,7 +3258,7 @@ _data = {
 }
 
 [node name="Guard" type="Node3D" unique_id=1516807226]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="RIG-Guard_Rig_deform" type="Node3D" parent="." unique_id=945283904]
 
@@ -3502,7 +3502,6 @@ bone_idx = 0
 
 [node name="Guard_Helmet" type="MeshInstance3D" parent="RIG-Guard_Rig_deform/Skeleton3D/DEF-hat" unique_id=1830557197]
 transform = Transform3D(1, -2.1175826e-21, -2.3841864e-07, 1.04216105e-14, 1.0000001, 4.3711392e-08, 2.384186e-07, -4.3711392e-08, 1.0000001, 7.126004e-14, -1.1920929e-07, -1.4901161e-07)
-cast_shadow = 0
 mesh = SubResource("ArrayMesh_rr3k3")
 surface_material_override/0 = ExtResource("1_k007p")
 
@@ -3513,7 +3512,6 @@ bone_idx = 3
 
 [node name="Knight_Shield" type="MeshInstance3D" parent="RIG-Guard_Rig_deform/Skeleton3D/DEF-grip_L" unique_id=1393539230]
 transform = Transform3D(-0.25147942, 0.038477212, 0.9670975, -0.9677862, 0.002572033, -0.25176078, -0.012174459, -0.9992563, 0.036590893, -5.736947e-07, -4.3958426e-07, -1.2852252e-07)
-cast_shadow = 0
 mesh = SubResource("ArrayMesh_3nown")
 surface_material_override/0 = ExtResource("1_k007p")
 
@@ -3524,12 +3522,10 @@ bone_idx = 6
 
 [node name="Knight_Sword" type="MeshInstance3D" parent="RIG-Guard_Rig_deform/Skeleton3D/DEF-grip_R" unique_id=1925533434]
 transform = Transform3D(-0.010455611, 0.00023363334, 0.99994534, -0.9999339, 0.004813465, -0.010456613, -0.004815645, -0.99998844, 0.00018329016, -1.5124679e-06, -1.9595027e-06, 5.0477684e-07)
-cast_shadow = 0
 mesh = SubResource("ArrayMesh_4xnc2")
 surface_material_override/0 = ExtResource("1_k007p")
 
 [node name="Knight_Guard" type="MeshInstance3D" parent="RIG-Guard_Rig_deform/Skeleton3D" unique_id=29124649]
-cast_shadow = 0
 mesh = SubResource("ArrayMesh_fek43")
 skin = SubResource("Skin_7wsm3")
 skeleton = NodePath("..")

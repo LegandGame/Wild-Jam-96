@@ -1,7 +1,10 @@
 shader_type spatial;
+render_mode cull_disabled;
 
 uniform vec3 emissive_tint : source_color = vec3(1.0);
 uniform vec3 tint_color : source_color = vec3(1.0);
+uniform bool use_alpha = false;
+uniform float alpha_scissor_threshold : hint_range(0.0, 1.0) = 0.5;
 uniform sampler2D albedo_texture : source_color, hint_default_white;
 
 uniform sampler2D orm_texture: hint_default_black;
@@ -39,11 +42,16 @@ void fragment() {
 	
 	vec3 fake_specular = mix(soft_specular, metal_specular, orm.b) * orm.g * 5.0;
 	
-	vec3 albedo = texture(albedo_texture, UV).rgb * tint_color;
+	vec4 color = texture(albedo_texture, UV);
+	vec3 albedo = color.rgb * tint_color;
 	ALBEDO = albedo + (fake_specular * albedo);
 	ALBEDO *= 1.0 - (max(0.0, orm.b - fake_specular.r) * 0.5);
 	EMISSION = texture(emissive_texture, UV).rgb * emissive_tint * emissive_strength;
 	NORMAL_MAP = texture(normal_texture, UV).xyz;
+	if (use_alpha) {
+		ALPHA_SCISSOR_THRESHOLD = alpha_scissor_threshold;
+		ALPHA = clamp(color.a, 0.0, 1.0);
+	}
 }
 
 void light() {
