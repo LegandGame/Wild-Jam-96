@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://oda5v2pa5v41"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acxr8"]
+bg_color = Color(0.047058824, 0.70980394, 0.9254902, 1)
+
+[node name="ChargeBar" type="ProgressBar" unique_id=900461264]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 28.0
+offset_right = -1170.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_acxr8")
+max_value = 1000.0
+value = 200.0
+fill_mode = 3
