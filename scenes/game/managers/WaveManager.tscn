@@ -6,3 +6,5 @@
 script = ExtResource("1_s0p43")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=77420112]
+
+[node name="DowntimeTimer" type="Timer" parent="." unique_id=1847798653]
