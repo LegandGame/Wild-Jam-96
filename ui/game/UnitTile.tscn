@@ -26,5 +26,6 @@ offset_bottom = 95.0
 ignore_texture_size = true
 stretch_mode = 0
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

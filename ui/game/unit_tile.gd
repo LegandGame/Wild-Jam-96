@@ -1,8 +1,10 @@
 ## Class for a tile button that spawns a unit when pressed.
 class_name UnitTile extends Control
 
+signal tile_pressed(unit_type: Types.UnitType, cost: float)
+
 @export var unit_type: Types.UnitType
-@export var cost: int = 50
+@export var cost: float = 50
 
 var can_afford: bool = false
 var hovered: bool = false
@@ -24,13 +26,18 @@ func _process(_delta):
 	if can_afford:
 		$TextureButton.modulate = Color(1,1,1,1) * multiplier
 	else:
-		$TextureButton.modulate = Color(1,0.7,0.7,1)
-
-func _on_charge_change(amount):
-	cost = amount >= cost
+		$TextureButton.modulate = Color(1,0.5,0.5,0.6)
 
 func _on_mouse_entered():
 	hovered = true
 
 func _on_mouse_exited():
 	hovered = false
+
+func _on_charge_modified(value):
+	can_afford = value >= cost
+
+func _on_texture_button_pressed():
+	if can_afford:
+		$TextureButton.modulate = Color(0,0,1,1)
+		tile_pressed.emit(unit_type, cost)
