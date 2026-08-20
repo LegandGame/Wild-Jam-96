@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://oda5v2pa5v41"]
 
+[ext_resource type="Script" uid="uid://gpk4xcjaska6" path="res://ui/game/charge_bar.gd" id="1_xn8q3"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acxr8"]
 bg_color = Color(0.047058824, 0.70980394, 0.9254902, 1)
 
@@ -17,3 +19,4 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_acxr8")
 max_value = 1000.0
 value = 200.0
 fill_mode = 3
+script = ExtResource("1_xn8q3")

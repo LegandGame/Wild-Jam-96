@@ -4,6 +4,7 @@ class_name ChargeManager extends Node3D
 # Signals
 signal min_charge_reached
 signal max_charge_reached
+signal charge_modified(value)
 
 ## Minimum charge - hit this and you lose
 @export var min_charge: float = 0.0
@@ -46,9 +47,16 @@ func add_charge(amount: float):
 	elif charge < min_charge:
 		charge = min_charge
 		min_charge_reached.emit()
+	
+	charge_modified.emit(charge)
 
 func add_charge_rate(amount: float):
 	charge_rate += amount
 
 func multiply_charge_rate(amount: float):
 	charge_rate *= amount
+
+# TODO move this out of manager so that charge manager doesn't have to listen directly to buttons
+func _on_unit_tile_tile_pressed(unit_type, cost):
+	add_charge(-cost)
+	# TODO spawn unit

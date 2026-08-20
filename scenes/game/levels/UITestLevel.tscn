@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c544jx5swujjn"]
+
+[ext_resource type="PackedScene" uid="uid://be22gd8cmlj45" path="res://scenes/game/managers/ChargeManager.tscn" id="1_uc3ao"]
+[ext_resource type="PackedScene" uid="uid://oda5v2pa5v41" path="res://ui/game/ChargeBar.tscn" id="2_siv5y"]
+[ext_resource type="PackedScene" uid="uid://ddl7gxp24n0w1" path="res://ui/game/UnitTile.tscn" id="3_msqvc"]
+
+[node name="UiTestLevel" type="Node3D" unique_id=907255231]
+
+[node name="ChargeManager" parent="." unique_id=502572430 instance=ExtResource("1_uc3ao")]
+
+[node name="ChargeBar" parent="." unique_id=900461264 instance=ExtResource("2_siv5y")]
+
+[node name="UnitTile" parent="." unique_id=1736050719 instance=ExtResource("3_msqvc")]
+offset_left = 1162.0
+offset_top = 20.0
+offset_right = 1162.0
+offset_bottom = 20.0
+
+[connection signal="charge_modified" from="ChargeManager" to="ChargeBar" method="_on_charge_modified"]
+[connection signal="charge_modified" from="ChargeManager" to="UnitTile" method="_on_charge_modified"]
+[connection signal="tile_pressed" from="UnitTile" to="ChargeManager" method="_on_unit_tile_tile_pressed"]
