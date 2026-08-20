@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ddl7gxp24n0w1"]
 
+[ext_resource type="Script" uid="uid://qskfnqf6w41n" path="res://ui/game/unit_tile.gd" id="1_dpb4d"]
+
 [node name="UnitTile" type="Control" unique_id=1736050719]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dpb4d")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1736020245]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+color = Color(0.2285108, 0.2285108, 0.2285108, 1)
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=316043471]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 95.0
+offset_bottom = 95.0
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
