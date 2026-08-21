@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://74v6k80bv6co"]
+
+[ext_resource type="Shader" uid="uid://yltxhhb32l7a" path="res://assets/materials/shaders/toon.gdshader" id="1_qog4n"]
+[ext_resource type="Texture2D" uid="uid://b2kht2kllx0xe" path="res://assets/textures/PineTrees_Base_Color.png" id="2_qog4n"]
+[ext_resource type="Texture2D" uid="uid://c7ftrprt06lys" path="res://assets/textures/PineTrees_Normal_OpenGL.png" id="3_i36tn"]
+[ext_resource type="Texture2D" uid="uid://cghni0inntonp" path="res://assets/textures/PineTrees_ORM.png" id="4_uxblj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qog4n")
+shader_parameter/emissive_tint = Color(1, 1, 1, 1)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/use_alpha = true
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/use_triplanar = false
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/albedo_texture = ExtResource("2_qog4n")
+shader_parameter/orm_texture = ExtResource("4_uxblj")
+shader_parameter/normal_texture = ExtResource("3_i36tn")
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/normal_strength = 1.0
+shader_parameter/emissive_strength = 2.0
+shader_parameter/self_shadow_strength = 0.750000035625
+shader_parameter/edge_softness = 0.250000011875
+shader_parameter/rim_power = 10.0
+shader_parameter/rim_brightness = 1.0
+shader_parameter/rim_light_affect = 1.0
+shader_parameter/rim_tint = Color(1, 1, 1, 1)

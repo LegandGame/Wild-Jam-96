@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://3pd0t5dq2wrv"]
+
+[ext_resource type="Shader" uid="uid://yltxhhb32l7a" path="res://assets/materials/shaders/toon.gdshader" id="1_5ibbj"]
+[ext_resource type="Texture2D" uid="uid://ctyockv8m0nph" path="res://assets/textures/terrain_rocks_Base_Color.png" id="2_5ibbj"]
+[ext_resource type="Texture2D" uid="uid://sxsyndphvvve" path="res://assets/textures/terrain_rocks_Normal_OpenGL.png" id="3_ni4at"]
+[ext_resource type="Texture2D" uid="uid://da7offusy0od6" path="res://assets/textures/terrain_rocks_ORM.png" id="4_5ha3t"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_5ibbj")
+shader_parameter/emissive_tint = Color(1, 1, 1, 1)
+shader_parameter/tint_color = Color(0.7194924, 0.75270027, 0.8069187, 1)
+shader_parameter/use_alpha = false
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/use_triplanar = false
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/albedo_texture = ExtResource("2_5ibbj")
+shader_parameter/orm_texture = ExtResource("4_5ha3t")
+shader_parameter/normal_texture = ExtResource("3_ni4at")
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/normal_strength = 1.0
+shader_parameter/emissive_strength = 2.0
+shader_parameter/self_shadow_strength = 0.750000035625
+shader_parameter/edge_softness = 0.250000011875
+shader_parameter/rim_power = 10.0
+shader_parameter/rim_brightness = 0.75
+shader_parameter/rim_light_affect = 1.0
+shader_parameter/rim_tint = Color(1, 1, 1, 1)

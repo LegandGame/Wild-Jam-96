@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cwugqja2kp77u"]
+
+[ext_resource type="PackedScene" uid="uid://dhud044tbj4fk" path="res://assets/glb_imports/roboskull.glb" id="1_k6tgh"]
+[ext_resource type="Material" uid="uid://bgudfl43j2kjo" path="res://assets/materials/rusty_metal_triplanar.tres" id="2_g84c1"]
+[ext_resource type="Material" uid="uid://155ihl01cx8f" path="res://assets/materials/hole.tres" id="3_v1txt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t6sap"]
+radius = 1.5
+
+[node name="roboskull" unique_id=88147531 instance=ExtResource("1_k6tgh")]
+
+[node name="Robojaw" parent="." index="0" unique_id=91556012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.219, -0.32)
+surface_material_override/0 = ExtResource("2_g84c1")
+
+[node name="Roboskull" parent="." index="1" unique_id=280366693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.171, 0)
+surface_material_override/0 = ExtResource("2_g84c1")
+surface_material_override/1 = ExtResource("3_v1txt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=1553215299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79462576, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1962838947]
+shape = SubResource("SphereShape3D_t6sap")

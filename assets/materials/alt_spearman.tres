@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cjrdh8c6rtm5k"]
+
+[ext_resource type="Shader" uid="uid://yltxhhb32l7a" path="res://assets/materials/shaders/toon.gdshader" id="1_wdr1f"]
+[ext_resource type="Texture2D" uid="uid://cgguyq0sf6lxx" path="res://assets/textures/EvilSpearman_Base_Color.png" id="2_wdr1f"]
+[ext_resource type="Texture2D" uid="uid://mhykhb74demc" path="res://assets/textures/Spearman_Emissive.png" id="3_mi52r"]
+[ext_resource type="Texture2D" uid="uid://nvc1h1yyip72" path="res://assets/textures/Spearman_ORM.png" id="4_s6edo"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wdr1f")
+shader_parameter/emissive_tint = Color(0.9529412, 0.11764706, 0.007843138, 1)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/use_alpha = false
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/use_triplanar = false
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/albedo_texture = ExtResource("2_wdr1f")
+shader_parameter/orm_texture = ExtResource("4_s6edo")
+shader_parameter/emissive_texture = ExtResource("3_mi52r")
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/normal_strength = 1.0
+shader_parameter/emissive_strength = 5.0
+shader_parameter/self_shadow_strength = 0.750000035625
+shader_parameter/edge_softness = 0.18400000874
+shader_parameter/rim_power = 10.0
+shader_parameter/rim_brightness = 2.0
+shader_parameter/rim_light_affect = 0.25
+shader_parameter/rim_tint = Color(1, 1, 1, 1)
