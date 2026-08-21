@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0prf1o70r541"
-path.s3tc="res://.godot/imported/bolt_heraldry_ORM.png-96a3a0e057b4ca812981eb65de6e0bde.s3tc.ctex"
-path.etc2="res://.godot/imported/bolt_heraldry_ORM.png-96a3a0e057b4ca812981eb65de6e0bde.etc2.ctex"
+uid="uid://clmooj1kfkagw"
+path.bptc="res://.godot/imported/cobblestone_Normal_Roughness.png-9fab020d58cbd684fc207e937d51622d.bptc.ctex"
+path.astc="res://.godot/imported/cobblestone_Normal_Roughness.png-9fab020d58cbd684fc207e937d51622d.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,20 +12,20 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/bolt_heraldry_ORM.png"
-dest_files=["res://.godot/imported/bolt_heraldry_ORM.png-96a3a0e057b4ca812981eb65de6e0bde.s3tc.ctex", "res://.godot/imported/bolt_heraldry_ORM.png-96a3a0e057b4ca812981eb65de6e0bde.etc2.ctex"]
+source_file="res://assets/textures/cobblestone_Normal_Roughness.png"
+dest_files=["res://.godot/imported/cobblestone_Normal_Roughness.png-9fab020d58cbd684fc207e937d51622d.bptc.ctex", "res://.godot/imported/cobblestone_Normal_Roughness.png-9fab020d58cbd684fc207e937d51622d.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=2
+compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -39,4 +39,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

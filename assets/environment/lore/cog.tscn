@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dpeil6jn767s0"]
+
+[ext_resource type="PackedScene" uid="uid://k6xrscxhbsqi" path="res://assets/glb_imports/cog.glb" id="1_2sipi"]
+[ext_resource type="Material" uid="uid://bgudfl43j2kjo" path="res://assets/materials/rusty_metal_triplanar.tres" id="2_dx3q7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t6sap"]
+height = 0.5
+radius = 1.5
+
+[node name="cog" unique_id=241881492 instance=ExtResource("1_2sipi")]
+
+[node name="Cylinder_013" parent="." index="0" unique_id=210305050]
+surface_material_override/0 = ExtResource("2_dx3q7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=2122152546]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1641720142]
+shape = SubResource("CylinderShape3D_t6sap")

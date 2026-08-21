@@ -15,7 +15,7 @@ uniform sampler2D orm_texture: hint_default_white;
 uniform sampler2D emissive_texture: hint_default_black;
 uniform sampler2D normal_texture: hint_normal;
 
-uniform float metallic = 0.0;
+uniform float metallic = 1.0;
 uniform float roughness = 1.0;
 
 uniform float normal_strength = 1.0;
@@ -30,7 +30,7 @@ uniform vec3 rim_tint : source_color = vec3(1.0);
 global uniform sampler2D reflection_texture;
 global uniform sampler2D soft_reflection_texture;
 
-varying lowp vec3 norm;
+varying lowp vec3 projected_normal;
 varying vec3 world_pos;
 varying vec3 world_normal;
 
@@ -61,11 +61,7 @@ vec4 get_texture(sampler2D sampler, vec2 uv) {
 }
 
 void vertex() {
-	mat4 mat = MODELVIEW_MATRIX;
-	norm = NORMAL;
-	vec4 norm4 = vec4(norm.x, norm.y, norm.z, 0.0);
-	norm4 = mat*norm4;
-	norm = normalize(vec3(norm4.x, norm4.y, norm4.z));
+	projected_normal = normalize(MODELVIEW_NORMAL_MATRIX * NORMAL);
 	
 	world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	world_normal = MODEL_NORMAL_MATRIX * NORMAL;
@@ -76,9 +72,9 @@ void fragment() {
 	orm.b *= metallic;
 	orm.g = 1.0 - (orm.g * roughness);
 	
-	vec2 _norm = vec2(norm.x, norm.y/2.0);
-	vec3 metal_specular = texture(reflection_texture, _norm).rgb;
-	vec3 soft_specular = texture(soft_reflection_texture, _norm).rgb;
+	vec2 reflection_normal = projected_normal.xy * vec2(1.0, 0.5);
+	vec3 metal_specular = texture(reflection_texture, reflection_normal).rgb;
+	vec3 soft_specular = texture(soft_reflection_texture, reflection_normal).rgb;
 	
 	vec3 fake_specular = clamp(mix(soft_specular, metal_specular, orm.b) * orm.g * 5.0, vec3(0.0), vec3(5.0));
 	

@@ -1,6 +1,6 @@
 shader_type spatial;
 
-render_mode unshaded, ambient_light_disabled;
+render_mode unshaded, ambient_light_disabled, fog_disabled;
 
 uniform float outline_brightness = 2.0;
 uniform float outline_width = 20.0;
@@ -23,7 +23,7 @@ void fragment() {
 	float fragment_depth = texture(depth_texture, SCREEN_UV).r;
 	fragment_depth = PROJECTION_MATRIX[3][2] / (fragment_depth + PROJECTION_MATRIX[2][2]);
 	
-	float recalculated_outline_width = outline_width * (1.0 / fragment_depth);
+	float recalculated_outline_width = outline_width / (fragment_depth);
 	float highest_angle_difference = 0.0;
 	float highest_depth_difference = 0.0;
 	
