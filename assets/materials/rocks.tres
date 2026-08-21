@@ -9,7 +9,7 @@
 render_priority = 0
 shader = ExtResource("1_5ibbj")
 shader_parameter/emissive_tint = Color(1, 1, 1, 1)
-shader_parameter/tint_color = Color(0.54, 0.47673005, 0.3402, 1)
+shader_parameter/tint_color = Color(0.7194924, 0.75270027, 0.8069187, 1)
 shader_parameter/use_alpha = false
 shader_parameter/alpha_scissor_threshold = 0.5
 shader_parameter/use_triplanar = false

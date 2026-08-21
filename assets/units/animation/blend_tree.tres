@@ -1,0 +1,106 @@
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://rph5fan0ren8"]
+
+[sub_resource type="Curve" id="Curve_v87qk"]
+_data = [Vector2(0, 0), 0.0, 2.0941684, 0, 0, Vector2(1, 1), -0.22114106, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_rd6pf"]
+_data = [Vector2(0, 0), 0.0, 2.0941684, 0, 0, Vector2(1, 1), -0.22114106, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_dedlq"]
+fadein_time = 0.5
+fadein_curve = SubResource("Curve_v87qk")
+fadeout_time = 0.5
+fadeout_curve = SubResource("Curve_rd6pf")
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aetc0"]
+animation = &"Attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r08w0"]
+animation = &"Death"
+
+[sub_resource type="Curve" id="Curve_veo2t"]
+_data = [Vector2(0, 0), 0.0, 2.0941684, 0, 0, Vector2(1, 1), -0.22114106, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_rctkp"]
+fadein_time = 0.5
+fadein_curve = SubResource("Curve_veo2t")
+fadeout_time = 0.5
+fadeout_curve = SubResource("Curve_veo2t")
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0mq4b"]
+animation = &"Hit_Reaction"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m4bxc"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b0dv1"]
+animation = &"Spawn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_anbrb"]
+advance_mode = 2
+
+[sub_resource type="Curve" id="Curve_w7i6c"]
+_data = [Vector2(0, 0), 0.0, 2.0941684, 0, 0, Vector2(1, 1), -0.22114106, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wp20x"]
+xfade_time = 0.5
+xfade_curve = SubResource("Curve_w7i6c")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_djgos"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_8jfab"]
+states/End/position = Vector2(736, 100)
+states/Idle/node = SubResource("AnimationNodeAnimation_m4bxc")
+states/Idle/position = Vector2(535.5, 100)
+states/Spawn/node = SubResource("AnimationNodeAnimation_b0dv1")
+states/Spawn/position = Vector2(337.5, 100)
+states/Start/position = Vector2(184, 100)
+transitions = ["Start", "Spawn", SubResource("AnimationNodeStateMachineTransition_anbrb"), "Spawn", "Idle", SubResource("AnimationNodeStateMachineTransition_wp20x"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_djgos")]
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_113kd"]
+xfade_time = 0.5
+xfade_curve = SubResource("Curve_veo2t")
+input_0/name = "Idle"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = false
+input_1/name = "Walking"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "Dead"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ur7uv"]
+animation = &"Walk"
+
+[resource]
+graph_offset = Vector2(-507.31836, 12.007454)
+nodes/output/position = Vector2(940, 180)
+nodes/State/node = SubResource("AnimationNodeTransition_113kd")
+nodes/State/position = Vector2(40, 160)
+nodes/Spawn>Idle/node = SubResource("AnimationNodeStateMachine_8jfab")
+nodes/Spawn>Idle/position = Vector2(-280, 140)
+nodes/WalkAnim/node = SubResource("AnimationNodeAnimation_ur7uv")
+nodes/WalkAnim/position = Vector2(-200, 320)
+nodes/HitReaction/node = SubResource("AnimationNodeOneShot_rctkp")
+nodes/HitReaction/position = Vector2(360, 160)
+nodes/HitReactionAnim/node = SubResource("AnimationNodeAnimation_0mq4b")
+nodes/HitReactionAnim/position = Vector2(200, 280)
+nodes/DeathAnim/node = SubResource("AnimationNodeAnimation_r08w0")
+nodes/DeathAnim/position = Vector2(-200, 480)
+nodes/Attack/node = SubResource("AnimationNodeOneShot_dedlq")
+nodes/Attack/position = Vector2(680, 160)
+nodes/AttackAnim/node = SubResource("AnimationNodeAnimation_aetc0")
+nodes/AttackAnim/position = Vector2(520, 280)
+node_connections = [&"output", 0, &"Attack", &"State", 0, &"Spawn>Idle", &"State", 1, &"WalkAnim", &"State", 2, &"DeathAnim", &"HitReaction", 0, &"State", &"HitReaction", 1, &"HitReactionAnim", &"Attack", 0, &"HitReaction", &"Attack", 1, &"AttackAnim"]

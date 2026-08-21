@@ -2,14 +2,13 @@
 
 [ext_resource type="Shader" uid="uid://b8lcka3trrc1e" path="res://assets/materials/shaders/terrain3d_toon.gdshader" id="1_l8dcq"]
 [ext_resource type="Texture2D" uid="uid://da5s7hlwks3ag" path="res://assets/textures/grass_Base_Color.png" id="1_swy4y"]
-[ext_resource type="PackedScene" uid="uid://bsluhmkfltf41" path="res://assets/vfx/ScreenSpaceEdges.tscn" id="1_y8nus"]
 [ext_resource type="Texture2D" uid="uid://ie5h4468up8h" path="res://assets/textures/grass_Normal_OpenGL.png" id="2_d4yl4"]
-[ext_resource type="PackedScene" uid="uid://bmkixcbwxoeg6" path="res://assets/characters/guard.tscn" id="2_viuol"]
+[ext_resource type="PackedScene" uid="uid://bmkixcbwxoeg6" path="res://assets/units/guard.tscn" id="2_viuol"]
 [ext_resource type="Texture2D" uid="uid://i11pxi1rcvhm" path="res://assets/textures/dirt_Base_Color.png" id="3_cio6d"]
 [ext_resource type="Texture2D" uid="uid://dd74xctfnkh3e" path="res://assets/textures/dirt_Normal_OpenGL.png" id="4_veo2t"]
 [ext_resource type="Texture2D" uid="uid://dlfdaw6v6hm7r" path="res://assets/textures/rocks_Base_Color.png" id="5_veo2t"]
-[ext_resource type="PackedScene" uid="uid://cnmhviokshjx4" path="res://assets/characters/spearman.tscn" id="5_xtkv5"]
-[ext_resource type="PackedScene" uid="uid://plpt4ccxshr0" path="res://assets/characters/evil_spearman.tscn" id="7_cio6d"]
+[ext_resource type="PackedScene" uid="uid://cnmhviokshjx4" path="res://assets/units/spearman.tscn" id="5_xtkv5"]
+[ext_resource type="PackedScene" uid="uid://plpt4ccxshr0" path="res://assets/units/evil_spearman.tscn" id="7_cio6d"]
 [ext_resource type="Texture2D" uid="uid://dgwael5su37ka" path="res://assets/textures/cobblestone_Base_Color.png" id="8_3857e"]
 [ext_resource type="Texture2D" uid="uid://bouqexyvk515c" path="res://assets/textures/rocks_Normal_OpenGL.png" id="8_e2ycy"]
 [ext_resource type="Texture2D" uid="uid://clmooj1kfkagw" path="res://assets/textures/cobblestone_Normal_Roughness.png" id="9_xje0n"]
@@ -17,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c5w0ixwsj7ax6" path="res://assets/environment/rocks/tall_flat_rock.tscn" id="12_7rq4p"]
 [ext_resource type="PackedScene" uid="uid://bbwox7k8ojnt7" path="res://assets/environment/rocks/flat_rock.tscn" id="13_u5fbt"]
 [ext_resource type="PackedScene" uid="uid://bqy6o1qrp8rhi" path="res://assets/environment/rocks/tall_rock.tscn" id="14_gt8t3"]
-[ext_resource type="PackedScene" uid="uid://d3miv5bnq02wj" path="res://assets/characters/evil_guard.tscn" id="15_7rq4p"]
+[ext_resource type="PackedScene" uid="uid://d3miv5bnq02wj" path="res://assets/units/evil_guard.tscn" id="15_7rq4p"]
 [ext_resource type="PackedScene" uid="uid://dgu6n6ywyfc2n" path="res://assets/environment/rocks/pillar_rock.tscn" id="15_x25wl"]
 [ext_resource type="PackedScene" uid="uid://rv8v4rjf6off" path="res://assets/environment/pine_trees/curvy_pine.tscn" id="16_u5fbt"]
 [ext_resource type="PackedScene" uid="uid://cl5331m3pk6bh" path="res://assets/environment/pine_trees/curvy_pine_decayed.tscn" id="17_cfmqw"]
@@ -147,7 +146,7 @@ lod0_range = 128.0
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_viuol"]
 name = "Grass"
-albedo_color = Color(0.31269926, 0.35632545, 0.16532958, 1)
+albedo_color = Color(0.827451, 0.8392157, 0.95686275, 1)
 albedo_texture = ExtResource("1_swy4y")
 normal_texture = ExtResource("2_d4yl4")
 uv_scale = 0.5
@@ -155,7 +154,7 @@ uv_scale = 0.5
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_l8dcq"]
 name = "Dirt"
 id = 1
-albedo_color = Color(0.41544917, 0.3406115, 0.20275375, 1)
+albedo_color = Color(0.7019608, 0.7764706, 0.92941177, 1)
 albedo_texture = ExtResource("3_cio6d")
 normal_texture = ExtResource("4_veo2t")
 normal_depth = 0.75
@@ -167,7 +166,7 @@ detiling_shift = 0.435
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_e2ycy"]
 name = "Rocks"
 id = 2
-albedo_color = Color(0.39690262, 0.35021135, 0.2520981, 1)
+albedo_color = Color(0.55883044, 0.5998606, 0.67257345, 1)
 albedo_texture = ExtResource("5_veo2t")
 normal_texture = ExtResource("8_e2ycy")
 normal_depth = 2.0
@@ -180,7 +179,7 @@ detiling_shift = 1.0
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_y8nus"]
 name = "Cobblestone"
 id = 3
-albedo_color = Color(0.60745674, 0.59239817, 0.4521879, 1)
+albedo_color = Color(0.69953555, 0.7550985, 0.83700126, 1)
 albedo_texture = ExtResource("8_3857e")
 normal_texture = ExtResource("9_xje0n")
 uv_scale = 0.5
@@ -242,12 +241,6 @@ height = 180.0
 
 [node name="Game_Environment" type="Node3D" unique_id=496390260]
 
-[node name="ScreenSpaceEdges" parent="." unique_id=511432441 instance=ExtResource("1_y8nus")]
-sorting_offset = -15.0
-cast_shadow = 0
-ignore_occlusion_culling = true
-gi_mode = 0
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=413905761]
 transform = Transform3D(-0.92641646, -0.14199632, 0.34869713, -7.329053e-08, 0.92615324, 0.37714756, -0.3765005, 0.34939572, -0.85800356, 0, 0, 0)
 light_color = Color(0.9709504, 0.77108717, 0.39296338, 1)
@@ -268,6 +261,21 @@ metadata/_edit_lock_ = true
 script = ExtResource("10_xje0n")
 metadata/_custom_type_script = "uid://dbndw8p05yam7"
 
+[node name="CurvyPine_Dead2" parent="Terrain3D/Terrain3DObjects" unique_id=894969644 instance=ExtResource("18_gvvjy")]
+transform = Transform3D(0.92859954, -0.3333124, -0.16311301, 0.35122228, 0.93131524, 0.09641206, 0.11977436, -0.1468171, 0.9818855, -137.43011, 1.1068916, -155.92783)
+
+[node name="BentPine_Decayed" parent="Terrain3D/Terrain3DObjects" unique_id=533372129 instance=ExtResource("29_bi6is")]
+transform = Transform3D(2.182498, -0.67818975, 1.9433881, 2.012887, 1.2950956, -1.808594, -0.43010122, 2.6196911, 1.3972213, -194.33087, 22.66368, -300.7704)
+
+[node name="StraightPine_Dead" parent="Terrain3D/Terrain3DObjects" unique_id=523552825 instance=ExtResource("30_o2naj")]
+transform = Transform3D(1.5, 0, 0, 0, 1.4708803, -0.29412803, 0, 0.29412803, 1.4708803, -157.6511, 24.430143, -272.89322)
+
+[node name="PillarRock7" parent="Terrain3D/Terrain3DObjects" unique_id=1948731656 instance=ExtResource("15_x25wl")]
+transform = Transform3D(3.577464e-08, 3, 0, -3, 3.577464e-08, 0, 0, 0, 3, -108.25767, 15.167385, 280.50433)
+
+[node name="FlatRock4" parent="Terrain3D/Terrain3DObjects" unique_id=538200513 instance=ExtResource("13_u5fbt")]
+transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, -107.00678, 15.523564, 293.5559)
+
 [node name="TallRock3" parent="Terrain3D/Terrain3DObjects" unique_id=479119567 instance=ExtResource("14_gt8t3")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -160.23808, 18.473972, -39.343273)
 
@@ -275,19 +283,22 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -160.23808, 18.473972, -39.34
 transform = Transform3D(-0.06481075, -0.00041536614, -1.3434377, 0.13138129, 1.3385509, -0.0067520193, 1.3369982, -0.131554, -0.06445944, -180.64763, 15.2856045, -35.209606)
 
 [node name="PillarRock5" parent="Terrain3D/Terrain3DObjects" unique_id=1461019800 instance=ExtResource("15_x25wl")]
-transform = Transform3D(-2.2576087, 0.16584775, 1.9686787, 0.1249976, 2.9954119, -0.10900035, -1.9716938, 7.450581e-09, -2.2610667, -250.17435, 3.164957, -43.35901)
+transform = Transform3D(-2.2576087, 0.16584775, 1.9686787, 0.1249976, 2.9954119, -0.10900035, -1.9716938, 7.450581e-09, -2.2610667, -277.5313, 3.1649563, -6.30587)
 
 [node name="TallFlatRock3" parent="Terrain3D/Terrain3DObjects" unique_id=1794324227 instance=ExtResource("12_7rq4p")]
 transform = Transform3D(1.9780123, -0.0026456115, -1.528876, 0.005287801, 2.499993, 0.0025151947, 1.5288696, -0.005223751, 1.9780121, -194.47462, 13.329371, -61.85245)
 
 [node name="TallFlatRock4" parent="Terrain3D/Terrain3DObjects" unique_id=1064217317 instance=ExtResource("12_7rq4p")]
-transform = Transform3D(2.8777757, 1.7683897, -2.1427093, -1.1250454, 3.562541, 1.4291868, 2.540212, -0.42555842, 3.0604284, -189.48193, 5.203065, -264.31604)
+transform = Transform3D(3.196176, 1.2182082, -2.0737464, -0.88050985, 3.8021715, 0.8764678, 2.2381148, -0.24384767, 3.306264, -189.52162, 4.279855, -264.6636)
 
 [node name="TallFlatRock" parent="Terrain3D/Terrain3DObjects" unique_id=2044009434 instance=ExtResource("12_7rq4p")]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -245.18048, 2.559854, 142.53181)
 
-[node name="FlatRock" parent="Terrain3D/Terrain3DObjects" unique_id=538200513 instance=ExtResource("13_u5fbt")]
+[node name="FlatRock" parent="Terrain3D/Terrain3DObjects" unique_id=1629243988 instance=ExtResource("13_u5fbt")]
 transform = Transform3D(1, 0, 0, 0, 0.6077, -0.7941667, 0, 0.7941667, 0.6077, -272.6675, 1.0761976, 116.06785)
+
+[node name="FlatRock3" parent="Terrain3D/Terrain3DObjects" unique_id=1384693131 instance=ExtResource("13_u5fbt")]
+transform = Transform3D(0.53615785, -0.15526232, 1.9205282, -1.1239238, 1.5940112, 0.44263363, -1.5650339, -1.1979239, 0.34006914, -246.77477, 11.592762, 192.82292)
 
 [node name="TallRock" parent="Terrain3D/Terrain3DObjects" unique_id=1611942973 instance=ExtResource("14_gt8t3")]
 transform = Transform3D(0.6586832, 0, 0, 0, 1, 0, 0, 0, 0.6586832, -231.1582, 8.430654, 124.1705)
@@ -295,14 +306,14 @@ transform = Transform3D(0.6586832, 0, 0, 0, 1, 0, 0, 0, 0.6586832, -231.1582, 8.
 [node name="TallRock2" parent="Terrain3D/Terrain3DObjects" unique_id=986055284 instance=ExtResource("14_gt8t3")]
 transform = Transform3D(0.6586832, 0, 0, 0, 0.6617775, 0, 0, 0, 0.6586832, -228.85132, 2.0857415, 125.931465)
 
-[node name="PillarRock" parent="Terrain3D/Terrain3DObjects" unique_id=1948731656 instance=ExtResource("15_x25wl")]
+[node name="PillarRock" parent="Terrain3D/Terrain3DObjects" unique_id=732236570 instance=ExtResource("15_x25wl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -231.20885, 2.5607176, 124.43643)
 
 [node name="CurvyPine" parent="Terrain3D/Terrain3DObjects" unique_id=2037302520 instance=ExtResource("16_u5fbt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -278.5679, 15.791984, 150.8448)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -284.2614, 17.132317, 152.23141)
 
 [node name="CurvyPine2" parent="Terrain3D/Terrain3DObjects" unique_id=799976151 instance=ExtResource("16_u5fbt")]
-transform = Transform3D(-0.8059601, 0, 0.25387666, 0, 0.845, 0, -0.25387666, 0, -0.8059601, -279.28143, 9.343133, 169.532)
+transform = Transform3D(-0.8059601, 0, 0.25387666, 0, 0.845, 0, -0.25387666, 0, -0.8059601, -296.0046, 17.13437, 167.47925)
 
 [node name="CurvyPine3" parent="Terrain3D/Terrain3DObjects" unique_id=342289270 instance=ExtResource("16_u5fbt")]
 transform = Transform3D(0.29580998, 0, -1.3786212, 0, 1.41, 0, 1.3786212, 0, 0.29580998, -0.5306244, 2.1368628, 3.697361)
@@ -347,13 +358,19 @@ transform = Transform3D(0.1418648, 0.015731454, 0.65461975, -0.014870665, 0.6697
 transform = Transform3D(-0.4751951, 0.037876163, 0.8790649, -0.01820593, 0.998436, -0.05286107, -0.8796921, -0.04112351, -0.47376236, 7.769516, 1.9411993, -44.54852)
 
 [node name="BentPine6" parent="Terrain3D/Terrain3DObjects" unique_id=582795184 instance=ExtResource("19_q5lqk")]
-transform = Transform3D(-0.5087725, 0.036430113, 0.86012983, -0.014363468, 0.99860597, -0.050791264, -0.8607811, -0.038195644, -0.50754005, -128.94034, 1.9163322, 123.42877)
+transform = Transform3D(-0.5087725, 0.036430113, 0.86012983, -0.014363468, 0.99860597, -0.050791264, -0.8607811, -0.038195644, -0.50754005, -122.90596, 1.9163322, 121.473236)
+
+[node name="BentPine11" parent="Terrain3D/Terrain3DObjects" unique_id=1915389552 instance=ExtResource("19_q5lqk")]
+transform = Transform3D(-0.045825303, -0.0791035, -1.5422928, -0.022191554, 1.5428461, -0.07847249, 1.5441608, 0.019825162, -0.04689753, -121.56236, 1.9163322, 138.39064)
 
 [node name="StraightPine5" parent="Terrain3D/Terrain3DObjects" unique_id=1680828223 instance=ExtResource("21_m45s3")]
 transform = Transform3D(-0.15008548, 0.02482897, -0.76502144, 0.019709947, 0.7794563, 0.021430682, 0.76517034, -0.015207826, -0.15060833, -164.42361, 1.568903, 94.2721)
 
 [node name="StraightPine6" parent="Terrain3D/Terrain3DObjects" unique_id=2035560767 instance=ExtResource("21_m45s3")]
 transform = Transform3D(0.25884098, -0.008393258, -0.735752, -0.017312115, 0.77966386, -0.014984678, 0.7355958, 0.021302667, 0.25854307, -188.98755, 1.568903, 121.458855)
+
+[node name="StraightPine13" parent="Terrain3D/Terrain3DObjects" unique_id=1056042107 instance=ExtResource("21_m45s3")]
+transform = Transform3D(0.3461246, 0.02875578, 1.0962987, -0.02552428, 1.1495044, -0.022092806, -1.0963786, -0.017682925, 0.3466137, -129.98755, 1.5689036, 166.45886)
 
 [node name="BentPine7" parent="Terrain3D/Terrain3DObjects" unique_id=1289517380 instance=ExtResource("19_q5lqk")]
 transform = Transform3D(0.8657981, -0.010699332, -0.50027895, -0.018205928, 0.99843585, -0.052861065, 0.50006217, 0.054875053, 0.86424935, -199.6878, 1.9411993, 97.41637)
@@ -370,7 +387,7 @@ transform = Transform3D(0.8610326, -0.013472166, -0.5083711, -0.01436347, 0.9986
 [node name="StraightPine9" parent="Terrain3D/Terrain3DObjects" unique_id=501841868 instance=ExtResource("21_m45s3")]
 transform = Transform3D(-0.23784345, -0.014406139, 0.74271315, 0.019709945, 0.7794563, 0.021430682, -0.7425912, 0.02530254, -0.23731364, -208.46509, 1.568903, 76.60235)
 
-[node name="StraightPine27" parent="Terrain3D/Terrain3DObjects" unique_id=1056042107 instance=ExtResource("21_m45s3")]
+[node name="StraightPine27" parent="Terrain3D/Terrain3DObjects" unique_id=791744874 instance=ExtResource("21_m45s3")]
 transform = Transform3D(-0.23784345, -0.014406139, 0.74271315, 0.019709945, 0.7794563, 0.021430682, -0.7425912, 0.02530254, -0.23731364, -154.3027, 19.140818, -32.878605)
 
 [node name="StraightPine28" parent="Terrain3D/Terrain3DObjects" unique_id=1058727036 instance=ExtResource("21_m45s3")]
@@ -404,7 +421,7 @@ transform = Transform3D(1.1146698, 0.020667277, 0.98097354, 0.040226817, 1.48245
 transform = Transform3D(-0.27128482, 0.026953, -0.7308064, 0.01970994, 0.77945626, 0.021430682, 0.73103744, -0.01101326, -0.2717769, -46.408768, 0.7916031, -184.76358)
 
 [node name="StraightPine32" parent="Terrain3D/Terrain3DObjects" unique_id=140873620 instance=ExtResource("21_m45s3")]
-transform = Transform3D(0.86897457, 0.15056996, -1.3049282, -0.035685264, 1.5667475, 0.15701672, 1.3131013, -0.057064645, 0.8678327, -140.85217, 2.7118788, -172.33252)
+transform = Transform3D(0.86897457, 0.15056996, -1.3049282, -0.035685264, 1.5667475, 0.15701672, 1.3131013, -0.057064645, 0.8678327, -136.7074, 2.7118788, -137.27177)
 
 [node name="StraightPine33" parent="Terrain3D/Terrain3DObjects" unique_id=399720812 instance=ExtResource("21_m45s3")]
 transform = Transform3D(0.102377646, 0.09817607, 1.2167602, -0.03172116, 1.2208334, -0.09583572, -1.2203022, -0.023498453, 0.104571685, -154.12296, 1.6128483, -146.88995)
@@ -434,7 +451,7 @@ transform = Transform3D(0.7341496, -0.028625546, 0.26192516, 0.023024062, 0.7793
 transform = Transform3D(0.4996567, 0.019740893, 0.59862626, -0.014057822, 0.7797482, -0.013980065, -0.59878665, -0.001833532, 0.49985117, -82.24649, 1.5927712, -171.55309)
 
 [node name="StraightPine31" parent="Terrain3D/Terrain3DObjects" unique_id=984989949 instance=ExtResource("21_m45s3")]
-transform = Transform3D(1.0249316, 0.003281805, -0.8475876, -0.023970392, 1.3295703, -0.023837797, 0.8472549, 0.033645954, 1.0246595, -200.36717, 2.9664164, -230.60085)
+transform = Transform3D(1.0249316, 0.003281805, -0.8475876, -0.023970392, 1.3295703, -0.023837797, 0.8472549, 0.033645954, 1.0246595, -205.46623, 2.2349508, -194.89867)
 
 [node name="StraightPine26" parent="Terrain3D/Terrain3DObjects" unique_id=630222443 instance=ExtResource("21_m45s3")]
 transform = Transform3D(-0.14862129, -0.016404677, -0.7655344, -0.014057828, 0.7797482, -0.013980069, 0.7655809, 0.011133351, -0.1488691, -74.26754, 1.5927701, -204.1776)
@@ -443,22 +460,58 @@ transform = Transform3D(-0.14862129, -0.016404677, -0.7655344, -0.014057828, 0.7
 transform = Transform3D(-2.9745996, 0, -0.38955995, 0, 3, 0, 0.38955995, 0, -2.9745996, -120.87861, 6.749962, -84.90677)
 
 [node name="FlatRock2" parent="Terrain3D/Terrain3DObjects" unique_id=618522273 instance=ExtResource("13_u5fbt")]
-transform = Transform3D(2.9847002, -0.06155706, -0.29627025, 0.032882884, 2.9858556, -0.2891106, 0.3008057, 0.28438878, 2.9713025, -70.10078, -0.98595077, 106.46245)
+transform = Transform3D(-1.8928211, 0.24495745, 2.3145678, 0.03288289, 2.9858556, -0.28911057, -2.3272612, -0.15704156, -1.8865815, -37.441345, -0.9859535, 163.8232)
 
 [node name="PillarRock2" parent="Terrain3D/Terrain3DObjects" unique_id=1846841889 instance=ExtResource("15_x25wl")]
-transform = Transform3D(1.0650724, -0.097619094, -3.4385397, 0.4308861, 2.7203248, 0, 3.4138489, -0.31289577, 1.0727758, -104.87778, 3.7380922, 38.684216)
+transform = Transform3D(1.0650724, -0.097619094, -3.4385397, 0.4308861, 2.7203248, 0, 3.4138489, -0.31289577, 1.0727758, -168.12839, 3.738085, 61.883015)
 
 [node name="PillarRock6" parent="Terrain3D/Terrain3DObjects" unique_id=299242254 instance=ExtResource("15_x25wl")]
-transform = Transform3D(5.7077684, -0.523144, -3.1863363, 0.7862894, 4.9640965, -1.1690294e-07, 3.1634562, -0.28994575, 5.7490516, -264.9566, 4.3184524, -211.85739)
+transform = Transform3D(5.7077684, -0.523144, -3.1863363, 0.7862894, 4.9640965, -1.1690294e-07, 3.1634562, -0.28994575, 5.7490516, -318.22305, 3.8688486, -155.51196)
 
 [node name="PillarRock3" parent="Terrain3D/Terrain3DObjects" unique_id=567686530 instance=ExtResource("15_x25wl")]
-transform = Transform3D(0.30134577, 0.9925355, -2.8149714, 2.8706093, -0.87155175, 4.2974076e-08, -0.8177977, -2.6935613, -1.0372732, -96.989265, -1.978407, 6.562605)
+transform = Transform3D(-0.2742192, -0.90318954, 2.84764, 2.870609, -0.87155145, 3.8525506e-08, 0.82728803, 2.7248206, 0.94390017, -73.79026, -1.978407, -1.4957609)
 
 [node name="PillarRock4" parent="Terrain3D/Terrain3DObjects" unique_id=1252269158 instance=ExtResource("15_x25wl")]
 transform = Transform3D(0.3400738, 2.1516314, 2.0627244, 0.36352387, -2.090548, 2.120721, 2.9584117, 0.00954929, -0.49770325, -141.44463, 3.0158663, -44.931866)
 
+[node name="cog" parent="Terrain3D/Terrain3DObjects" unique_id=241881492 instance=ExtResource("26_yog76")]
+transform = Transform3D(6.3030314, 1.0129856, -7.6971197, -0.3358999, -9.869639, -1.5739644, -7.7562227, 1.2506206, -6.186838, -166.30695, 0.2584343, -171.13348)
+
+[node name="cog2" parent="Terrain3D/Terrain3DObjects" unique_id=1468491632 instance=ExtResource("26_yog76")]
+transform = Transform3D(-11.634333, 9.094419, -2.6332169, -0.50385094, -4.760578, -14.21559, -9.454543, -10.937478, 3.997892, -317.2092, 11.1551285, 144.86049)
+
+[node name="cog3" parent="Terrain3D/Terrain3DObjects" unique_id=107686932 instance=ExtResource("26_yog76")]
+transform = Transform3D(0.39645636, 9.101179, 4.1244836, 9.062404, -2.0662336, 3.6882958, 4.2089987, 3.5915492, -8.329772, -294.2499, 1.2896652, 122.841736)
+
+[node name="roboskull" parent="Terrain3D/Terrain3DObjects" unique_id=88147531 instance=ExtResource("27_ax3m5")]
+transform = Transform3D(-0.52067673, 3.1625364, -7.3298893, 7.6479483, 2.3034494, 0.45057157, 2.288622, -6.978001, -3.1732817, -160.92638, 0.0005297661, -243.94173)
+
+[node name="Robojaw" parent="Terrain3D/Terrain3DObjects/roboskull" index="0" unique_id=91556012]
+transform = Transform3D(-0.10260189, 0.9611059, 0.2564148, -0.016181704, 0.25612843, -0.9665073, -0.99459094, -0.10331472, -0.010726931, -0.42225435, 0.74192286, 0.31095436)
+
+[node name="Roboskull" parent="Terrain3D/Terrain3DObjects/roboskull" index="1" unique_id=280366693]
+transform = Transform3D(-0.031698316, 0.6045097, 0.79596674, -0.22421215, 0.7717705, -0.5950624, -0.9740248, -0.19732791, 0.1110746, 0.19564086, 1.437789, 0.02730105)
+
+[node name="StaticBody3D" parent="Terrain3D/Terrain3DObjects/roboskull" index="2" unique_id=1553215299]
+transform = Transform3D(0.99999994, -2.9802322e-08, -2.2351742e-08, 0, 1, -2.9802322e-08, 0, 0, 1, 0.13254023, 1.078682, 0.11314201)
+
+[node name="big_sword" parent="Terrain3D/Terrain3DObjects" unique_id=1003402768 instance=ExtResource("28_bi6is")]
+transform = Transform3D(5.457292, 2.9802322e-08, -4.38383, 0.4630168, -6.960847, 0.57639503, -4.3593097, -0.7393347, -5.426768, -162.08696, 23.730331, -218.14326)
+
+[node name="BentPine_Decayed2" parent="Terrain3D/Terrain3DObjects" unique_id=852035562 instance=ExtResource("29_bi6is")]
+transform = Transform3D(0.46444488, 3.9409537, -0.50316554, -3.9726956, 0.46634787, -0.014394868, 0.044480167, 0.5014023, 3.9682007, -93.335495, 17.885933, 250.62566)
+
+[node name="CurvyPine_Dead3" parent="Terrain3D/Terrain3DObjects" unique_id=1206291822 instance=ExtResource("18_gvvjy")]
+transform = Transform3D(1.6920924, 0.18892688, 0.4045115, -0.25766802, 1.7081196, 0.28006238, -0.3645958, -0.33035496, 1.6794156, -98.88632, 15.786941, 194.7108)
+
+[node name="BentPine15" parent="Terrain3D/Terrain3DObjects" unique_id=264996616 instance=ExtResource("19_q5lqk")]
+transform = Transform3D(0.9410718, 0.07545844, -0.32968146, -0.079926975, 0.9968007, 0, 0.3286267, 0.026350444, 0.9440922, -122.67281, 26.22819, 216.69144)
+
+[node name="BentPine16" parent="Terrain3D/Terrain3DObjects" unique_id=1182264132 instance=ExtResource("19_q5lqk")]
+transform = Transform3D(-1.3994161, -0.036595628, -0.5387907, 3.7252903e-09, 1.496552, -0.10164848, 0.540032, -0.094832346, -1.3961991, -111.52839, 16.960455, 229.8459)
+
 [node name="Guard" parent="." unique_id=1516807226 instance=ExtResource("2_viuol")]
-transform = Transform3D(0.04194472, 0, -0.19555211, 0, 0.19999999, 0, 0.19555211, 0, 0.04194472, -222.77011, 4.7683716e-07, 145.34837)
+transform = Transform3D(0.10486184, 0, -0.48888034, 0, 0.5, 0, 0.48888034, 0, 0.10486184, -222.77011, 4.7683716e-07, 145.34837)
 
 [node name="deleteme" type="MeshInstance3D" parent="Guard" unique_id=211208862]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
@@ -466,7 +519,8 @@ mesh = SubResource("ArrayMesh_l8dcq")
 surface_material_override/0 = SubResource("StandardMaterial3D_e2ycy")
 
 [node name="Spearman" parent="." unique_id=1179257224 instance=ExtResource("5_xtkv5")]
-transform = Transform3D(0.007503554, 0, -0.19985917, 0, 0.19999999, 0, 0.19985917, 0, 0.007503554, -221.58745, -4.7683716e-07, 150.87216)
+transform = Transform3D(0.018758878, 0, -0.49964797, 0, 0.5, 0, 0.49964797, 0, 0.018758878, -221.58745, -4.7683716e-07, 150.87216)
+state = "Dead"
 
 [node name="deleteme" type="MeshInstance3D" parent="Spearman" unique_id=1457628253]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
@@ -474,7 +528,7 @@ mesh = SubResource("ArrayMesh_l8dcq")
 surface_material_override/0 = SubResource("StandardMaterial3D_xvb8u")
 
 [node name="EvilSpearman" parent="." unique_id=1035353683 instance=ExtResource("7_cio6d")]
-transform = Transform3D(0.101325706, 0, 0.17243287, 0, 0.19999999, 0, -0.17243287, 0, 0.101325706, -225.34833, -4.7683716e-07, 145.49234)
+transform = Transform3D(0.2533143, 0, 0.43108222, 0, 0.5, 0, -0.43108222, 0, 0.2533143, -228.35329, -4.7683716e-07, 144.07828)
 
 [node name="deleteme" type="MeshInstance3D" parent="EvilSpearman" unique_id=340856832]
 transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0, 0, 0)
@@ -490,7 +544,7 @@ current = true
 fov = 50.0
 
 [node name="EvilGuard" parent="." unique_id=1280639864 instance=ExtResource("15_7rq4p")]
-transform = Transform3D(0.010084158, 0, 0.19974561, 0, 0.2, 0, -0.19974561, 0, 0.010084158, -224.10674, 0, 150.47137)
+transform = Transform3D(0.025210394, 0, 0.49936402, 0, 0.5, 0, -0.49936402, 0, 0.025210394, -225.67953, 0, 150.34877)
 
 [node name="deleteme" type="MeshInstance3D" parent="EvilGuard" unique_id=455886939]
 transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0, 0, 0)
@@ -507,7 +561,7 @@ mesh = SubResource("SphereMesh_t6sap")
 surface_material_override/0 = ExtResource("26_o2naj")
 
 [node name="Guard2" parent="." unique_id=1397331884 instance=ExtResource("2_viuol")]
-transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, -36.964455, 0, -29.874617)
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -36.964455, 0, -29.874617)
 
 [node name="deleteme" type="MeshInstance3D" parent="Guard2" unique_id=2109239362]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
@@ -515,50 +569,11 @@ mesh = SubResource("ArrayMesh_l8dcq")
 surface_material_override/0 = SubResource("StandardMaterial3D_e2ycy")
 
 [node name="Guard3" parent="." unique_id=1321817292 instance=ExtResource("2_viuol")]
-transform = Transform3D(-0.14913714, 0, -0.13325958, 0, 0.2, 0, 0.13325958, 0, -0.14913714, -39.72936, 0, -22.343348)
+transform = Transform3D(-0.37284285, 0, -0.33314893, 0, 0.5, 0, 0.33314893, 0, -0.37284285, -39.72936, 0, -22.343348)
 
 [node name="deleteme" type="MeshInstance3D" parent="Guard3" unique_id=641898297]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_l8dcq")
 surface_material_override/0 = SubResource("StandardMaterial3D_e2ycy")
 
-[node name="cog" parent="." unique_id=241881492 instance=ExtResource("26_yog76")]
-transform = Transform3D(6.3030314, 1.0129856, -7.6971197, -0.3358999, -9.869639, -1.5739644, -7.7562227, 1.2506206, -6.186838, -166.30695, 0.2584343, -171.13348)
-
-[node name="cog2" parent="." unique_id=1468491632 instance=ExtResource("26_yog76")]
-transform = Transform3D(-11.634333, 9.094419, -2.6332169, -0.50385094, -4.760578, -14.21559, -9.454543, -10.937478, 3.997892, -317.2092, 11.1551285, 144.86049)
-
-[node name="cog3" parent="." unique_id=107686932 instance=ExtResource("26_yog76")]
-transform = Transform3D(0.39645636, 9.101179, 4.1244836, 9.062404, -2.0662336, 3.6882958, 4.2089987, 3.5915492, -8.329772, -294.2499, 1.2896652, 122.841736)
-
-[node name="roboskull" parent="." unique_id=88147531 instance=ExtResource("27_ax3m5")]
-transform = Transform3D(-0.52067673, 3.1625364, -7.3298893, 7.6479483, 2.3034494, 0.45057157, 2.288622, -6.978001, -3.1732817, -160.92638, -7.6293945e-06, -243.94173)
-
-[node name="Robojaw" parent="roboskull" index="0" unique_id=91556012]
-transform = Transform3D(-0.10260189, 0.9611059, 0.2564148, -0.016181704, 0.25612843, -0.9665073, -0.99459094, -0.10331472, -0.010726931, -0.42225435, 0.74192286, 0.31095436)
-
-[node name="Roboskull" parent="roboskull" index="1" unique_id=280366693]
-transform = Transform3D(-0.031698316, 0.6045097, 0.79596674, -0.22421215, 0.7717705, -0.5950624, -0.9740248, -0.19732791, 0.1110746, 0.19564086, 1.437789, 0.02730105)
-
-[node name="StaticBody3D" parent="roboskull" index="2" unique_id=1553215299]
-transform = Transform3D(0.99999994, -2.9802322e-08, -2.2351742e-08, 0, 1, -2.9802322e-08, 0, 0, 1, 0.13254023, 1.078682, 0.11314201)
-
-[node name="big_sword" parent="." unique_id=1003402768 instance=ExtResource("28_bi6is")]
-transform = Transform3D(7, 0, 0, 0, -6.960847, 0.7393347, 0, -0.7393347, -6.960847, -162.08696, 23.730331, -218.14326)
-
-[node name="CurvyPine_Dead" parent="." unique_id=894969644 instance=ExtResource("18_gvvjy")]
-transform = Transform3D(0.92859954, -0.3333124, -0.16311301, 0.35122228, 0.93131524, 0.09641206, 0.11977436, -0.1468171, 0.9818855, -137.43011, 1.1068916, -155.92783)
-
-[node name="BentPine_Decayed" parent="." unique_id=533372129 instance=ExtResource("29_bi6is")]
-transform = Transform3D(2.182498, -0.67818975, 1.9433881, 2.012887, 1.2950956, -1.808594, -0.43010122, 2.6196911, 1.3972213, -194.33087, 22.654757, -300.7704)
-
-[node name="StraightPine_Dead" parent="." unique_id=523552825 instance=ExtResource("30_o2naj")]
-transform = Transform3D(1.5, 0, 0, 0, 1.4708803, -0.29412803, 0, 0.29412803, 1.4708803, -157.6511, 24.430143, -272.89322)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=889942849]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.86185, 7.04955, -110.78565)
-light_color = Color(0.99038476, 0.728585, 0, 1)
-omni_range = 30.0
-omni_attenuation = 0.75
-
-[editable path="roboskull"]
+[editable path="Terrain3D/Terrain3DObjects/roboskull"]
