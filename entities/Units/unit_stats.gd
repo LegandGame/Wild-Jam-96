@@ -10,4 +10,6 @@ const UNIT_COLORS = {
 @export var health : int = 3
 @export var cost : int = 1
 @export var move_speed : float = 5.0
+@export var damage : int = 1
+@export var attack_range : float = 3
 const ACCEL : float = 5.0
