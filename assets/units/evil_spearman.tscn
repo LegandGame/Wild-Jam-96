@@ -3228,6 +3228,7 @@ _data = {
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_a7mh5")
 animation_tree = NodePath("AnimationTree")
+move_speed = null
 
 [node name="RIG-Guard_Rig_deform" type="Node3D" parent="." unique_id=2085561225]
 
@@ -3505,3 +3506,4 @@ parameters/HitReaction/request = 0
 parameters/Attack/active = false
 parameters/Attack/internal_active = false
 parameters/Attack/request = 0
+parameters/MoveSpeed/scale = 1.0

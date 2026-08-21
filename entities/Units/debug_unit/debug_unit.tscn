@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d2geap8a52qi4" path="res://entities/Units/unit.gd" id="1_63md5"]
 [ext_resource type="Script" uid="uid://r2baue2y324i" path="res://common/counter.gd" id="2_laae3"]
 [ext_resource type="Script" uid="uid://bxahglea2iyqi" path="res://entities/Units/unit_stats.gd" id="2_xu31v"]
+[ext_resource type="PackedScene" uid="uid://bmkixcbwxoeg6" path="res://assets/units/guard.tscn" id="3_5r117"]
 [ext_resource type="Script" uid="uid://drvlx84s0dv6t" path="res://common/hitbox_hurtbox/hurtbox.gd" id="3_klytv"]
 [ext_resource type="Script" uid="uid://cwb6t52fiebop" path="res://common/hitbox_hurtbox/hitbox.gd" id="5_p3jkv"]
 
@@ -21,7 +22,7 @@ metadata/_custom_type_script = "uid://bxahglea2iyqi"
 [node name="DebugUnit" type="CharacterBody3D" unique_id=764353807 node_paths=PackedStringArray("model", "health", "hurtbox", "navigator", "hitbox")]
 script = ExtResource("1_63md5")
 stats = SubResource("Resource_klytv")
-model = NodePath("MeshInstance3D")
+model = NodePath("Guard")
 health = NodePath("HealthCounter")
 hurtbox = NodePath("Hurtbox")
 navigator = NodePath("NavigationAgent3D")
@@ -30,7 +31,11 @@ hitbox = NodePath("Hitbox")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2144051896]
 shape = SubResource("CapsuleShape3D_ky4ls")
 
+[node name="Guard" parent="." unique_id=1516807226 instance=ExtResource("3_5r117")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.1, -1, -4.371139e-09)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1559928568]
+visible = false
 mesh = SubResource("CapsuleMesh_ky4ls")
 
 [node name="HealthCounter" type="Node" parent="." unique_id=1482041667]
@@ -51,5 +56,5 @@ script = ExtResource("5_p3jkv")
 metadata/_custom_type_script = "uid://cwb6t52fiebop"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=788681752]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2189633, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.219)
 shape = SubResource("SphereShape3D_ky4ls")

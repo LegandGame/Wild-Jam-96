@@ -33,6 +33,8 @@ fadeout_curve = SubResource("Curve_veo2t")
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0mq4b"]
 animation = &"Hit_Reaction"
 
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_jklr4"]
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m4bxc"]
 animation = &"Idle"
 
@@ -85,14 +87,14 @@ input_2/reset = true
 animation = &"Walk"
 
 [resource]
-graph_offset = Vector2(-507.31836, 12.007454)
+graph_offset = Vector2(-698.13226, 171.70248)
 nodes/output/position = Vector2(940, 180)
 nodes/State/node = SubResource("AnimationNodeTransition_113kd")
 nodes/State/position = Vector2(40, 160)
 nodes/Spawn>Idle/node = SubResource("AnimationNodeStateMachine_8jfab")
 nodes/Spawn>Idle/position = Vector2(-280, 140)
 nodes/WalkAnim/node = SubResource("AnimationNodeAnimation_ur7uv")
-nodes/WalkAnim/position = Vector2(-200, 320)
+nodes/WalkAnim/position = Vector2(-360, 320)
 nodes/HitReaction/node = SubResource("AnimationNodeOneShot_rctkp")
 nodes/HitReaction/position = Vector2(360, 160)
 nodes/HitReactionAnim/node = SubResource("AnimationNodeAnimation_0mq4b")
@@ -103,4 +105,6 @@ nodes/Attack/node = SubResource("AnimationNodeOneShot_dedlq")
 nodes/Attack/position = Vector2(680, 160)
 nodes/AttackAnim/node = SubResource("AnimationNodeAnimation_aetc0")
 nodes/AttackAnim/position = Vector2(520, 280)
-node_connections = [&"output", 0, &"Attack", &"State", 0, &"Spawn>Idle", &"State", 1, &"WalkAnim", &"State", 2, &"DeathAnim", &"HitReaction", 0, &"State", &"HitReaction", 1, &"HitReactionAnim", &"Attack", 0, &"HitReaction", &"Attack", 1, &"AttackAnim"]
+nodes/MoveSpeed/node = SubResource("AnimationNodeTimeScale_jklr4")
+nodes/MoveSpeed/position = Vector2(-200, 320)
+node_connections = [&"output", 0, &"Attack", &"State", 0, &"Spawn>Idle", &"State", 1, &"MoveSpeed", &"State", 2, &"DeathAnim", &"HitReaction", 0, &"State", &"HitReaction", 1, &"HitReactionAnim", &"Attack", 0, &"HitReaction", &"Attack", 1, &"AttackAnim", &"MoveSpeed", 0, &"WalkAnim"]

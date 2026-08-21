@@ -512,6 +512,7 @@ transform = Transform3D(-1.3994161, -0.036595628, -0.5387907, 3.7252903e-09, 1.4
 
 [node name="Guard" parent="." unique_id=1516807226 instance=ExtResource("2_viuol")]
 transform = Transform3D(0.10486184, 0, -0.48888034, 0, 0.5, 0, 0.48888034, 0, 0.10486184, -222.77011, 4.7683716e-07, 145.34837)
+visible = false
 
 [node name="deleteme" type="MeshInstance3D" parent="Guard" unique_id=211208862]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
@@ -520,6 +521,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_e2ycy")
 
 [node name="Spearman" parent="." unique_id=1179257224 instance=ExtResource("5_xtkv5")]
 transform = Transform3D(0.018758878, 0, -0.49964797, 0, 0.5, 0, 0.49964797, 0, 0.018758878, -221.58745, -4.7683716e-07, 150.87216)
+visible = false
 state = "Dead"
 
 [node name="deleteme" type="MeshInstance3D" parent="Spearman" unique_id=1457628253]
@@ -529,6 +531,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xvb8u")
 
 [node name="EvilSpearman" parent="." unique_id=1035353683 instance=ExtResource("7_cio6d")]
 transform = Transform3D(0.2533143, 0, 0.43108222, 0, 0.5, 0, -0.43108222, 0, 0.2533143, -228.35329, -4.7683716e-07, 144.07828)
+visible = false
 
 [node name="deleteme" type="MeshInstance3D" parent="EvilSpearman" unique_id=340856832]
 transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0, 0, 0)
@@ -545,6 +548,7 @@ fov = 50.0
 
 [node name="EvilGuard" parent="." unique_id=1280639864 instance=ExtResource("15_7rq4p")]
 transform = Transform3D(0.025210394, 0, 0.49936402, 0, 0.5, 0, -0.49936402, 0, 0.025210394, -225.67953, 0, 150.34877)
+visible = false
 
 [node name="deleteme" type="MeshInstance3D" parent="EvilGuard" unique_id=455886939]
 transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0, 0, 0)
@@ -562,6 +566,7 @@ surface_material_override/0 = ExtResource("26_o2naj")
 
 [node name="Guard2" parent="." unique_id=1397331884 instance=ExtResource("2_viuol")]
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -36.964455, 0, -29.874617)
+visible = false
 
 [node name="deleteme" type="MeshInstance3D" parent="Guard2" unique_id=2109239362]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
@@ -570,6 +575,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_e2ycy")
 
 [node name="Guard3" parent="." unique_id=1321817292 instance=ExtResource("2_viuol")]
 transform = Transform3D(-0.37284285, 0, -0.33314893, 0, 0.5, 0, 0.33314893, 0, -0.37284285, -39.72936, 0, -22.343348)
+visible = false
 
 [node name="deleteme" type="MeshInstance3D" parent="Guard3" unique_id=641898297]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
