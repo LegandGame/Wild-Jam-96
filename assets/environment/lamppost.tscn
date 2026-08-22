@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cclhkm1ncv60x"]
+
+[ext_resource type="PackedScene" uid="uid://c0rnjl26bijko" path="res://assets/glb_imports/lamppost.glb" id="1_7w6ab"]
+[ext_resource type="Material" uid="uid://bexy5x25iv3uo" path="res://assets/materials/brickwork_triplanar.tres" id="2_dl3q4"]
+[ext_resource type="Material" uid="uid://bgudfl43j2kjo" path="res://assets/materials/rusty_metal_triplanar.tres" id="3_wawmo"]
+[ext_resource type="Material" uid="uid://cy1ke52npc3ny" path="res://assets/materials/light.tres" id="4_h3j4e"]
+
+[node name="lamppost" unique_id=104762971 instance=ExtResource("1_7w6ab")]
+
+[node name="Lamppost" parent="." index="0" unique_id=684477173]
+cast_shadow = 0
+surface_material_override/0 = ExtResource("2_dl3q4")
+surface_material_override/1 = ExtResource("3_wawmo")
+surface_material_override/2 = ExtResource("4_h3j4e")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1" unique_id=1775928508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.973332, -2.4845462)
+light_color = Color(0.99858457, 0.7926726, 0.58247226, 1)
+shadow_enabled = true
+omni_range = 25.0
+omni_attenuation = 0.8

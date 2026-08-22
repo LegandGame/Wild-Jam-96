@@ -8,5 +8,6 @@ flip_faces = true
 size = Vector2(15, 15)
 
 [node name="ScreenSpaceEdges" type="MeshInstance3D" unique_id=511432441]
+sorting_offset = -15.0
 extra_cull_margin = 2000.0
 mesh = SubResource("QuadMesh_t6sap")
