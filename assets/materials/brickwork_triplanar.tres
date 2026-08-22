@@ -9,7 +9,7 @@
 render_priority = 0
 shader = ExtResource("1_wmhu5")
 shader_parameter/emissive_tint = Color(1, 1, 1, 1)
-shader_parameter/tint_color = Color(0.667321, 0.7022034, 0.7226361, 1)
+shader_parameter/tint_color = Color(0.6452645, 0.582848, 0.45011723, 1)
 shader_parameter/use_alpha = false
 shader_parameter/alpha_scissor_threshold = 0.5
 shader_parameter/use_triplanar = true

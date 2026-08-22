@@ -3225,7 +3225,7 @@ _data = {
 }
 
 [node name="Spearman" type="Node3D" unique_id=1179257224 node_paths=PackedStringArray("animation_tree")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 script = ExtResource("1_as68h")
 animation_tree = NodePath("AnimationTree")
 
@@ -3505,3 +3505,4 @@ parameters/HitReaction/request = 0
 parameters/Attack/active = false
 parameters/Attack/internal_active = false
 parameters/Attack/request = 0
+parameters/MoveSpeed/scale = 1.0

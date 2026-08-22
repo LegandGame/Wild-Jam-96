@@ -36,6 +36,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5dguu")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_cesdk"]
+size = Vector3(12.874756, 4.2770996, 8.6779785)
+
 [node name="FlatRock" type="MeshInstance3D" unique_id=538200513]
 mesh = SubResource("ArrayMesh_7rq4p")
 surface_material_override/0 = ExtResource("1_7gcft")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=237598840]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1208458861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5391846, 0)
+shape = SubResource("BoxShape3D_cesdk")

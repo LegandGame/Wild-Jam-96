@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://bnaujgpqqsjuj"]
+
+[ext_resource type="Script" uid="uid://bxahglea2iyqi" path="res://entities/Units/unit_stats.gd" id="1_ugjmq"]
+
+[resource]
+script = ExtResource("1_ugjmq")
+name = "Spearman"
+health = 5
+cost = 2
+move_speed = 10.0
+acceleration = 10.0
+attack_range = 6.0
+metadata/_custom_type_script = "uid://bxahglea2iyqi"
