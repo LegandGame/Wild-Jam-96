@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://osxulxw2oas3"]
+
+[ext_resource type="Script" uid="uid://c5wuso5r3dwpw" path="res://addons/maaacks_credits_scene/examples/scenes/credits/scrollable_credits.gd" id="1_hny8b"]
+[ext_resource type="PackedScene" uid="uid://b0o5hpukdt644" path="res://addons/maaacks_credits_scene/examples/scenes/credits/credits_label.tscn" id="2_1ldew"]
+[ext_resource type="Script" uid="uid://cc2wtqasev7le" path="res://addons/maaacks_credits_scene/base/nodes/labels/credits_label.gd" id="3_p2rg7"]
+
+[node name="ScrollableCredits" type="Control" unique_id=778902116]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hny8b")
+
+[node name="CreditsLabel" parent="." unique_id=2043146142 instance=ExtResource("2_1ldew")]
+unique_name_in_owner = true
+layout_mode = 1
+fit_content = false
+scroll_active = true
+script = ExtResource("3_p2rg7")
+attribution_file_path = "res://ATTRIBUTION.md"
+auto_update = true
+h1_font_size = 0
+h2_font_size = 0
+h3_font_size = 0
+h4_font_size = 0
+h5_font_size = 0
+h6_font_size = 0
+bold_headings = false
+max_image_width = 0
+max_image_height = 0
+disable_images = false
+disable_urls = false

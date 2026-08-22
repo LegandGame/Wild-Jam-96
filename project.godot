@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Godot Wild Jam #96"
+config/name="Static Knights"
+config/version="0.1"
 run/main_scene="res://ui/opening/opening.tscn"
 config/features=PackedStringArray("4.7")
-config/icon="uid://bdtqacwys6h13"
+config/icon="uid://dpbnxn6gvroe6"
 
 [autoload]
 
@@ -32,7 +33,7 @@ project/assembly_name="Maaack-s Minimal Game Template"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://addons/guide/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
+enabled=PackedStringArray("res://addons/maaacks_credits_scene/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [file_customization]
 
@@ -148,6 +149,11 @@ locale/translations=PackedStringArray("res://addons/maaacks_game_template/base/t
 3d_navigation/layer_6="Pickup"
 3d_physics/layer_7="Interactable"
 3d_navigation/layer_7="Interactable"
+
+[maaacks_credits_scene]
+
+disable_update_check=false
+disable_install_wizard=true
 
 [maaacks_game_template]
 

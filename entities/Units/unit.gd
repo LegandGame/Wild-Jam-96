@@ -64,6 +64,8 @@ func hurt(attacker: Unit) -> void:
 	if !is_instance_valid(attacker): return
 	velocity *= Vector3(0.0, 1.0, 0.0)
 	health.value -= attacker.stats.damage
+func _on_hurtbox_hurt(hit : Hitbox) -> void:
+	health.value -= hit.damage
 	model.play_one_shot("HitReaction")
 
 func _die() -> void:
