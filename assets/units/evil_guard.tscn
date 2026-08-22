@@ -3259,7 +3259,7 @@ _data = {
 }
 
 [node name="EvilGuard" type="Node3D" unique_id=1516807226 node_paths=PackedStringArray("animation_tree")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 script = ExtResource("1_ahqgj")
 animation_tree = NodePath("AnimationTree")
 

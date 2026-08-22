@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cdah1wd0cu4dk"]
+
+[ext_resource type="Script" uid="uid://d2geap8a52qi4" path="res://entities/Units/unit.gd" id="1_cglnm"]
+[ext_resource type="Resource" uid="uid://df2daoaf4dabi" path="res://entities/Units/unit_type_stats/guard.tres" id="2_esiq5"]
+[ext_resource type="PackedScene" uid="uid://d3miv5bnq02wj" path="res://assets/units/evil_guard.tscn" id="3_wc3q1"]
+[ext_resource type="Script" uid="uid://r2baue2y324i" path="res://common/counter.gd" id="4_qd3yy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ky4ls"]
+radius = 1.0
+height = 6.0
+
+[node name="EvilGuard" type="CharacterBody3D" unique_id=764353807 node_paths=PackedStringArray("model", "health", "navigator", "line_of_sight")]
+script = ExtResource("1_cglnm")
+alignment = "ENEMY"
+stats = ExtResource("2_esiq5")
+model = NodePath("EvilGuard")
+health = NodePath("HealthCounter")
+navigator = NodePath("NavigationAgent3D")
+line_of_sight = NodePath("LineOfSight")
+
+[node name="EvilGuard" parent="." unique_id=1516807226 instance=ExtResource("3_wc3q1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2144051896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("CapsuleShape3D_ky4ls")
+
+[node name="HealthCounter" type="Node" parent="." unique_id=1482041667]
+script = ExtResource("4_qd3yy")
+metadata/_custom_type_script = "uid://r2baue2y324i"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1298225350]
+
+[node name="LineOfSight" type="RayCast3D" parent="." unique_id=658647390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+target_position = Vector3(0, 0, 90)
+collision_mask = 3

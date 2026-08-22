@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bxim7qjugsqwb"]
+
+[ext_resource type="Script" uid="uid://d2geap8a52qi4" path="res://entities/Units/unit.gd" id="1_p8flj"]
+[ext_resource type="Resource" uid="uid://bnaujgpqqsjuj" path="res://entities/Units/unit_type_stats/spearman.tres" id="2_rrkah"]
+[ext_resource type="PackedScene" uid="uid://plpt4ccxshr0" path="res://assets/units/evil_spearman.tscn" id="3_qkox0"]
+[ext_resource type="Script" uid="uid://r2baue2y324i" path="res://common/counter.gd" id="4_5pjkl"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ky4ls"]
+radius = 1.0
+height = 6.0
+
+[node name="EvilSpearman" type="CharacterBody3D" unique_id=764353807 node_paths=PackedStringArray("model", "health", "navigator", "line_of_sight")]
+script = ExtResource("1_p8flj")
+alignment = "ENEMY"
+stats = ExtResource("2_rrkah")
+model = NodePath("EvilSpearman")
+health = NodePath("HealthCounter")
+navigator = NodePath("NavigationAgent3D")
+line_of_sight = NodePath("LineOfSight")
+
+[node name="EvilSpearman" parent="." unique_id=1179257224 instance=ExtResource("3_qkox0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2144051896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("CapsuleShape3D_ky4ls")
+
+[node name="HealthCounter" type="Node" parent="." unique_id=1482041667]
+script = ExtResource("4_5pjkl")
+metadata/_custom_type_script = "uid://r2baue2y324i"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1298225350]
+
+[node name="LineOfSight" type="RayCast3D" parent="." unique_id=2121160501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+target_position = Vector3(0, 0, 90)
+collision_mask = 3

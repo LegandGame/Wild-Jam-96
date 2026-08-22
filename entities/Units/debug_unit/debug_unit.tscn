@@ -9,34 +9,31 @@
 
 [sub_resource type="Resource" id="Resource_klytv"]
 script = ExtResource("2_xu31v")
+move_speed = 15.0
+acceleration = 15.0
+attack_range = 6.0
 metadata/_custom_type_script = "uid://bxahglea2iyqi"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ky4ls"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ky4ls"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mr007"]
+radius = 1.5
+height = 6.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ky4ls"]
+radius = 1.5
 
-[node name="DebugUnit" type="CharacterBody3D" unique_id=764353807 node_paths=PackedStringArray("model", "health", "hurtbox", "navigator", "hitbox")]
+[node name="DebugUnit" type="CharacterBody3D" unique_id=764353807 node_paths=PackedStringArray("health", "hurtbox", "navigator", "hitbox")]
 script = ExtResource("1_63md5")
 stats = SubResource("Resource_klytv")
-model = NodePath("Guard")
 health = NodePath("HealthCounter")
 hurtbox = NodePath("Hurtbox")
 navigator = NodePath("NavigationAgent3D")
 hitbox = NodePath("Hitbox")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2144051896]
-shape = SubResource("CapsuleShape3D_ky4ls")
-
 [node name="Guard" parent="." unique_id=1516807226 instance=ExtResource("3_5r117")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.1, -1, -4.371139e-09)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1559928568]
-visible = false
-mesh = SubResource("CapsuleMesh_ky4ls")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2144051896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("CapsuleShape3D_ky4ls")
 
 [node name="HealthCounter" type="Node" parent="." unique_id=1482041667]
 script = ExtResource("2_laae3")
@@ -47,14 +44,16 @@ script = ExtResource("3_klytv")
 metadata/_custom_type_script = "uid://drvlx84s0dv6t"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=852767588]
-shape = SubResource("CapsuleShape3D_mr007")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("CapsuleShape3D_ky4ls")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1298225350]
 
 [node name="Hitbox" type="Area3D" parent="." unique_id=1913860143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 script = ExtResource("5_p3jkv")
 metadata/_custom_type_script = "uid://cwb6t52fiebop"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=788681752]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.219)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2189999)
 shape = SubResource("SphereShape3D_ky4ls")

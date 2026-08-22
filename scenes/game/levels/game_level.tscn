@@ -1,85 +1,62 @@
 [gd_scene format=3 uid="uid://ch55nc5r8dc5k"]
 
-[ext_resource type="PackedScene" uid="uid://cr4rlmoper1c2" path="res://entities/Units/debug_unit/debug_unit.tscn" id="1_u8aah"]
+[ext_resource type="PackedScene" uid="uid://ivuho8u704n8" path="res://assets/environment/game_environment.tscn" id="1_63uhi"]
 [ext_resource type="PackedScene" uid="uid://pq6d411mu1kt" path="res://common/rts_camera/rts_camera.tscn" id="1_xtc42"]
-[ext_resource type="Script" uid="uid://bxahglea2iyqi" path="res://entities/Units/unit_stats.gd" id="3_fcsgj"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_otvh4"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_u8aah"]
-sky_material = SubResource("ProceduralSkyMaterial_otvh4")
-
-[sub_resource type="Environment" id="Environment_xtc42"]
-background_mode = 2
-sky = SubResource("Sky_u8aah")
-
-[sub_resource type="NavigationMesh" id="NavigationMesh_ky4ls"]
-vertices = PackedVector3Array(-24.5, 0.5, -24.5, -24.5, 0.5, 24.5, 24.5, 0.5, 24.5, 24.5, 0.5, -24.5)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
-
-[sub_resource type="Resource" id="Resource_63uhi"]
-script = ExtResource("3_fcsgj")
-alignment = "ENEMY"
-metadata/_custom_type_script = "uid://bxahglea2iyqi"
-
-[sub_resource type="Resource" id="Resource_qtt3t"]
-script = ExtResource("3_fcsgj")
-alignment = "ENEMY"
-metadata/_custom_type_script = "uid://bxahglea2iyqi"
-
-[sub_resource type="Resource" id="Resource_fcsgj"]
-script = ExtResource("3_fcsgj")
-alignment = "ENEMY"
-metadata/_custom_type_script = "uid://bxahglea2iyqi"
+[ext_resource type="PackedScene" uid="uid://bxim7qjugsqwb" path="res://entities/Units/all_units/evil_spearman_unit.tscn" id="3_al50s"]
+[ext_resource type="PackedScene" uid="uid://4d0f7wuoclbx" path="res://entities/Units/all_units/spearman_unit.tscn" id="4_3tf5j"]
+[ext_resource type="PackedScene" uid="uid://cdah1wd0cu4dk" path="res://entities/Units/all_units/evil_guard_unit.tscn" id="5_0wufo"]
+[ext_resource type="PackedScene" uid="uid://cddlh3vyudyj5" path="res://entities/Units/all_units/guard_unit.tscn" id="6_qy3ey"]
 
 [node name="GameLevel" type="Node3D" unique_id=1838144058]
 
+[node name="Game_Environment" parent="." unique_id=496390260 instance=ExtResource("1_63uhi")]
+
 [node name="RTSCamera" parent="." unique_id=219880910 instance=ExtResource("1_xtc42")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 25)
-zoom_speed = 25.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.850845, 10, -14.080742)
+move_speed = 30.0
+rotate_speed = 120.0
+zoom_speed = 150.0
+max_zoom = 50.0
 
 [node name="CameraZoomPivot" parent="RTSCamera/CameraRotationX" parent_id_path=PackedInt32Array(219880910, 2114858487) index="0" unique_id=2134376419]
 transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 3.15, 5)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=240772459]
-environment = SubResource("Environment_xtc42")
+[node name="Camera3D" parent="RTSCamera/CameraRotationX/CameraZoomPivot" index="0" unique_id=951955966]
+current = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1993480318]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 9.029389, 0)
-shadow_enabled = true
+[node name="Units" type="Node" parent="." unique_id=936343458]
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=76763861]
-navigation_mesh = SubResource("NavigationMesh_ky4ls")
+[node name="Guard" parent="Units" unique_id=1586831157 instance=ExtResource("6_qy3ey")]
+transform = Transform3D(0.022175595, 0, -0.9997542, 0, 1, 0, 0.9997542, 0, 0.022175595, -54.449455, 0.042354584, -42.56889)
 
-[node name="Floor" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1815423916]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-use_collision = true
-size = Vector3(50, 1, 50)
-metadata/_edit_lock_ = true
+[node name="Spearman" parent="Units" unique_id=1130034080 instance=ExtResource("4_3tf5j")]
+transform = Transform3D(-0.7953523, 0, 0.6061475, 0, 1, 0, -0.6061475, 0, -0.7953523, -98, 0.04235077, -49)
 
-[node name="Enemy Battle Test" type="Node3D" parent="." unique_id=1904252528]
+[node name="Spearman2" parent="Units" unique_id=705125967 instance=ExtResource("4_3tf5j")]
+transform = Transform3D(-0.7953523, 0, 0.6061475, 0, 1, 0, -0.6061475, 0, -0.7953523, -167.86685, 0.04235077, -103.78678)
 
-[node name="Ally 2" parent="Enemy Battle Test" unique_id=764353807 instance=ExtResource("1_u8aah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.465414, 1.3628879, -17.128754)
+[node name="Spearman3" parent="Units" unique_id=1376770903 instance=ExtResource("4_3tf5j")]
+transform = Transform3D(-0.7953523, 0, 0.6061475, 0, 1, 0, -0.6061475, 0, -0.7953523, -111.0365, 0.042354584, -23.826212)
 
-[node name="Enemy 1" parent="Enemy Battle Test" unique_id=232161171 instance=ExtResource("1_u8aah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.428806, 2.1799073, 0)
-stats = SubResource("Resource_63uhi")
+[node name="EvilSpearman" parent="Units" unique_id=764353807 instance=ExtResource("3_al50s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 0.04235077, -77)
 
-[node name="Ally 1" parent="Enemy Battle Test" unique_id=411104869 instance=ExtResource("1_u8aah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.426155, 2.220808, 0)
+[node name="EvilGuard" parent="Units" unique_id=825411231 instance=ExtResource("5_0wufo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69, 0.04235077, -67)
 
-[node name="Enemy 2" parent="Enemy Battle Test" unique_id=1991320218 instance=ExtResource("1_u8aah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.449085, 2.2858691, -14.70981)
-stats = SubResource("Resource_qtt3t")
+[node name="EvilGuard2" parent="Units" unique_id=505661631 instance=ExtResource("5_0wufo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.496693, 0.042354584, -114.2323)
 
-[node name="Ally 3" parent="Enemy Battle Test" unique_id=1341694035 instance=ExtResource("1_u8aah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.861328, 1.6107674, 19.005291)
+[node name="EvilGuard3" parent="Units" unique_id=95010799 instance=ExtResource("5_0wufo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.565506, 0.04235077, -93.66197)
 
-[node name="Enemy 3" parent="Enemy Battle Test" unique_id=677532565 instance=ExtResource("1_u8aah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.59515, 2.970521, 14.213963)
-stats = SubResource("Resource_fcsgj")
+[node name="EvilGuard4" parent="Units" unique_id=795891580 instance=ExtResource("5_0wufo")]
+transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, -125.55994, 0.0423584, 37.523026)
+
+[node name="EvilGuard5" parent="Units" unique_id=819336868 instance=ExtResource("5_0wufo")]
+transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, -128.36043, 0.042362213, 93.679054)
+
+[node name="EvilGuard6" parent="Units" unique_id=132718018 instance=ExtResource("5_0wufo")]
+transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, -96.15076, 0.0423584, 51.330215)
 
 [editable path="RTSCamera"]

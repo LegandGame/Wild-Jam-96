@@ -13,7 +13,13 @@ signal attack_finished
 	set(value):
 		move_speed = value
 		if animation_tree:
-			animation_tree.set("parameters/MoveSpeed/scale", move_speed * 0.5)
+			animation_tree.set("parameters/MoveSpeed/scale", move_speed * speed_scale)
+
+@export var speed_scale := 0.15:
+	set(value):
+		speed_scale = value
+		if animation_tree:
+			animation_tree.set("parameters/MoveSpeed/scale", move_speed * speed_scale)
 
 @export_enum("Idle", "Walking", "Dead") var state := "Idle":
 	set(value):
