@@ -3549,3 +3549,4 @@ parameters/HitReaction/request = 0
 parameters/Attack/active = false
 parameters/Attack/internal_active = false
 parameters/Attack/request = 0
+parameters/MoveSpeed/scale = 1.0
