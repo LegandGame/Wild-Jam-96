@@ -83,4 +83,10 @@ func _ready():
 	await fade_to_black_tween.finished
 	
 	get_tree().change_scene_to_file(GAME_LEVEL_PATH)
+
+func _on_button_pressed():
+	var fade_to_black_tween = create_tween()
+	fade_to_black_tween.tween_property($ColorRect, "color:a", 1.0, 3)
+	await fade_to_black_tween.finished
 	
+	get_tree().change_scene_to_file(GAME_LEVEL_PATH)

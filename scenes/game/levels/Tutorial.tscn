@@ -41,8 +41,17 @@ transform = Transform3D(0.2611067, 0.030209603, 0.14460522, 0, 0.29366022, -0.06
 
 [node name="ChargeBar" parent="." unique_id=874576994 instance=ExtResource("4_kxs0k")]
 
+[node name="Button" type="Button" parent="." unique_id=548709131]
+offset_left = 1211.0
+offset_top = 664.0
+offset_right = 1268.0
+offset_bottom = 711.0
+text = "Skip"
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2102006387]
 offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
