@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://b8lcka3trrc1e" path="res://assets/materials/shaders/terrain3d_toon.gdshader" id="1_l8dcq"]
 [ext_resource type="Texture2D" uid="uid://da5s7hlwks3ag" path="res://assets/textures/grass_Base_Color.png" id="1_swy4y"]
 [ext_resource type="PackedScene" uid="uid://bsluhmkfltf41" path="res://assets/vfx/ScreenSpaceEdges.tscn" id="1_vf6mq"]
+[ext_resource type="Script" uid="uid://doddx7bbq5387" path="res://assets/environment/game_environment.gd" id="1_w5ynl"]
 [ext_resource type="Texture2D" uid="uid://ie5h4468up8h" path="res://assets/textures/grass_Normal_OpenGL.png" id="2_d4yl4"]
 [ext_resource type="PackedScene" uid="uid://bmkixcbwxoeg6" path="res://assets/units/guard.tscn" id="2_viuol"]
 [ext_resource type="Texture2D" uid="uid://i11pxi1rcvhm" path="res://assets/textures/dirt_Base_Color.png" id="3_cio6d"]
@@ -252,6 +253,7 @@ shading_mode = 0
 albedo_color = Color(0.9191208, 0.13366643, 0, 1)
 
 [node name="Game_Environment" type="Node3D" unique_id=496390260]
+script = ExtResource("1_w5ynl")
 
 [node name="ScreenSpaceEdges" parent="." unique_id=511432441 instance=ExtResource("1_vf6mq")]
 
@@ -670,10 +672,10 @@ transform = Transform3D(0.39645636, 9.101179, 4.1244836, 9.062404, -2.0662336, 3
 [node name="roboskull" parent="NavigationRegion3D/Terrain3D/Terrain3DObjects" unique_id=88147531 instance=ExtResource("27_ax3m5")]
 transform = Transform3D(-0.52067673, 3.1625364, -7.3298893, 7.6479483, 2.3034494, 0.45057157, 2.288622, -6.978001, -3.1732817, -160.92638, 0.0005297661, -243.94173)
 
-[node name="Robojaw" parent="NavigationRegion3D/Terrain3D/Terrain3DObjects/roboskull" index="0" unique_id=91556012]
+[node name="Robojaw" parent="NavigationRegion3D/Terrain3D/Terrain3DObjects/roboskull" index="0" unique_id=757819245]
 transform = Transform3D(-0.10260189, 0.9611059, 0.2564148, -0.016181704, 0.25612843, -0.9665073, -0.99459094, -0.10331472, -0.010726931, -0.42225435, 0.74192286, 0.31095436)
 
-[node name="Roboskull" parent="NavigationRegion3D/Terrain3D/Terrain3DObjects/roboskull" index="1" unique_id=280366693]
+[node name="Roboskull" parent="NavigationRegion3D/Terrain3D/Terrain3DObjects/roboskull" index="1" unique_id=1348227815]
 transform = Transform3D(-0.031698316, 0.6045097, 0.79596674, -0.22421215, 0.7717705, -0.5950624, -0.9740248, -0.19732791, 0.1110746, 0.19564086, 1.437789, 0.02730105)
 
 [node name="StaticBody3D" parent="NavigationRegion3D/Terrain3D/Terrain3DObjects/roboskull" index="2" unique_id=1553215299]

@@ -8,12 +8,6 @@ signal charge_modified(value)
 signal charge_level_changed(new_level: int)
 signal charge_steal_level_changed(new_level: int)
 
-## Minimum charge - hit this and you lose
-@export var min_charge: float = 0.0
-
-## Maximum charge - hit this and you win
-@export var max_charge: float = 1000.0
-
 ## Starting charge - begin here on new game
 @export var starting_charge: float = 200.0
 
@@ -62,11 +56,11 @@ func add_charge(amount: float):
 	charge += amount
 	
 	# check boundaries
-	if charge > max_charge:
-		charge = max_charge
+	if charge > Constants.MAX_CHARGE:
+		charge = Constants.MAX_CHARGE
 		max_charge_reached.emit()
-	elif charge < min_charge:
-		charge = min_charge
+	elif charge < Constants.MIN_CHARGE:
+		charge = Constants.MIN_CHARGE
 		min_charge_reached.emit()
 	
 	charge_modified.emit(charge)

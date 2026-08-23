@@ -147,6 +147,7 @@ color = Color(0, 0, 0, 0)
 [connection signal="enemy_died" from="WaveManager" to="ChargeManager" method="_on_unit_death"]
 [connection signal="charge_level_changed" from="ChargeManager" to="ChargeBar" method="_on_charge_level_changed"]
 [connection signal="charge_level_changed" from="ChargeManager" to="ChargeUpgradeTile" method="_on_charge_level_changed"]
+[connection signal="charge_modified" from="ChargeManager" to="Game_Environment" method="_on_charge_modified"]
 [connection signal="charge_modified" from="ChargeManager" to="ChargeBar" method="_on_charge_modified"]
 [connection signal="charge_modified" from="ChargeManager" to="GuardTile" method="_on_charge_modified"]
 [connection signal="charge_modified" from="ChargeManager" to="SpearmanTile" method="_on_charge_modified"]
