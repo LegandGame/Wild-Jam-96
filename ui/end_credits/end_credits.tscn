@@ -8,6 +8,7 @@
 script = ExtResource("2_0sycx")
 main_menu_scene_path = "uid://d3gri4x2idvnh"
 force_mouse_mode_visible = false
+scroll_paused = true
 
 [node name="BackgroundColor" type="ColorRect" parent="." index="0" unique_id=1680337145]
 layout_mode = 1
@@ -29,7 +30,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ScrollContainer" parent="." index="2" unique_id=1826061058]
-scroll_vertical = 3034
+scroll_vertical = 3717
 
 [node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" parent_id_path=PackedInt32Array(1799859771) index="1" unique_id=951333631]
 text = "[font_size=0]Collaborators[/font_size]
@@ -76,6 +77,9 @@ License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License
 Author: [url=https://github.com/TokisanGames/Terrain3D]Tokisan games[/url]
 Source: [url=https://store.godotengine.org/asset/tokisangames/terrain3d/]Godot Asset Library[/url]
 License: [url=https://choosealicense.com/licenses/mit/]MIT License[/url]
+
+[font_size=0]PlayfulTime Font[/font_size]
+Source: [url=https://www.fontspace.com/playful-time-star-font-f109394]Fontspace[/url]
 "
 
 [node name="CenterContainer" type="CenterContainer" parent="." index="3" unique_id=1516904581]
@@ -88,7 +92,6 @@ mouse_filter = 2
 
 [node name="EndMessagePanel" type="Panel" parent="CenterContainer" index="0" unique_id=213736646]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(360, 120)
 layout_mode = 2
 
