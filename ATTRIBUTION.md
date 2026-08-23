@@ -21,6 +21,11 @@ Author: [Jason Long](https://bsky.app/profile/jasonlong.me)
 Source: [git-scm.com : logos](https://git-scm.com/downloads/logos)  
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) 
 
+#### Playful Time Star Font
+Author: [Dmletter studio](https://www.fontspace.com/dmletter-studio)
+Source: [fontspace.com](https://www.fontspace.com/playful-time-star-font-f109394)
+License: Freeware, Non-Commercial
+
 ## Tools
 #### Godot
 ![Godot Engine Logo](/assets/godot_engine_logo/logo_vertical_color_dark.png)  
