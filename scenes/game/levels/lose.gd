@@ -2,13 +2,11 @@ extends Node3D
 
 @export_file_path() var main_menu_path = "res://ui/menus/main_menu/custom_main_menu.tscn"
 
-#TODO update
 @export var lose_text = '''
 [font_size=50]The [font_size=60][color=gray][b]Castle[/b][/color][/font_size] is overrun![/font_size]
 The [color=deepskyblue][b]OmniSpark[/b][/color] has been [color=maroon]lost[/color]...       
 '''
 
-# TODO update
 @export var try_again = '''[wave]Try Again![/wave]
 [shake][font_size=50]The Knights need you![/font_size][/shake]
 '''
