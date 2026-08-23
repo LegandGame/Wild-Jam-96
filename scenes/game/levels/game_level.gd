@@ -4,6 +4,12 @@ extends Node3D
 @export_file_path() var lose_file_path = "res://scenes/game/levels/Lose.tscn"
 
 func _ready():
+	$Blackout.color.a = 1.0
+	
+	var fade_in_tween = create_tween()
+	fade_in_tween.tween_property($Blackout, "color:a", 0, 2)
+	await fade_in_tween.finished
+	
 	AudioManager.play_level_music()
 
 func _on_min_charge_reached():

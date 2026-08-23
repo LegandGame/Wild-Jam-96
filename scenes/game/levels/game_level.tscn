@@ -3,12 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://ivuho8u704n8" path="res://assets/environment/game_environment.tscn" id="1_63uhi"]
 [ext_resource type="Script" uid="uid://d36261m3wr51q" path="res://scenes/game/levels/game_level.gd" id="1_w08eq"]
 [ext_resource type="PackedScene" uid="uid://pq6d411mu1kt" path="res://common/rts_camera/rts_camera.tscn" id="1_xtc42"]
-[ext_resource type="PackedScene" uid="uid://bxim7qjugsqwb" path="res://entities/Units/all_units/evil_spearman_unit.tscn" id="3_al50s"]
 [ext_resource type="PackedScene" uid="uid://dqp3v2c7i4ga6" path="res://scenes/game/spawners/EnemySpawn.tscn" id="3_pekqs"]
-[ext_resource type="PackedScene" uid="uid://4d0f7wuoclbx" path="res://entities/Units/all_units/spearman_unit.tscn" id="4_3tf5j"]
-[ext_resource type="PackedScene" uid="uid://cdah1wd0cu4dk" path="res://entities/Units/all_units/evil_guard_unit.tscn" id="5_0wufo"]
-[ext_resource type="PackedScene" uid="uid://cddlh3vyudyj5" path="res://entities/Units/all_units/guard_unit.tscn" id="6_qy3ey"]
 [ext_resource type="PackedScene" uid="uid://be22gd8cmlj45" path="res://scenes/game/managers/ChargeManager.tscn" id="7_bh5ub"]
+[ext_resource type="PackedScene" uid="uid://bxc1bg0k8tmtl" path="res://scenes/game/spawners/AllySpawn.tscn" id="7_j4rxa"]
 [ext_resource type="PackedScene" uid="uid://b483gbejo5yc5" path="res://scenes/game/managers/WaveManager.tscn" id="8_j4rxa"]
 [ext_resource type="PackedScene" uid="uid://oda5v2pa5v41" path="res://ui/game/ChargeBar.tscn" id="8_w08eq"]
 [ext_resource type="PackedScene" uid="uid://ddl7gxp24n0w1" path="res://ui/game/UnitTile.tscn" id="9_j4rxa"]
@@ -21,7 +18,7 @@ script = ExtResource("1_w08eq")
 [node name="Game_Environment" parent="." unique_id=496390260 instance=ExtResource("1_63uhi")]
 
 [node name="EnemySpawn1" parent="." unique_id=1176679365 instance=ExtResource("3_pekqs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.86826, 6.0353317, 351.67365)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.18866, 6.0353317, 314.34662)
 
 [node name="RTSCamera" parent="." unique_id=219880910 instance=ExtResource("1_xtc42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.850845, 10, -14.080742)
@@ -38,38 +35,31 @@ current = true
 
 [node name="Units" type="Node" parent="." unique_id=936343458]
 
-[node name="Guard" parent="Units" unique_id=1586831157 instance=ExtResource("6_qy3ey")]
-transform = Transform3D(0.022175595, 0, -0.9997542, 0, 1, 0, 0.9997542, 0, 0.022175595, -54.449455, 0.042354584, -42.56889)
+[node name="AllySpawns" type="Node" parent="." unique_id=2122331443]
 
-[node name="Spearman" parent="Units" unique_id=1130034080 instance=ExtResource("4_3tf5j")]
-transform = Transform3D(-0.7953523, 0, 0.6061475, 0, 1, 0, -0.6061475, 0, -0.7953523, -98, 0.04235077, -49)
+[node name="AllySpawn1" parent="AllySpawns" unique_id=1594643545 instance=ExtResource("7_j4rxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.30647, 0, 0)
 
-[node name="Spearman2" parent="Units" unique_id=705125967 instance=ExtResource("4_3tf5j")]
-transform = Transform3D(-0.7953523, 0, 0.6061475, 0, 1, 0, -0.6061475, 0, -0.7953523, -167.86685, 0.04235077, -103.78678)
+[node name="AllySpawn2" parent="AllySpawns" unique_id=508020969 instance=ExtResource("7_j4rxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.38033, 0, -51.14603)
 
-[node name="Spearman3" parent="Units" unique_id=1376770903 instance=ExtResource("4_3tf5j")]
-transform = Transform3D(-0.7953523, 0, 0.6061475, 0, 1, 0, -0.6061475, 0, -0.7953523, -111.0365, 0.042354584, -23.826212)
+[node name="AllySpawn3" parent="AllySpawns" unique_id=1667958887 instance=ExtResource("7_j4rxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.465103, 83.35007)
 
-[node name="EvilSpearman" parent="Units" unique_id=764353807 instance=ExtResource("3_al50s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 0.04235077, -77)
+[node name="AllySpawn4" parent="AllySpawns" unique_id=156767697 instance=ExtResource("7_j4rxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.79727, 0, 77.879456)
 
-[node name="EvilGuard" parent="Units" unique_id=825411231 instance=ExtResource("5_0wufo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69, 0.04235077, -67)
+[node name="AllySpawn5" parent="AllySpawns" unique_id=30401599 instance=ExtResource("7_j4rxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -98)
 
-[node name="EvilGuard2" parent="Units" unique_id=505661631 instance=ExtResource("5_0wufo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.496693, 0.042354584, -114.2323)
+[node name="AllySpawn6" parent="AllySpawns" unique_id=2143609214 instance=ExtResource("7_j4rxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -90)
 
-[node name="EvilGuard3" parent="Units" unique_id=95010799 instance=ExtResource("5_0wufo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.565506, 0.04235077, -93.66197)
+[node name="AllySpawn7" parent="AllySpawns" unique_id=1414703169 instance=ExtResource("7_j4rxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.292007, 0, 96.88768)
 
-[node name="EvilGuard4" parent="Units" unique_id=795891580 instance=ExtResource("5_0wufo")]
-transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, -125.55994, 0.0423584, 37.523026)
-
-[node name="EvilGuard5" parent="Units" unique_id=819336868 instance=ExtResource("5_0wufo")]
-transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, -128.36043, 0.042362213, 93.679054)
-
-[node name="EvilGuard6" parent="Units" unique_id=132718018 instance=ExtResource("5_0wufo")]
-transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, -96.15076, 0.0423584, 51.330215)
+[node name="AllySpawn8" parent="AllySpawns" unique_id=1800441713 instance=ExtResource("7_j4rxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.436264, 0, 58.231476)
 
 [node name="WaveManager" parent="." unique_id=1795922052 instance=ExtResource("8_j4rxa")]
 

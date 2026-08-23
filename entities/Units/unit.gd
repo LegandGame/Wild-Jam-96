@@ -96,6 +96,7 @@ func _find_new_target(unit_alignment : String) -> void:
 	target = closest_target
 
 func update_target_location(target_pos : Vector3) -> void:
+	#print("navigator target pos: ", target_pos)
 	navigator.target_position = target_pos
 
 func _physics_process(delta: float) -> void:
@@ -120,6 +121,8 @@ func _physics_process(delta: float) -> void:
 	path_location = get_path_location()
 	
 	if _target_in_range() or target_reached:
+		#print("in range: ", _target_in_range())
+		#print("reached: ", target_reached)
 		velocity = velocity.move_toward(Vector3.ZERO, stats.acceleration * delta)
 		if is_instance_valid(target) and !attacking:
 			look_direction = (target.global_position - self.global_position).normalized()
@@ -144,17 +147,21 @@ func update_path():
 	
 	if !is_instance_valid(target) or target.dead:
 		if !navigator.target_position.is_equal_approx(self.global_position):
+			#print("navigator target pos (self.glob): ", self.global_position)
 			navigator.target_position = self.global_position
 		return
 	
 	if navigator.target_position.distance_squared_to(target.global_position) >= 36.0:
+		#print("navigator target pos (target.glob): ", target.global_position)
 		navigator.target_position = target.global_position
 
 func get_path_location():
 	if can_see_enemy(true):
 		target_reached = _target_in_range()
+		#print("can see enemy and target_reached: ", target_reached)
 		return target.position
 	target_reached = navigator.is_target_reached()
+	#print("navigator says: ", target_reached)
 	return navigator.get_next_path_position()
 
 func can_see_enemy(override_target := false) -> bool:
@@ -169,6 +176,7 @@ func can_see_enemy(override_target := false) -> bool:
 
 # --- misc and utils
 func attack() -> void:
+	#print("unit attacking: ", name)
 	if attacking: return
 	attacking = true
 	model.play_one_shot("Attack")

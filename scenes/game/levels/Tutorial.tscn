@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dyuqpint3haab"]
+
+[ext_resource type="Script" uid="uid://ovamnvledvvh" path="res://scenes/game/levels/tutorial.gd" id="1_cyq2k"]
+[ext_resource type="PackedScene" uid="uid://ivuho8u704n8" path="res://assets/environment/game_environment.tscn" id="2_6ddg0"]
+[ext_resource type="PackedScene" uid="uid://bmkixcbwxoeg6" path="res://assets/units/guard.tscn" id="3_kxs0k"]
+[ext_resource type="PackedScene" uid="uid://oda5v2pa5v41" path="res://ui/game/ChargeBar.tscn" id="4_kxs0k"]
+
+[node name="Tutorial" type="Node3D" unique_id=895719057]
+script = ExtResource("1_cyq2k")
+
+[node name="Description" type="RichTextLabel" parent="." unique_id=173130757]
+offset_left = 93.0
+offset_right = 937.0
+offset_bottom = 666.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+
+[node name="Description2" type="RichTextLabel" parent="." unique_id=894576500]
+offset_left = 133.0
+offset_top = 21.0
+offset_right = 908.0
+offset_bottom = 687.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+
+[node name="Description3" type="RichTextLabel" parent="." unique_id=1669674901]
+offset_left = 133.0
+offset_top = 21.0
+offset_right = 973.0
+offset_bottom = 687.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+
+[node name="Game_Environment" parent="." unique_id=496390260 instance=ExtResource("2_6ddg0")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1399698308]
+transform = Transform3D(0.43837157, 0.20981929, 0.8739601, 0, 0.9723699, -0.2334454, -0.8987938, 0.102335826, 0.4262593, -12.249431, 2.5311813, -12.645081)
+
+[node name="Guard" parent="." unique_id=1516807226 instance=ExtResource("3_kxs0k")]
+transform = Transform3D(0.2611067, 0.030209603, 0.14460522, 0, 0.29366022, -0.061348815, -0.14772707, 0.053395286, 0.25558886, -15, 0, -18)
+
+[node name="ChargeBar" parent="." unique_id=874576994 instance=ExtResource("4_kxs0k")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2102006387]
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

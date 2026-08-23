@@ -326,7 +326,7 @@ spacing_bottom = 2
 
 [node name="MainMenu" unique_id=2084566378 instance=ExtResource("1_viria")]
 script = ExtResource("2_pvt1w")
-game_scene_path = "res://scenes/game/game.tscn"
+game_scene_path = "uid://dyuqpint3haab"
 options_packed_scene = ExtResource("3_yl0x6")
 credits_packed_scene = ExtResource("4_lmm1u")
 

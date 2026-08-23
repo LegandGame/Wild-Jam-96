@@ -86,8 +86,11 @@ func _process(_delta):
 			$Label.text = text
 	
 	if wave_state == Types.WaveState.CLEARING:
-		if not get_children().any(func(child): return child is Unit):
+		if remaining_unit_count == 0:
+			print("wave cleared")
 			_handle_wave_clear()
+		else:
+			print(remaining_unit_count, " units left before clear")
 #endregion
 
 #region Spawning
@@ -126,51 +129,66 @@ func _generate_wave() -> Array[Types.UnitType]:
 	return units
 
 func _start_wave_spawn():
+	print("wave starting")
 	wave_state = Types.WaveState.SPAWNING
 
 	# Set wave unit variables
+	print("generating wave")
 	units_to_spawn = _generate_wave()
 	total_unit_count = units_to_spawn.size()
 	remaining_unit_count = total_unit_count
 	
+	print("starting spawn timer")
 	# Start the spawn delay timer - every x seconds, a unit will be spawned
 	if not $SpawnTimer.is_stopped():
 		print("Spawn timer already running on start wave call")
 	$SpawnTimer.start(wave_spawn_delay)
 
 func _on_spawn_timer_timeout():
+	print("spawn timer timed out")
 	if units_to_spawn.is_empty():
+		print("moving to clearing")
 		wave_state = Types.WaveState.CLEARING
+		$SpawnTimer.stop()
 	else:
+		print("spawning")
 		_spawn_unit(units_to_spawn[0])
 		
 		# restart spawn timer
 		$SpawnTimer.start(wave_spawn_delay)
 
 func _spawn_unit(unit_type: Types.UnitType):
+	print("spawning unit")
 	# spawn unit based on type
 	var spawn_point = get_tree().get_nodes_in_group("enemy_spawn").pick_random()
 	var unit = unit_type_to_preload.get(unit_type).instantiate()
-	unit.position = spawn_point.position
-	unit.unit_died.connect(_on_unit_death)
 	add_child(unit)
+	unit.global_position = spawn_point.global_position
+	unit.unit_died.connect(_on_unit_death)
 	
 	# remove from spawn list
 	units_to_spawn.pop_front()
+	print(units_to_spawn.size(), " left to spawn")
 
 func _on_unit_death():
+	print("unit died")
 	remaining_unit_count -= 1
 	
 #endregion
 
 #region Clearing
 func _handle_wave_clear():
+	print("wave cleared")
 	wave_state = Types.WaveState.DOWNTIME
-	$DowntimeTimer.start(wave_downtime)
+	if $DowntimeTimer.is_stopped():
+		$DowntimeTimer.start(wave_downtime)
 #endregion
 
 #region Downtime
 func _on_downtime_timer_timeout():
+	print("downtime over")
+	$DowntimeTimer.stop()
+	
 	# bump wave number and start next
 	wave_number += 1
 	_start_wave_spawn()
