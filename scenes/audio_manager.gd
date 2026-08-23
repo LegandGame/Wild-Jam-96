@@ -7,8 +7,9 @@ const LOSE_MUSIC = preload("res://assets/audio/mus_lose.ogg")
 const WIN_MUSIC = preload("res://assets/audio/mus_win.ogg")
 
 const CLICK_EFFECT = preload("res://assets/audio/click.wav")
+const UPGRADE_EFFECT = preload("res://assets/audio/mus_upgrade.ogg")
 
-@export var BASE_MUSIC_DB = -4
+@export var BASE_MUSIC_DB = -6
 
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 @onready var sfx_player: AudioStreamPlayer = $SFXPlayer
@@ -69,7 +70,12 @@ func _on_music_player_finished():
 func play_click():
 	if sfx_player.stream != CLICK_EFFECT:
 		sfx_player.stream = CLICK_EFFECT
-		sfx_player.volume_db = 8
+		sfx_player.volume_db = 15
+	sfx_player.play()
+
+func play_upgrade():
+	sfx_player.stream = UPGRADE_EFFECT
+	sfx_player.volume_db = 0
 	sfx_player.play()
 
 func _on_sfx_player_finished():
