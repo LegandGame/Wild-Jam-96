@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0506nfphkgx3"
-path="res://.godot/imported/enemy_base.png-1fa0a3f4365ea5d8b18428f9b32f0fc7.ctex"
+uid="uid://seic5iy4b7j8"
+path="res://.godot/imported/ally_sword.png-6d57e3dd0b99ee59183a4b8f440cc461.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buttons/enemy_base.png"
-dest_files=["res://.godot/imported/enemy_base.png-1fa0a3f4365ea5d8b18428f9b32f0fc7.ctex"]
+source_file="res://assets/ui/buttons/ally_sword.png"
+dest_files=["res://.godot/imported/ally_sword.png-6d57e3dd0b99ee59183a4b8f440cc461.ctex"]
 
 [params]
 

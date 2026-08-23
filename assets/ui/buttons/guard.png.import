@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://seic5iy4b7j8"
-path="res://.godot/imported/ally_sword.png-1878ead479d9655448c66d7827b20c6e.ctex"
+uid="uid://g8xrjca4cnay"
+path="res://.godot/imported/guard.png-c8aeef661c5e9f38a7a3295fd0f8fe61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buttons/ally_sword.png"
-dest_files=["res://.godot/imported/ally_sword.png-1878ead479d9655448c66d7827b20c6e.ctex"]
+source_file="res://assets/ui/buttons/guard.png"
+dest_files=["res://.godot/imported/guard.png-c8aeef661c5e9f38a7a3295fd0f8fe61.ctex"]
 
 [params]
 

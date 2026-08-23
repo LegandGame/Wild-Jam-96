@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d12pp2loy5872"
-path="res://.godot/imported/red.png-8f51df397e6245100bd8e5dcb5c327cb.ctex"
+uid="uid://0506nfphkgx3"
+path="res://.godot/imported/enemy_base.png-ae54d2b0ca7ee2f1b6b4521888289879.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buttons/red.png"
-dest_files=["res://.godot/imported/red.png-8f51df397e6245100bd8e5dcb5c327cb.ctex"]
+source_file="res://assets/ui/buttons/enemy_base.png"
+dest_files=["res://.godot/imported/enemy_base.png-ae54d2b0ca7ee2f1b6b4521888289879.ctex"]
 
 [params]
 

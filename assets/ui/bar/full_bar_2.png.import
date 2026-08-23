@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvihtd33aygyi"
-path="res://.godot/imported/ally_base.png-33d982a57d8e58891bca7605986b2868.ctex"
+uid="uid://dnvui4vyjry5f"
+path="res://.godot/imported/full_bar_2.png-60299b32b3e42d88a96f739c8ec7c034.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buttons/ally_base.png"
-dest_files=["res://.godot/imported/ally_base.png-33d982a57d8e58891bca7605986b2868.ctex"]
+source_file="res://assets/ui/bar/full_bar_2.png"
+dest_files=["res://.godot/imported/full_bar_2.png-60299b32b3e42d88a96f739c8ec7c034.ctex"]
 
 [params]
 
