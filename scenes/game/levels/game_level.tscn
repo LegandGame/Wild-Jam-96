@@ -91,6 +91,7 @@ offset_left = 1150.0
 offset_top = 290.0
 offset_right = -30.0
 offset_bottom = -330.0
+unit_type = 2
 
 [node name="ChargeUpgradeTile" parent="." unique_id=785219385 instance=ExtResource("10_pekqs")]
 offset_left = 1150.0

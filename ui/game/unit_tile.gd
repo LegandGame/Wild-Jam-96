@@ -13,7 +13,7 @@ var hovered: bool = false
 @export var unit_type_to_button_texture: Dictionary[Types.UnitType, Texture2D] = {
 	Types.UnitType.ALLY_GUARD: preload("res://assets/ui/buttons/guard.png"),
 	Types.UnitType.ALLY_SPEARMAN: preload("res://assets/ui/buttons/spearman.png"),
-	Types.UnitType.ALLY_CAVALRY: preload("res://assets/ui/buttons/spearman.png"), # TODO update
+	Types.UnitType.ALLY_CAVALRY: preload("res://assets/ui/buttons/cavalry.png"),
 }
 
 func _init(p_unit_type: Types.UnitType = Types.UnitType.ALLY_GUARD):
