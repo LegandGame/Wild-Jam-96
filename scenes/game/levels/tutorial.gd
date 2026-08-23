@@ -1,6 +1,6 @@
 class_name Tutorial extends Node3D
 
-const GAME_LEVEL_PATH = "res://scenes/game/levels/game_level.tscn"
+const CONTROLS_LEVEL_PATH = "res://scenes/game/levels/controls.tscn"
 
 @export var tutorial1 = '''
 [font_size=30]My lord! [shake]The Castle is under siege![/shake]
@@ -82,11 +82,11 @@ func _ready():
 	fade_to_black_tween.tween_property($ColorRect, "color:a", 1.0, 3)
 	await fade_to_black_tween.finished
 	
-	get_tree().change_scene_to_file(GAME_LEVEL_PATH)
+	get_tree().change_scene_to_file(CONTROLS_LEVEL_PATH)
 
 func _on_button_pressed():
 	var fade_to_black_tween = create_tween()
 	fade_to_black_tween.tween_property($ColorRect, "color:a", 1.0, 3)
 	await fade_to_black_tween.finished
 	
-	get_tree().change_scene_to_file(GAME_LEVEL_PATH)
+	get_tree().change_scene_to_file(CONTROLS_LEVEL_PATH)

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://tcpq3fw21b2c"]
+
+[ext_resource type="Script" uid="uid://cv7vbf2lb18kc" path="res://scenes/game/levels/controls.gd" id="1_g20mi"]
+[ext_resource type="PackedScene" uid="uid://ivuho8u704n8" path="res://assets/environment/game_environment.tscn" id="2_tbm05"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tbm05"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.6
+dof_blur_near_enabled = true
+
+[node name="Controls" type="Node3D" unique_id=539429923]
+script = ExtResource("1_g20mi")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1175833297]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -330.0
+offset_right = 500.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[font_size=70]Defend the castle![/font_size]
+
+[font_size=35]Enemies are closing in from all sides. 
+Hold down the fort until the OmniSpark is fully charged, but you'll need to use some of that charge on units and upgrades if you want to survive!
+
+Units you summon spawn around your castle.
+Move the camera with [color=deepskyblue]WASD[/color] and [color=deepskyblue]Q/E[/color] to rotate.
+Hover over the buttons on the right for info on their effects and charge cost.[/font_size]"
+horizontal_alignment = 1
+
+[node name="Game_Environment" parent="." unique_id=496390260 instance=ExtResource("2_tbm05")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=665768902]
+transform = Transform3D(-0.8616309, 0.17396675, 0.4767891, 0, 0.9394202, -0.3427677, -0.50753546, -0.29533923, -0.8094335, 48.433117, 10.36496, -35.675396)
+attributes = SubResource("CameraAttributesPractical_tbm05")
+
+[node name="Button" type="Button" parent="." unique_id=836844096]
+offset_left = 1211.0
+offset_top = 664.0
+offset_right = 1268.0
+offset_bottom = 711.0
+text = "Skip"
+
+[node name="Blackout" type="ColorRect" parent="." unique_id=1720469095]
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
