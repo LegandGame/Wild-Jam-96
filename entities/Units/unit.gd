@@ -89,6 +89,8 @@ func _find_new_target(unit_alignment : String) -> void:
 		return
 	var temp_sorted = unit_list[unit_alignment]	# we only need to create a temprary shallow array
 	if len(temp_sorted) < 1:
+		if alignment == "ENEMY":
+			return
 		return
 	temp_sorted.sort_custom(pos_sort)
 	var closest_target = temp_sorted[0]
@@ -120,7 +122,7 @@ func _physics_process(delta: float) -> void:
 	
 	path_location = get_path_location()
 	
-	if _target_in_range() or target_reached:
+	if _target_in_range() and target_reached:
 		#print("in range: ", _target_in_range())
 		#print("reached: ", target_reached)
 		velocity = velocity.move_toward(Vector3.ZERO, stats.acceleration * delta)
