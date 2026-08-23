@@ -15,6 +15,7 @@ func update_name_label():
 	# Scale differently based on font
 	if not DirAccess.get_files_at("res://assets/fonts/").is_empty():
 		text = config_name.to_upper()
+		add_theme_font_override("font", load("res://assets/fonts/PlayfulTime-BLBB8.ttf"))
 		add_theme_font_size_override("font_size", 80)
 	else:
 		text = config_name
