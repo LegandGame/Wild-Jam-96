@@ -30,16 +30,16 @@ signal change_wave_state(wave_state: Types.WaveState, wave_number: int)
 var starting_waves = [
 	# Wave 1
 	{
-		Types.UnitType.ENEMY_GUARD: 4
+		Types.UnitType.ENEMY_GUARD: 3
 	},
 	# Wave 2
 	{
-		Types.UnitType.ENEMY_GUARD: 3,
+		Types.UnitType.ENEMY_GUARD: 2,
 		Types.UnitType.ENEMY_SPEARMAN: 1
 	},
 	# Wave 3
 	{
-		Types.UnitType.ENEMY_GUARD: 3,
+		Types.UnitType.ENEMY_GUARD: 2,
 		Types.UnitType.ENEMY_SPEARMAN: 2
 	},
 	# Wave 4
