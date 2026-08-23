@@ -61,6 +61,9 @@ var wave_number: int
 var units_to_spawn: Array[Types.UnitType]
 var total_unit_count: int
 var remaining_unit_count: int
+
+signal enemy_died
+
 #endregion
 
 #region Process
@@ -174,6 +177,7 @@ func _on_unit_death():
 	print("unit died")
 	remaining_unit_count -= 1
 	
+	enemy_died.emit()
 #endregion
 
 #region Clearing

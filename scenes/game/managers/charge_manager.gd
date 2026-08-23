@@ -107,7 +107,6 @@ func _spawn_unit(unit_type: Types.UnitType):
 	unit.global_position = spawn_point.global_position
 
 func _on_unit_death():
-	# TODO hook this up
 	add_charge(charge_steal)
 
 func _on_shield_attack(amount):

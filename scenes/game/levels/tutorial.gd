@@ -45,7 +45,7 @@ func _ready():
 	description_1_tween.tween_property($Description, "visible_ratio", 1.0, 10)
 	await description_1_tween.finished
 	
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(3).timeout
 	
 	var description_1_fade_tween = create_tween()
 	description_1_fade_tween.tween_property($Description, "modulate:a", 0.0, 1)
@@ -62,7 +62,7 @@ func _ready():
 	description_2_tween.tween_property($Description2, "visible_ratio", 1.0, 10)
 	await description_2_tween.finished
 	
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(3).timeout
 	
 	var description_2_fade_tween = create_tween()
 	description_2_fade_tween.tween_property($Description2, "modulate:a", 0.0, 1)

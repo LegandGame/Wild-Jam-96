@@ -57,7 +57,7 @@ func play_menu_music():
 
 func play_level_music():
 	# kick off intro - follow-up loop is handled on finished signal
-	_play_music(LEVEL_INTRO_MUSIC)
+	_play_music(LEVEL_INTRO_MUSIC, 1, 0)
 
 func play_lose_music():
 	_play_music(LOSE_MUSIC, 1, 0)

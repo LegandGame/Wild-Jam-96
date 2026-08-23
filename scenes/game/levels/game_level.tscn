@@ -105,6 +105,7 @@ offset_bottom = 720.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
+[connection signal="enemy_died" from="WaveManager" to="ChargeManager" method="_on_unit_death"]
 [connection signal="charge_level_changed" from="ChargeManager" to="ChargeBar" method="_on_charge_level_changed"]
 [connection signal="charge_level_changed" from="ChargeManager" to="ChargeUpgradeTile" method="_on_charge_level_changed"]
 [connection signal="charge_modified" from="ChargeManager" to="ChargeBar" method="_on_charge_modified"]
