@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://sv1xqwdf5iyy"]
+[gd_scene format=3 uid="uid://cxhckhe0nfa41"]
 
-[ext_resource type="Script" uid="uid://qexxwcj1b3sy" path="res://ui/game/charge_upgrade_tile.gd" id="1_btl31"]
+[ext_resource type="Script" uid="uid://b08ees2qcwjq7" path="res://ui/game/steal_charge_tile.gd" id="1_femo4"]
 
-[node name="ChargeUpgradeTile" type="Control" unique_id=1736050719]
+[node name="StealChargeTile" type="Control" unique_id=1736050719]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ offset_right = -1180.0
 offset_bottom = -620.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_btl31")
+script = ExtResource("1_femo4")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1736020245]
 layout_mode = 0
@@ -25,7 +25,6 @@ offset_left = 5.0
 offset_top = 5.0
 offset_right = 95.0
 offset_bottom = 95.0
-tooltip_text = "Upgrade Charge"
 ignore_texture_size = true
 stretch_mode = 0
 

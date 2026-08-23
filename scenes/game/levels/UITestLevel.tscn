@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://be22gd8cmlj45" path="res://scenes/game/managers/ChargeManager.tscn" id="1_uc3ao"]
 [ext_resource type="PackedScene" uid="uid://oda5v2pa5v41" path="res://ui/game/ChargeBar.tscn" id="2_siv5y"]
 [ext_resource type="PackedScene" uid="uid://ddl7gxp24n0w1" path="res://ui/game/UnitTile.tscn" id="3_msqvc"]
+[ext_resource type="PackedScene" uid="uid://sv1xqwdf5iyy" path="res://ui/game/ChargeUpgradeTile.tscn" id="4_msqvc"]
+[ext_resource type="PackedScene" uid="uid://cxhckhe0nfa41" path="res://ui/game/StealChargeTile.tscn" id="5_a73e2"]
 
 [node name="UiTestLevel" type="Node3D" unique_id=907255231]
 
@@ -10,12 +12,48 @@
 
 [node name="ChargeBar" parent="." unique_id=900461264 instance=ExtResource("2_siv5y")]
 
-[node name="UnitTile" parent="." unique_id=1736050719 instance=ExtResource("3_msqvc")]
-offset_left = 1162.0
-offset_top = 20.0
-offset_right = 1162.0
-offset_bottom = 20.0
+[node name="GuardTile" parent="." unique_id=1736050719 instance=ExtResource("3_msqvc")]
+offset_left = 1150.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -590.0
 
+[node name="SpearmanTile" parent="." unique_id=1379279403 instance=ExtResource("3_msqvc")]
+offset_left = 1150.0
+offset_top = 160.0
+offset_right = -30.0
+offset_bottom = -460.0
+unit_type = 1
+
+[node name="CavalryTile" parent="." unique_id=1020273727 instance=ExtResource("3_msqvc")]
+offset_left = 1150.0
+offset_top = 290.0
+offset_right = -30.0
+offset_bottom = -330.0
+
+[node name="ChargeUpgradeTile" parent="." unique_id=165553943 instance=ExtResource("4_msqvc")]
+offset_left = 1150.0
+offset_top = 460.0
+offset_right = -30.0
+offset_bottom = -160.0
+
+[node name="StealChargeTile" parent="." unique_id=890274132 instance=ExtResource("5_a73e2")]
+offset_left = 1150.0
+offset_top = 590.0
+offset_right = -30.0
+offset_bottom = -30.0
+
+[connection signal="charge_level_changed" from="ChargeManager" to="ChargeBar" method="_on_charge_level_changed"]
+[connection signal="charge_level_changed" from="ChargeManager" to="ChargeUpgradeTile" method="_on_charge_level_changed"]
 [connection signal="charge_modified" from="ChargeManager" to="ChargeBar" method="_on_charge_modified"]
-[connection signal="charge_modified" from="ChargeManager" to="UnitTile" method="_on_charge_modified"]
-[connection signal="tile_pressed" from="UnitTile" to="ChargeManager" method="_on_unit_tile_tile_pressed"]
+[connection signal="charge_modified" from="ChargeManager" to="GuardTile" method="_on_charge_modified"]
+[connection signal="charge_modified" from="ChargeManager" to="SpearmanTile" method="_on_charge_modified"]
+[connection signal="charge_modified" from="ChargeManager" to="CavalryTile" method="_on_charge_modified"]
+[connection signal="charge_modified" from="ChargeManager" to="ChargeUpgradeTile" method="_on_charge_modified"]
+[connection signal="charge_modified" from="ChargeManager" to="StealChargeTile" method="_on_charge_modified"]
+[connection signal="charge_steal_level_changed" from="ChargeManager" to="StealChargeTile" method="_on_charge_steal_level_changed"]
+[connection signal="tile_pressed" from="GuardTile" to="ChargeManager" method="_on_unit_tile_pressed"]
+[connection signal="tile_pressed" from="SpearmanTile" to="ChargeManager" method="_on_unit_tile_pressed"]
+[connection signal="tile_pressed" from="CavalryTile" to="ChargeManager" method="_on_unit_tile_pressed"]
+[connection signal="charge_upgrade_tile_pressed" from="ChargeUpgradeTile" to="ChargeManager" method="_on_charge_upgrade_tile_pressed"]
+[connection signal="steal_charge_tile_pressed" from="StealChargeTile" to="ChargeManager" method="_on_steal_charge_tile_pressed"]

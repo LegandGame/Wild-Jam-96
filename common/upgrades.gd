@@ -1,5 +1,21 @@
 class_name Upgrades
 
+#region Unit Purchases
+'''
+Unit purchases spawn a unit for a given cost.
+'''
+const UNIT_TYPE_COSTS: Dictionary[Types.UnitType, float] = {
+	Types.UnitType.ALLY_GUARD: 30,
+	Types.UnitType.ALLY_SPEARMAN: 60,
+	Types.UnitType.ALLY_CAVALRY: 90,
+	
+	# These should not be spawnable - costs are higher than possible
+	Types.UnitType.ENEMY_GUARD: 2000,
+	Types.UnitType.ENEMY_SPEARMAN: 2000,
+	Types.UnitType.ENEMY_CAVALRY: 2000,
+}
+#endregion
+
 #region Charge Production Upgrades
 '''
 Charge Production upgrades determine how much charge your castle
