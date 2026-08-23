@@ -24,6 +24,8 @@ var path_location := self.position
 var target_reached := false
 var target : Unit	# enemy unit we are currently moving towards
 
+signal unit_died
+
 func _ready() -> void:
 	_bug_checker()
 	_init_stats()
@@ -72,6 +74,7 @@ func _on_hurtbox_hurt(hit : Hitbox) -> void:
 func _die() -> void:
 	dead = true
 	model.state = "Dead"
+	unit_died.emit()
 	unit_list[alignment].erase(self)
 	self.velocity *= Vector3(0.0, 1.0, 0.0)
 	self.collision_layer = 0

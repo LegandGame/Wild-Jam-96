@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://d36261m3wr51q" path="res://scenes/game/levels/game_level.gd" id="1_w08eq"]
 [ext_resource type="PackedScene" uid="uid://pq6d411mu1kt" path="res://common/rts_camera/rts_camera.tscn" id="1_xtc42"]
 [ext_resource type="PackedScene" uid="uid://bxim7qjugsqwb" path="res://entities/Units/all_units/evil_spearman_unit.tscn" id="3_al50s"]
+[ext_resource type="PackedScene" uid="uid://dqp3v2c7i4ga6" path="res://scenes/game/spawners/EnemySpawn.tscn" id="3_pekqs"]
 [ext_resource type="PackedScene" uid="uid://4d0f7wuoclbx" path="res://entities/Units/all_units/spearman_unit.tscn" id="4_3tf5j"]
 [ext_resource type="PackedScene" uid="uid://cdah1wd0cu4dk" path="res://entities/Units/all_units/evil_guard_unit.tscn" id="5_0wufo"]
 [ext_resource type="PackedScene" uid="uid://cddlh3vyudyj5" path="res://entities/Units/all_units/guard_unit.tscn" id="6_qy3ey"]
@@ -18,6 +19,9 @@
 script = ExtResource("1_w08eq")
 
 [node name="Game_Environment" parent="." unique_id=496390260 instance=ExtResource("1_63uhi")]
+
+[node name="EnemySpawn1" parent="." unique_id=1176679365 instance=ExtResource("3_pekqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.86826, 6.0353317, 351.67365)
 
 [node name="RTSCamera" parent="." unique_id=219880910 instance=ExtResource("1_xtc42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.850845, 10, -14.080742)

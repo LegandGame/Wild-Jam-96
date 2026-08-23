@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b483gbejo5yc5"]
 
-[ext_resource type="Script" uid="uid://bj75n8b7g4gua" path="res://scenes/game/managers/wave_manager.gd" id="1_s0p43"]
+[ext_resource type="Script" uid="uid://c6vdgc2suutev" path="res://scenes/game/managers/wave_manager.gd" id="1_s0p43"]
 
 [node name="WaveManager" type="Node" unique_id=272861379]
 script = ExtResource("1_s0p43")
@@ -8,3 +8,12 @@ script = ExtResource("1_s0p43")
 [node name="SpawnTimer" type="Timer" parent="." unique_id=77420112]
 
 [node name="DowntimeTimer" type="Timer" parent="." unique_id=1847798653]
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1087752061]
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+horizontal_alignment = 1

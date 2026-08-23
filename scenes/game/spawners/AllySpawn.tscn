@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bxc1bg0k8tmtl"]
+
+[node name="AllySpawn" type="Node3D" unique_id=1594643545 groups=["ally_spawn"]]

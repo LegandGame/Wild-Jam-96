@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dqp3v2c7i4ga6"]
+
+[node name="EnemySpawn" type="Node3D" unique_id=1176679365 groups=["enemy_spawn"]]
