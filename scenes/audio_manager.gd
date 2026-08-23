@@ -27,11 +27,17 @@ func _ready():
 	play_menu_music()
 
 func _fade_out(audio_player, seconds):
+	if seconds <= 0:
+		audio_player.volume_db = -80
+		return
 	var tween = create_tween()
 	tween.tween_property(audio_player, "volume_db", -80, seconds)
 	await tween.finished
 
 func _fade_in(audio_player, seconds):
+	if seconds <= 0:
+		audio_player.volume_db = BASE_MUSIC_DB
+		return
 	var tween = create_tween()
 	tween.tween_property(audio_player, "volume_db", BASE_MUSIC_DB, seconds).set_ease(Tween.EASE_OUT)
 	await tween.finished
@@ -57,7 +63,7 @@ func play_lose_music():
 	_play_music(LOSE_MUSIC)
 
 func play_win_music():
-	_play_music(WIN_MUSIC)
+	_play_music(WIN_MUSIC, 1, 0)
 
 func _on_music_player_finished():
 	# handle tracks with intro then loop
