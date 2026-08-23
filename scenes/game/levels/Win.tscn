@@ -29,5 +29,17 @@ offset_bottom = 342.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
-text = "  [wave]You Win![/wave]
-[shake][font_size=50]The Knights are ec[color=skyblue]static[/color]![/font_size][/shake]"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=451435885]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1614713855]
+offset_left = 1082.0
+offset_top = 19.0
+offset_right = 1255.0
+offset_bottom = 66.0
+text = "Back to Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
