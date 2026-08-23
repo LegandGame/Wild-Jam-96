@@ -36,5 +36,4 @@ func _on_body_exited(body : Node3D) -> void:
 
 func _physics_process(delta: float) -> void:
 	if units_overlayed >= 1:
-		print("CORRECT")
 		charge_manager._on_shield_attack(units_overlayed * drain_rate * delta)
