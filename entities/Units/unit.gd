@@ -77,12 +77,14 @@ func _die() -> void:
 	unit_died.emit()
 	self.velocity *= Vector3(0.0, 1.0, 0.0)
 	self.collision_layer = 0
+	unit_list[alignment].erase(self)
 	_update_targets()
 	await get_tree().create_timer(10.0).timeout
 	queue_free()
 
 func _exit_tree() -> void:
-	unit_list[alignment].erase(self)
+	if unit_list[alignment].has(self):
+		unit_list[alignment].erase(self)
 
 # Nav mesh Stuff
 func _find_new_target(unit_alignment : String) -> void:
