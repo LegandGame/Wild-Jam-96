@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ch55nc5r8dc5k"]
 
 [ext_resource type="PackedScene" uid="uid://ivuho8u704n8" path="res://assets/environment/game_environment.tscn" id="1_63uhi"]
+[ext_resource type="Script" uid="uid://d36261m3wr51q" path="res://scenes/game/levels/game_level.gd" id="1_w08eq"]
 [ext_resource type="PackedScene" uid="uid://pq6d411mu1kt" path="res://common/rts_camera/rts_camera.tscn" id="1_xtc42"]
 [ext_resource type="PackedScene" uid="uid://bxim7qjugsqwb" path="res://entities/Units/all_units/evil_spearman_unit.tscn" id="3_al50s"]
 [ext_resource type="PackedScene" uid="uid://4d0f7wuoclbx" path="res://entities/Units/all_units/spearman_unit.tscn" id="4_3tf5j"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cxhckhe0nfa41" path="res://ui/game/StealChargeTile.tscn" id="11_vjkdi"]
 
 [node name="GameLevel" type="Node3D" unique_id=1838144058]
+script = ExtResource("1_w08eq")
 
 [node name="Game_Environment" parent="." unique_id=496390260 instance=ExtResource("1_63uhi")]
 

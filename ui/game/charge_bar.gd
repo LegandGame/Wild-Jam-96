@@ -1,6 +1,15 @@
 class_name ChargeBar extends TextureProgressBar
 
+const BLUE_BAR = preload("res://assets/ui/bar/full_bar_2.png")
+const RED_BAR = preload("res://assets/ui/bar/red_bar.png")
+
 var rate = Upgrades.CHARGE_PRODUCTION_LEVEL_AMOUNTS[0]
+
+func _process(_delta):
+	if (value / max_value) < 0.1:
+		texture_progress = RED_BAR
+	else:
+		texture_progress = BLUE_BAR
 
 func _set_tooltip():
 	tooltip_text = '''

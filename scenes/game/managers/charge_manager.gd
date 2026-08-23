@@ -73,6 +73,7 @@ func multiply_charge_rate(amount: float):
 func _on_unit_tile_pressed(unit_type: Types.UnitType, _cost: float):
 	var have_enough_charge = charge > Upgrades.UNIT_TYPE_COSTS[unit_type]
 	if have_enough_charge:
+		AudioManager.play_click()
 		add_charge(-Upgrades.UNIT_TYPE_COSTS[unit_type])
 		_spawn_unit(unit_type)
 
@@ -80,6 +81,7 @@ func _on_charge_upgrade_tile_pressed(_charge_level: int, _cost: float):
 	var at_max_level = charge_level + 1 == Upgrades.CHARGE_PRODUCTION_LEVELS
 	var have_enough_charge = charge > Upgrades.CHARGE_PRODUCTION_NEXT_LEVEL_COSTS[charge_level]
 	if have_enough_charge and not at_max_level:
+		AudioManager.play_click()
 		add_charge(-Upgrades.CHARGE_PRODUCTION_NEXT_LEVEL_COSTS[charge_level])
 		_increase_charge_level()
 
@@ -87,6 +89,7 @@ func _on_steal_charge_tile_pressed(_charge_steal_level: int, _cost: float):
 	var at_max_level = charge_steal_level + 1 == Upgrades.CHARGE_STEAL_LEVELS
 	var have_enough_charge = charge > Upgrades.CHARGE_STEAL_NEXT_LEVEL_COSTS[charge_level]
 	if have_enough_charge and not at_max_level:
+		AudioManager.play_click()
 		add_charge(-Upgrades.CHARGE_STEAL_NEXT_LEVEL_COSTS[charge_level])
 		_increase_charge_steal_level()
 

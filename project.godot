@@ -21,6 +21,7 @@ config/icon="uid://dpbnxn6gvroe6"
 GUIDE="*uid://p2jwrgjcbexr"
 PhantomCameraManager="*uid://duq6jhf6unyis"
 ScreenSpaceEdges="*uid://bsluhmkfltf41"
+AudioManager="*uid://dhkba5213rmw4"
 
 [display]
 

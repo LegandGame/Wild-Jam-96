@@ -47,6 +47,4 @@ func _on_charge_modified(value):
 	can_afford = value >= cost
 
 func _on_texture_button_pressed():
-	if can_afford:
-		$TextureButton.modulate = Color(0,0,1,1)
-		tile_pressed.emit(unit_type, cost)
+	tile_pressed.emit(unit_type, cost)
