@@ -1,6 +1,6 @@
 extends Node3D
 
-@export_file_path() var main_menu_path = "res://ui/opening/opening.tscn"
+@export_file_path() var main_menu_path = "res://ui/menus/main_menu/custom_main_menu.tscn"
 
 @export var win_text = '''
 Finally...                           
