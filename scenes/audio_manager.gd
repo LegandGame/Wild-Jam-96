@@ -64,6 +64,8 @@ func _on_music_player_finished():
 	if music_player.stream == LEVEL_INTRO_MUSIC:
 		music_player.stream = LEVEL_LOOP_MUSIC
 		music_player.play()
+	elif music_player.stream == WIN_MUSIC:
+		play_menu_music()
 #endregion
 
 #region SFXPlayer
