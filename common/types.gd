@@ -2,10 +2,14 @@ class_name Types
 
 enum UnitType {
 	## Ally Units
-	ALLY_DEBUG,
+	ALLY_GUARD,
+	ALLY_SPEARMAN,
+	ALLY_CAVALRY,
 	
 	## Enemy Units
-	ENEMY_DEBUG,
+	ENEMY_GUARD,
+	ENEMY_SPEARMAN,
+	ENEMY_CAVALRY,
 }
 
 ## Used by [WaveManager] to track state within wave.
