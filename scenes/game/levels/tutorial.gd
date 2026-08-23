@@ -1,6 +1,6 @@
 class_name Tutorial extends Node3D
 
-const CONTROLS_LEVEL_PATH = "res://scenes/game/levels/controls.tscn"
+const CONTROLS_LEVEL_PATH = "res://scenes/game/levels/Controls.tscn"
 
 @export var tutorial1 = '''
 [font_size=30]My lord! [shake]The Castle is under siege![/shake]
