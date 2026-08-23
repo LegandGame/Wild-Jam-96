@@ -87,7 +87,7 @@ input_2/reset = true
 animation = &"Walk"
 
 [resource]
-graph_offset = Vector2(-342.02646, 63.331757)
+graph_offset = Vector2(-352.7051, 94.95998)
 nodes/output/position = Vector2(940, 180)
 nodes/State/node = SubResource("AnimationNodeTransition_113kd")
 nodes/State/position = Vector2(40, 160)

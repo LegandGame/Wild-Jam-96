@@ -5,9 +5,10 @@
 [resource]
 script = ExtResource("1_ugjmq")
 name = "Spearman"
-health = 5
+health = 4
 cost = 2
 move_speed = 10.0
 acceleration = 10.0
+damage = 2
 attack_range = 6.0
 metadata/_custom_type_script = "uid://bxahglea2iyqi"

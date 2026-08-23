@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_jlaf8")
 name = "Guard"
-health = 5
+health = 6
 move_speed = 12.0
 acceleration = 12.0
 attack_range = 4.0

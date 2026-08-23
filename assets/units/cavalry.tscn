@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dh8or01g8o3al"]
+
+[ext_resource type="PackedScene" uid="uid://c88vwjjqv00pa" path="res://assets/glb_imports/KnightCavalry.glb" id="1_egnho"]
+[ext_resource type="Script" uid="uid://bylc0nnyiaxqh" path="res://common/animated_character.gd" id="2_xmney"]
+[ext_resource type="Material" uid="uid://c8afcy76slpoc" path="res://assets/materials/cavalry.tres" id="3_pnaxo"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://rph5fan0ren8" path="res://assets/units/animation/blend_tree.tres" id="4_1n1s3"]
+
+[node name="Cavalry" unique_id=587748622 node_paths=PackedStringArray("animation_tree") instance=ExtResource("1_egnho")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+script = ExtResource("2_xmney")
+animation_tree = NodePath("AnimationTree")
+
+[node name="RIG-Guard_Rig_deform" parent="." index="0" unique_id=1033723616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="DEF-Vehicle" parent="RIG-Guard_Rig_deform/Skeleton3D" parent_id_path=PackedInt32Array(547435937) index="0" unique_id=830075532]
+transform = Transform3D(1, -5.684342e-14, -1.0410972e-06, -1.0410972e-06, 0, -1, 5.684342e-14, 1, 0, -3.626175e-16, 7.2367663, 1.0423774)
+
+[node name="Horsycle" parent="RIG-Guard_Rig_deform/Skeleton3D/DEF-Vehicle" index="0" unique_id=614654772]
+surface_material_override/0 = ExtResource("3_pnaxo")
+
+[node name="DEF-hat" parent="RIG-Guard_Rig_deform/Skeleton3D" parent_id_path=PackedInt32Array(547435937) index="1" unique_id=771122707]
+transform = Transform3D(1, 1.042161e-14, 2.3841864e-07, 0, 1, -4.371139e-08, -2.3841864e-07, 4.371139e-08, 1, 0, 15.549989, -0.418043)
+
+[node name="Knight_Cavalry_001" parent="RIG-Guard_Rig_deform/Skeleton3D/DEF-hat" index="0" unique_id=2061481815]
+surface_material_override/0 = ExtResource("3_pnaxo")
+
+[node name="DEF-grip_R" parent="RIG-Guard_Rig_deform/Skeleton3D" parent_id_path=PackedInt32Array(547435937) index="2" unique_id=618143871]
+transform = Transform3D(0.5245468, -0.8240734, -0.21390077, -0.8431838, -0.5376137, 0.0034777443, -0.11786195, 0.17853348, -0.97684884, -7.0131173, 9.408412, -0.3927135)
+
+[node name="Lance" parent="RIG-Guard_Rig_deform/Skeleton3D/DEF-grip_R" index="0" unique_id=1404009940]
+surface_material_override/0 = ExtResource("3_pnaxo")
+
+[node name="Knight_Cavalry" parent="RIG-Guard_Rig_deform/Skeleton3D" parent_id_path=PackedInt32Array(547435937) index="3" unique_id=1748008886]
+surface_material_override/0 = ExtResource("3_pnaxo")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=289926696]
+tree_root = ExtResource("4_1n1s3")
+anim_player = NodePath("../AnimationPlayer")
+parameters/State/current_state = "Idle"
+parameters/State/transition_request = ""
+parameters/State/current_index = 0
+parameters/HitReaction/active = false
+parameters/HitReaction/internal_active = false
+parameters/HitReaction/request = 0
+parameters/Attack/active = false
+parameters/Attack/internal_active = false
+parameters/Attack/request = 0
+parameters/MoveSpeed/scale = 1.0

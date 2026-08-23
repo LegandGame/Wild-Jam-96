@@ -16,6 +16,7 @@ static var unit_list := {
 }
 
 var attacking := false
+var dead := false
 var time_alive := 0.0
 var time_since_path_update := 0.0
 var look_direction := Vector3.FORWARD
@@ -61,7 +62,7 @@ func _update_targets() -> void:
 
 # -------------
 func hurt(attacker: Unit) -> void:
-	if !is_instance_valid(attacker): return
+	if dead or !is_instance_valid(attacker): return
 	velocity *= Vector3(0.0, 1.0, 0.0)
 	health.value -= attacker.stats.damage
 func _on_hurtbox_hurt(hit : Hitbox) -> void:
@@ -69,9 +70,13 @@ func _on_hurtbox_hurt(hit : Hitbox) -> void:
 	model.play_one_shot("HitReaction")
 
 func _die() -> void:
+	dead = true
 	model.state = "Dead"
 	unit_list[alignment].erase(self)
+	self.velocity *= Vector3(0.0, 1.0, 0.0)
+	self.collision_layer = 0
 	_update_targets()
+	await get_tree().create_timer(10.0).timeout
 	queue_free()
 
 # Nav mesh Stuff
@@ -91,6 +96,11 @@ func update_target_location(target_pos : Vector3) -> void:
 	navigator.target_position = target_pos
 
 func _physics_process(delta: float) -> void:
+	if dead: return
+	
+	if is_instance_valid(target) and target.dead:
+		target = null
+	
 	time_alive += delta
 	time_since_path_update += delta
 	
@@ -129,7 +139,12 @@ func update_path():
 	time_since_path_update = 0.0
 	if can_see_enemy(true): return
 	
-	if is_instance_valid(target) and navigator.target_position.distance_squared_to(target.global_position) >= 36.0:
+	if !is_instance_valid(target) or target.dead:
+		if !navigator.target_position.is_equal_approx(self.global_position):
+			navigator.target_position = self.global_position
+		return
+	
+	if navigator.target_position.distance_squared_to(target.global_position) >= 36.0:
 		navigator.target_position = target.global_position
 
 func get_path_location():
@@ -139,14 +154,14 @@ func get_path_location():
 	target_reached = navigator.is_target_reached()
 	return navigator.get_next_path_position()
 
-func can_see_enemy(override_target := false):
+func can_see_enemy(override_target := false) -> bool:
 	if !line_of_sight or !is_instance_valid(target): return false
 	line_of_sight.look_at(target.position, Vector3.UP, true)
 	var colliding_with: Node3D = line_of_sight.get_collider()
-	if is_instance_valid(colliding_with) and colliding_with is Unit and colliding_with.alignment != self.alignment:
+	if is_instance_valid(colliding_with) and colliding_with is Unit and !colliding_with.dead and colliding_with.alignment != self.alignment:
 		if override_target:
 			target = colliding_with
-		return colliding_with
+		return true
 	return false
 
 # --- misc and utils

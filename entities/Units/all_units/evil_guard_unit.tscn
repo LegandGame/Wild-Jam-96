@@ -10,6 +10,7 @@ radius = 1.0
 height = 6.0
 
 [node name="EvilGuard" type="CharacterBody3D" unique_id=764353807 node_paths=PackedStringArray("model", "health", "navigator", "line_of_sight")]
+collision_layer = 5
 script = ExtResource("1_cglnm")
 alignment = "ENEMY"
 stats = ExtResource("2_esiq5")

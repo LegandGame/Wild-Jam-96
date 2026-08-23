@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://dcosg2bqkbx8m"]
+
+[ext_resource type="Script" uid="uid://bxahglea2iyqi" path="res://entities/Units/unit_stats.gd" id="1_jp3nl"]
+
+[resource]
+script = ExtResource("1_jp3nl")
+name = "Cavalry"
+health = 8
+cost = 6
+move_speed = 25.0
+acceleration = 25.0
+damage = 3
+attack_range = 8.0
+metadata/_custom_type_script = "uid://bxahglea2iyqi"
