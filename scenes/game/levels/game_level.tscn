@@ -36,7 +36,7 @@ current = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.18866, 6.0353317, 314.34662)
 
 [node name="EnemySpawn2" parent="EnemySpawns" unique_id=128807636 instance=ExtResource("3_pekqs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -230.39091, 0, -348.7002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.942085, 0.70160675, -266.85867)
 
 [node name="EnemySpawn3" parent="EnemySpawns" unique_id=520584992 instance=ExtResource("3_pekqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -316.0415, 0, -210.44667)
@@ -54,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -180.57404, 0, 272.66388)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.80888, 0, 331.72873)
 
 [node name="EnemySpawn8" parent="EnemySpawns" unique_id=345691081 instance=ExtResource("3_pekqs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.45918, 0, 145.12808)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.45918, 6.6445084, 108.09848)
 
 [node name="AllySpawns" type="Node" parent="." unique_id=2122331443]
 

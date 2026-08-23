@@ -24,7 +24,7 @@ signal change_wave_state(wave_state: Types.WaveState, wave_number: int)
 @export var wave_spawn_delay: float = 2.0
 
 ## Downtime between waves in seconds
-@export var wave_downtime: float = 15.0
+@export var wave_downtime: float = 8.0
 
 ## Statically defined first 5 waves - after this, they are generated.
 var starting_waves = [

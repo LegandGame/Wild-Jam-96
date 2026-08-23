@@ -19,12 +19,12 @@ const UNIT_TYPE_COSTS: Dictionary[Types.UnitType, float] = {
 #region Charge Production Upgrades
 '''
 Charge Production upgrades determine how much charge your castle
-generates per second. Starts out with 1.
+generates per second. Starts out with 2.
 '''
 const CHARGE_PRODUCTION_LEVELS = 5
 const CHARGE_PRODUCTION_LEVEL_AMOUNTS: Dictionary[int, float] = {
-	0: 1,
-	1: 2,
+	0: 2,
+	1: 3,
 	2: 4,
 	3: 8,
 	4: 16
@@ -45,9 +45,9 @@ killing an enemy. Starts out with 0.
 '''
 const CHARGE_STEAL_LEVELS = 3
 const CHARGE_STEAL_AMOUNTS: Dictionary[int, float] = {
-	0: 0,
-	1: 5,
-	2: 10,
+	0: 5,
+	1: 10,
+	2: 15,
 }
 const CHARGE_STEAL_NEXT_LEVEL_COSTS: Dictionary[int, float] = {
 	0: 200, # Going from level 0 to 1
