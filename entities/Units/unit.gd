@@ -75,12 +75,14 @@ func _die() -> void:
 	dead = true
 	model.state = "Dead"
 	unit_died.emit()
-	unit_list[alignment].erase(self)
 	self.velocity *= Vector3(0.0, 1.0, 0.0)
 	self.collision_layer = 0
 	_update_targets()
 	await get_tree().create_timer(10.0).timeout
 	queue_free()
+
+func _exit_tree() -> void:
+	unit_list[alignment].erase(self)
 
 # Nav mesh Stuff
 func _find_new_target(unit_alignment : String) -> void:
@@ -136,7 +138,7 @@ func _physics_process(delta: float) -> void:
 	
 	global_rotation.y = lerp_angle(global_rotation.y, atan2(look_direction.x, look_direction.z), stats.acceleration * delta)
 	
-	if !flatten_vector(velocity).is_zero_approx():
+	if flatten_vector(velocity).length_squared() > 0.15:
 		model.state = "Walking"
 	else:
 		model.state = "Idle"
