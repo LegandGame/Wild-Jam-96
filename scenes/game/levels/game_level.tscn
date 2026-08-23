@@ -102,9 +102,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.436264, 0, 58.231476)
 
 [node name="WaveManager" parent="." unique_id=1795922052 instance=ExtResource("8_j4rxa")]
 
-[node name="ChargeManager" parent="." unique_id=611964090 groups=["charge_manager"] instance=ExtResource("7_bh5ub")]
-
 [node name="ChargeBar" parent="." unique_id=874576994 instance=ExtResource("8_w08eq")]
+
+[node name="ChargeManager" parent="." unique_id=611964090 groups=["charge_manager"] instance=ExtResource("7_bh5ub")]
 
 [node name="GuardTile" parent="." unique_id=1736050719 instance=ExtResource("9_j4rxa")]
 offset_left = 1150.0

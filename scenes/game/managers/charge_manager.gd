@@ -36,6 +36,9 @@ var unit_type_to_preload: Dictionary[Types.UnitType, Resource] = {
 	Types.UnitType.ALLY_CAVALRY: preload("res://entities/Units/all_units/cavalry_unit.tscn")
 }
 
+var charge_at_last_display = starting_charge
+var seconds_since_charge_display = 0
+
 func _ready():
 	# set initial values
 	charge = starting_charge
@@ -51,6 +54,30 @@ func _process(delta):
 	# add charge since last tick
 	if charge_production_enabled:
 		add_charge(charge_rate * delta)
+	
+	# display a charge number
+	seconds_since_charge_display += delta
+	if seconds_since_charge_display > 1:
+		_show_number((charge - charge_at_last_display) / seconds_since_charge_display)
+		charge_at_last_display = charge
+		seconds_since_charge_display = 0
+
+func _show_number(amount):
+	if amount == 0:
+		return
+	
+	var label = Label.new()
+	label.add_theme_color_override("font_color", Color.DEEP_SKY_BLUE if amount > 0 else Color.WEB_MAROON)
+	label.add_theme_font_size_override("font_size", 20)
+	label.position = Vector2(55,10)
+	label.size = Vector2(100,100)
+	label.text = "{0}{1}".format([("+" if amount > 0 else "-"), "%.1f" % amount])
+	add_child(label)
+	
+	var target_position = label.position - Vector2(0, 50)
+	var vert_tween = create_tween()
+	vert_tween.tween_property(label, "position", target_position, 3)
+	vert_tween.tween_callback(func(): label.queue_free())
 
 func add_charge(amount: float):
 	charge += amount
@@ -88,10 +115,10 @@ func _on_charge_upgrade_tile_pressed(_charge_level: int, _cost: float):
 
 func _on_steal_charge_tile_pressed(_charge_steal_level: int, _cost: float):
 	var at_max_level = charge_steal_level + 1 == Upgrades.CHARGE_STEAL_LEVELS
-	var have_enough_charge = charge > Upgrades.CHARGE_STEAL_NEXT_LEVEL_COSTS[charge_level]
+	var have_enough_charge = charge > Upgrades.CHARGE_STEAL_NEXT_LEVEL_COSTS[charge_steal_level]
 	if have_enough_charge and not at_max_level:
 		AudioManager.play_click()
-		add_charge(-Upgrades.CHARGE_STEAL_NEXT_LEVEL_COSTS[charge_level])
+		add_charge(-Upgrades.CHARGE_STEAL_NEXT_LEVEL_COSTS[charge_steal_level])
 		_increase_charge_steal_level()
 
 func _spawn_unit(unit_type: Types.UnitType):

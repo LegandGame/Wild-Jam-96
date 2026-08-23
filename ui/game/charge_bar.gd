@@ -18,6 +18,7 @@ func _set_tooltip():
 	'''.format(["%.0f" % value, "%.0f" % max_value, "%.0f" % rate])
 
 func _on_charge_modified(p_value):
+	var delta = p_value - value
 	value = p_value
 	$Label.text = "%.0f" % ((value / max_value) * 100) + "%"
 	_set_tooltip()
