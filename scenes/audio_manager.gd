@@ -60,7 +60,7 @@ func play_level_music():
 	_play_music(LEVEL_INTRO_MUSIC)
 
 func play_lose_music():
-	_play_music(LOSE_MUSIC)
+	_play_music(LOSE_MUSIC, 1, 0)
 
 func play_win_music():
 	_play_music(WIN_MUSIC, 1, 0)
@@ -70,7 +70,7 @@ func _on_music_player_finished():
 	if music_player.stream == LEVEL_INTRO_MUSIC:
 		music_player.stream = LEVEL_LOOP_MUSIC
 		music_player.play()
-	elif music_player.stream == WIN_MUSIC:
+	elif music_player.stream == WIN_MUSIC or music_player.stream == LOSE_MUSIC:
 		play_menu_music()
 #endregion
 

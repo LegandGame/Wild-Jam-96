@@ -2,26 +2,24 @@ extends Node3D
 
 @export_file_path() var main_menu_path = "res://ui/opening/opening.tscn"
 
-@export var win_text = '''
-Finally...                           
-    The [color=deepskyblue][b]OmniSpark[/b][/color] is charged...       
-  The [color=skyblue][b]Shields[/b][/color] are full strength...       
-[font_size=50]And the [font_size=60][color=gray][b]Castle[/b][/color][/font_size] is safe![/font_size]
+#TODO update
+@export var lose_text = '''
+[font_size=50]The [font_size=60][color=gray][b]Castle[/b][/color][/font_size] is overrun![/font_size]
+The [color=deepskyblue][b]OmniSpark[/b][/color] has been [color=maroon]lost[/color]...       
 '''
 
-@export var you_win = '''  [wave]You Win![/wave]
-[shake][font_size=50]The Knights are ec[color=skyblue]static[/color]![/font_size][/shake]
+# TODO update
+@export var try_again = '''[wave]Try Again![/wave]
+[shake][font_size=50]The Knights need you![/font_size][/shake]
 '''
 
 func _ready():
-	AudioManager.play_menu_music()
-	
 	# initialize parts of scene
 	$TextLabel.visible_ratio = 0.0
-	$TextLabel.text = win_text
+	$TextLabel.text = lose_text
 	
-	$YouWin.modulate.a = 0
-	$YouWin.text = you_win
+	$TryAgain.modulate.a = 0
+	$TryAgain.text = try_again
 	
 	$Button.visible = false
 	
@@ -37,20 +35,21 @@ func _ready():
 	var text_tween = create_tween()
 	text_tween.tween_property($TextLabel, "visible_ratio", 1.0, 10)
 	
+	AudioManager.play_lose_music()
+	
 	await get_tree().create_timer(5).timeout
-		
+	
 	await text_tween.finished
 	await get_tree().create_timer(2).timeout
 	
-	# fade story text out, start win music
+	# fade story text out, start lose music
 	var fade_tween = create_tween()
 	fade_tween.tween_property($TextLabel, "modulate:a", 0, 3)
-	AudioManager.play_win_music()
 	await fade_tween.finished
 	
-	# fade in win text
+	# fade in lose text
 	var win_tween = create_tween()
-	win_tween.tween_property($YouWin, "modulate:a", 1, 3)
+	win_tween.tween_property($TryAgain, "modulate:a", 1, 3)
 	
 	await get_tree().create_timer(3).timeout
 	$Button.visible = true

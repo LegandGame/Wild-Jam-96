@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cdah1wd0cu4dk" path="res://entities/Units/all_units/evil_guard_unit.tscn" id="5_0wufo"]
 [ext_resource type="PackedScene" uid="uid://cddlh3vyudyj5" path="res://entities/Units/all_units/guard_unit.tscn" id="6_qy3ey"]
 [ext_resource type="PackedScene" uid="uid://be22gd8cmlj45" path="res://scenes/game/managers/ChargeManager.tscn" id="7_bh5ub"]
+[ext_resource type="PackedScene" uid="uid://b483gbejo5yc5" path="res://scenes/game/managers/WaveManager.tscn" id="8_j4rxa"]
 [ext_resource type="PackedScene" uid="uid://oda5v2pa5v41" path="res://ui/game/ChargeBar.tscn" id="8_w08eq"]
 [ext_resource type="PackedScene" uid="uid://ddl7gxp24n0w1" path="res://ui/game/UnitTile.tscn" id="9_j4rxa"]
 [ext_resource type="PackedScene" uid="uid://sv1xqwdf5iyy" path="res://ui/game/ChargeUpgradeTile.tscn" id="10_pekqs"]
@@ -66,6 +67,8 @@ transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8
 [node name="EvilGuard6" parent="Units" unique_id=132718018 instance=ExtResource("5_0wufo")]
 transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, -96.15076, 0.0423584, 51.330215)
 
+[node name="WaveManager" parent="." unique_id=1795922052 instance=ExtResource("8_j4rxa")]
+
 [node name="ChargeManager" parent="." unique_id=611964090 instance=ExtResource("7_bh5ub")]
 
 [node name="ChargeBar" parent="." unique_id=874576994 instance=ExtResource("8_w08eq")]
@@ -117,6 +120,7 @@ color = Color(0, 0, 0, 0)
 [connection signal="charge_modified" from="ChargeManager" to="StealChargeTile" method="_on_charge_modified"]
 [connection signal="charge_steal_level_changed" from="ChargeManager" to="StealChargeTile" method="_on_charge_steal_level_changed"]
 [connection signal="max_charge_reached" from="ChargeManager" to="." method="_on_max_charge_reached"]
+[connection signal="min_charge_reached" from="ChargeManager" to="." method="_on_min_charge_reached"]
 [connection signal="tile_pressed" from="GuardTile" to="ChargeManager" method="_on_unit_tile_pressed"]
 [connection signal="tile_pressed" from="SpearmanTile" to="ChargeManager" method="_on_unit_tile_pressed"]
 [connection signal="tile_pressed" from="CavalryTile" to="ChargeManager" method="_on_unit_tile_pressed"]
