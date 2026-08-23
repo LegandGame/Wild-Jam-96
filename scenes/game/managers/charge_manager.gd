@@ -1,5 +1,5 @@
 ## Manager for Charge levels, registering changes and emitting signals on events
-class_name ChargeManager extends Node3D
+class_name ChargeManager extends Node
 
 # Signals
 signal min_charge_reached

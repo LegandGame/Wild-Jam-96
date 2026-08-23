@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://c0a0wbij8nlgy" path="res://scenes/game/managers/charge_manager.gd" id="1_hjomn"]
 
-[node name="ChargeManager" type="Node3D" unique_id=502572430]
+[node name="ChargeManager" type="Node" unique_id=611964090]
 script = ExtResource("1_hjomn")

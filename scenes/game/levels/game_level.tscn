@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://4d0f7wuoclbx" path="res://entities/Units/all_units/spearman_unit.tscn" id="4_3tf5j"]
 [ext_resource type="PackedScene" uid="uid://cdah1wd0cu4dk" path="res://entities/Units/all_units/evil_guard_unit.tscn" id="5_0wufo"]
 [ext_resource type="PackedScene" uid="uid://cddlh3vyudyj5" path="res://entities/Units/all_units/guard_unit.tscn" id="6_qy3ey"]
+[ext_resource type="PackedScene" uid="uid://be22gd8cmlj45" path="res://scenes/game/managers/ChargeManager.tscn" id="7_bh5ub"]
+[ext_resource type="PackedScene" uid="uid://oda5v2pa5v41" path="res://ui/game/ChargeBar.tscn" id="8_w08eq"]
+[ext_resource type="PackedScene" uid="uid://ddl7gxp24n0w1" path="res://ui/game/UnitTile.tscn" id="9_j4rxa"]
+[ext_resource type="PackedScene" uid="uid://sv1xqwdf5iyy" path="res://ui/game/ChargeUpgradeTile.tscn" id="10_pekqs"]
+[ext_resource type="PackedScene" uid="uid://cxhckhe0nfa41" path="res://ui/game/StealChargeTile.tscn" id="11_vjkdi"]
 
 [node name="GameLevel" type="Node3D" unique_id=1838144058]
 
@@ -58,5 +63,55 @@ transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8
 
 [node name="EvilGuard6" parent="Units" unique_id=132718018 instance=ExtResource("5_0wufo")]
 transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, -96.15076, 0.0423584, 51.330215)
+
+[node name="ChargeManager" parent="." unique_id=611964090 instance=ExtResource("7_bh5ub")]
+
+[node name="ChargeBar" parent="." unique_id=874576994 instance=ExtResource("8_w08eq")]
+
+[node name="GuardTile" parent="." unique_id=1736050719 instance=ExtResource("9_j4rxa")]
+offset_left = 1150.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -590.0
+
+[node name="SpearmanTile" parent="." unique_id=576672987 instance=ExtResource("9_j4rxa")]
+offset_left = 1150.0
+offset_top = 160.0
+offset_right = -30.0
+offset_bottom = -460.0
+unit_type = 1
+
+[node name="CavalryTile" parent="." unique_id=1440635175 instance=ExtResource("9_j4rxa")]
+offset_left = 1150.0
+offset_top = 290.0
+offset_right = -30.0
+offset_bottom = -330.0
+
+[node name="ChargeUpgradeTile" parent="." unique_id=785219385 instance=ExtResource("10_pekqs")]
+offset_left = 1150.0
+offset_top = 460.0
+offset_right = -30.0
+offset_bottom = -160.0
+
+[node name="StealChargeTile" parent="." unique_id=1391155548 instance=ExtResource("11_vjkdi")]
+offset_left = 1150.0
+offset_top = 590.0
+offset_right = -30.0
+offset_bottom = -30.0
+
+[connection signal="charge_level_changed" from="ChargeManager" to="ChargeBar" method="_on_charge_level_changed"]
+[connection signal="charge_level_changed" from="ChargeManager" to="ChargeUpgradeTile" method="_on_charge_level_changed"]
+[connection signal="charge_modified" from="ChargeManager" to="ChargeBar" method="_on_charge_modified"]
+[connection signal="charge_modified" from="ChargeManager" to="GuardTile" method="_on_charge_modified"]
+[connection signal="charge_modified" from="ChargeManager" to="SpearmanTile" method="_on_charge_modified"]
+[connection signal="charge_modified" from="ChargeManager" to="CavalryTile" method="_on_charge_modified"]
+[connection signal="charge_modified" from="ChargeManager" to="ChargeUpgradeTile" method="_on_charge_modified"]
+[connection signal="charge_modified" from="ChargeManager" to="StealChargeTile" method="_on_charge_modified"]
+[connection signal="charge_steal_level_changed" from="ChargeManager" to="StealChargeTile" method="_on_charge_steal_level_changed"]
+[connection signal="tile_pressed" from="GuardTile" to="ChargeManager" method="_on_unit_tile_pressed"]
+[connection signal="tile_pressed" from="SpearmanTile" to="ChargeManager" method="_on_unit_tile_pressed"]
+[connection signal="tile_pressed" from="CavalryTile" to="ChargeManager" method="_on_unit_tile_pressed"]
+[connection signal="charge_upgrade_tile_pressed" from="ChargeUpgradeTile" to="ChargeManager" method="_on_charge_upgrade_tile_pressed"]
+[connection signal="steal_charge_tile_pressed" from="StealChargeTile" to="ChargeManager" method="_on_steal_charge_tile_pressed"]
 
 [editable path="RTSCamera"]

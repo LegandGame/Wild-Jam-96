@@ -1,11 +1,12 @@
 ## Wave Manager, handles starting waves, stopping waves, and spawning units
-class_name WaveManager extends Node3D
+class_name WaveManager extends Node
 
 #region UnitScenes
 ## Map of UnitType to preloaded unit scene
 var unit_type_to_preload: Dictionary[Types.UnitType, Resource] = {
-	Types.UnitType.ALLY_DEBUG: preload("res://entities/Units/debug_unit/debug_unit.tscn"),
-	Types.UnitType.ENEMY_DEBUG: preload("res://entities/Units/debug_unit/debug_unit.tscn")
+	Types.UnitType.ENEMY_GUARD: preload("res://entities/Units/all_units/evil_guard_unit.tscn"),
+	Types.UnitType.ENEMY_SPEARMAN: preload("res://entities/Units/all_units/evil_spearman_unit.tscn"),
+	Types.UnitType.ENEMY_CAVALRY: preload("res://entities/Units/all_units/evil_guard_unit.tscn")
 }
 #endregion
 

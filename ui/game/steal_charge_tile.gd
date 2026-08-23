@@ -7,7 +7,6 @@ var charge_steal_level = 0
 var can_afford: bool = false
 var hovered: bool = false
 
-# TODO update textures
 @export var default_texture: Texture2D = preload("res://assets/ui/buttons/charge_steal_1.png")
 @export var charge_steal_level_to_button_texture: Dictionary[int, Texture2D] = {
 	0: preload("res://assets/ui/buttons/charge_steal_1.png"),
