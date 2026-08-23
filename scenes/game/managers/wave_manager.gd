@@ -62,6 +62,11 @@ var units_to_spawn: Array[Types.UnitType]
 var total_unit_count: int
 var remaining_unit_count: int
 
+var clear_seconds: float = 0.0
+var clear_damage_increase_level = 0
+signal clear_damage_increase
+signal clear_damage_reset
+
 signal enemy_died
 
 #endregion
@@ -78,7 +83,7 @@ func _ready():
 	# start initial wave
 	_start_wave_spawn()
 
-func _process(_delta):
+func _process(delta):
 	# update wave label
 	match wave_state:
 		Types.WaveState.SPAWNING, Types.WaveState.CLEARING:
@@ -91,6 +96,13 @@ func _process(_delta):
 	if wave_state == Types.WaveState.CLEARING:
 		if remaining_unit_count == 0:
 			_handle_wave_clear()
+		else:
+			clear_seconds += delta
+			if floor(clear_seconds / 30) > clear_damage_increase_level:
+				clear_damage_increase_level += 1
+				clear_damage_increase.emit()
+			if clear_damage_increase_level:
+				$Label.text += " (Damage +{0}!)".format([clear_damage_increase_level])
 #endregion
 
 #region Spawning
@@ -145,6 +157,8 @@ func _on_spawn_timer_timeout():
 	if units_to_spawn.is_empty():
 		wave_state = Types.WaveState.CLEARING
 		$SpawnTimer.stop()
+		clear_seconds = 0
+		clear_damage_increase_level = 0
 	else:
 		_spawn_unit(units_to_spawn[0])
 		
@@ -170,6 +184,9 @@ func _on_unit_death():
 
 #region Clearing
 func _handle_wave_clear():
+	clear_seconds = 0
+	clear_damage_increase_level = 0
+	clear_damage_reset.emit()
 	wave_state = Types.WaveState.DOWNTIME
 	if $DowntimeTimer.is_stopped():
 		$DowntimeTimer.start(wave_downtime)

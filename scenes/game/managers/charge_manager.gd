@@ -131,7 +131,6 @@ func _on_unit_death():
 	add_charge(charge_steal)
 
 func _on_shield_attack(amount):
-	# TODO hook this up
 	add_charge(-amount)
 
 func _increase_charge_level():
