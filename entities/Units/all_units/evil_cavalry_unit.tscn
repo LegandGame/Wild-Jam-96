@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://brhf6jjci63nj"]
 
 [ext_resource type="Script" uid="uid://d2geap8a52qi4" path="res://entities/Units/unit.gd" id="1_501ng"]
-[ext_resource type="Resource" uid="uid://dcosg2bqkbx8m" path="res://entities/Units/unit_type_stats/cavalry.tres" id="2_6fud6"]
+[ext_resource type="Resource" uid="uid://wblexoruff3f" path="res://entities/Units/unit_type_stats/evil_cavalry.tres" id="2_501ng"]
 [ext_resource type="PackedScene" uid="uid://d4hfu2nif3gur" path="res://assets/units/evil_cavalry.tscn" id="3_f4mft"]
 [ext_resource type="Script" uid="uid://r2baue2y324i" path="res://common/counter.gd" id="4_er82o"]
 
@@ -13,7 +13,7 @@ height = 6.0
 collision_layer = 3
 script = ExtResource("1_501ng")
 alignment = "ENEMY"
-stats = ExtResource("2_6fud6")
+stats = ExtResource("2_501ng")
 model = NodePath("EvilCavalry")
 health = NodePath("HealthCounter")
 navigator = NodePath("NavigationAgent3D")

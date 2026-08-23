@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://bo5pnw7vit1xn"]
+
+[ext_resource type="Script" uid="uid://bxahglea2iyqi" path="res://entities/Units/unit_stats.gd" id="1_h0vj7"]
+
+[resource]
+script = ExtResource("1_h0vj7")
+name = "EvilGuard"
+health = 5
+move_speed = 12.0
+acceleration = 12.0
+attack_range = 4.0
+metadata/_custom_type_script = "uid://bxahglea2iyqi"

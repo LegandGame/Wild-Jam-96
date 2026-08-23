@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cdah1wd0cu4dk"]
 
 [ext_resource type="Script" uid="uid://d2geap8a52qi4" path="res://entities/Units/unit.gd" id="1_cglnm"]
-[ext_resource type="Resource" uid="uid://df2daoaf4dabi" path="res://entities/Units/unit_type_stats/guard.tres" id="2_esiq5"]
+[ext_resource type="Resource" uid="uid://bo5pnw7vit1xn" path="res://entities/Units/unit_type_stats/evil_guard.tres" id="2_8cwi5"]
 [ext_resource type="PackedScene" uid="uid://d3miv5bnq02wj" path="res://assets/units/evil_guard.tscn" id="3_wc3q1"]
 [ext_resource type="Script" uid="uid://r2baue2y324i" path="res://common/counter.gd" id="4_qd3yy"]
 
@@ -13,7 +13,7 @@ height = 6.0
 collision_layer = 5
 script = ExtResource("1_cglnm")
 alignment = "ENEMY"
-stats = ExtResource("2_esiq5")
+stats = ExtResource("2_8cwi5")
 model = NodePath("EvilGuard")
 health = NodePath("HealthCounter")
 navigator = NodePath("NavigationAgent3D")

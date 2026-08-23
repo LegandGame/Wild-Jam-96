@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxim7qjugsqwb"]
 
 [ext_resource type="Script" uid="uid://d2geap8a52qi4" path="res://entities/Units/unit.gd" id="1_p8flj"]
-[ext_resource type="Resource" uid="uid://bnaujgpqqsjuj" path="res://entities/Units/unit_type_stats/spearman.tres" id="2_rrkah"]
+[ext_resource type="Resource" uid="uid://by2keroieatd5" path="res://entities/Units/unit_type_stats/evil_spearman.tres" id="2_x6t2g"]
 [ext_resource type="PackedScene" uid="uid://plpt4ccxshr0" path="res://assets/units/evil_spearman.tscn" id="3_qkox0"]
 [ext_resource type="Script" uid="uid://r2baue2y324i" path="res://common/counter.gd" id="4_5pjkl"]
 
@@ -13,7 +13,7 @@ height = 6.0
 collision_layer = 5
 script = ExtResource("1_p8flj")
 alignment = "ENEMY"
-stats = ExtResource("2_rrkah")
+stats = ExtResource("2_x6t2g")
 model = NodePath("EvilSpearman")
 health = NodePath("HealthCounter")
 navigator = NodePath("NavigationAgent3D")
