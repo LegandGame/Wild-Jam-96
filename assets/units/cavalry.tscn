@@ -9,6 +9,7 @@
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 script = ExtResource("2_xmney")
 animation_tree = NodePath("AnimationTree")
+speed_scale = 0.1
 
 [node name="RIG-Guard_Rig_deform" parent="." index="0" unique_id=1033723616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -46,4 +47,4 @@ parameters/HitReaction/request = 0
 parameters/Attack/active = false
 parameters/Attack/internal_active = false
 parameters/Attack/request = 0
-parameters/MoveSpeed/scale = 1.0
+parameters/MoveSpeed/scale = 0.1
