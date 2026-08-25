@@ -24,7 +24,7 @@ signal change_wave_state(wave_state: Types.WaveState, wave_number: int)
 @export var wave_spawn_delay: float = 2.0
 
 ## Downtime between waves in seconds
-@export var wave_downtime: float = 8.0
+@export var wave_downtime: float = 2.0
 
 ## Statically defined first 5 waves - after this, they are generated.
 var starting_waves = [
@@ -41,16 +41,6 @@ var starting_waves = [
 	{
 		Types.UnitType.ENEMY_GUARD: 2,
 		Types.UnitType.ENEMY_SPEARMAN: 2
-	},
-	# Wave 4
-	{
-		Types.UnitType.ENEMY_SPEARMAN: 4
-	},
-	# Wave 5
-	{
-		Types.UnitType.ENEMY_GUARD: 2,
-		Types.UnitType.ENEMY_SPEARMAN: 2,
-		Types.UnitType.ENEMY_CAVALRY: 1
 	},
 ]
 
@@ -119,8 +109,8 @@ func _generate_wave() -> Array[Types.UnitType]:
 	if wave_number <= starting_waves.size():
 		return _load_wave_from_starting_waves()
 	
-	var units = []
-	var unit_budget = wave_number
+	var units: Array[Types.UnitType] = []
+	var unit_budget = wave_number + 1
 	
 	# first add guards
 	for i in randi_range(0, unit_budget):
